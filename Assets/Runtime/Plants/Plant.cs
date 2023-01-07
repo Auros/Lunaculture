@@ -29,13 +29,12 @@ namespace Lunaculture.Plants
         [field: SerializeField]
         public float OxygenProduction { get; private set; } = 0f;
 
-        // TODO(Caeden): Sync with game speed
         // TODO(Caeden): Minimum water requirement
         private void Update()
         {
             var previousGrowth = GrowthPercent;
 
-            GrowthPercent = Mathf.Clamp01(GrowthPercent + Time.deltaTime / GrowTime / 60f);
+            GrowthPercent = Mathf.Clamp01(GrowthPercent + (Time.deltaTime * Time.timeScale / GrowTime / 60f));
         
             // TODO(Caeden): Tween?
             if (GrowthPercent != previousGrowth)
