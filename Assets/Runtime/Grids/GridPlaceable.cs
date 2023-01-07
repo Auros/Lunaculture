@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.Events;
 
 namespace Lunaculture.Grids
 {
@@ -10,8 +9,5 @@ namespace Lunaculture.Grids
         
         [field: SerializeField]
         public GameObject InvalidHologramPrefab { get; private set; } = null!;
-
-        [field: SerializeField]
-        public UnityEvent<bool> ValidPlacementEvent { get; private set; } = null!;
     }
 }
