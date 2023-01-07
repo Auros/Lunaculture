@@ -43,6 +43,22 @@ namespace Lunaculture.Grids
             y += half;
             return new Vector2(x, y);
         }
+        
+        public void MoveGameObjectToCellCenter(GridCell gridCell, GameObject objectToMove, GridCenterOverride? centerOverride = null)
+        {
+            var worldCenter = GetCellWorldCenter(gridCell);
+            var moveTransform = objectToMove.transform;
+            var gridY = transform.position.y;
+            moveTransform.position = new Vector3(worldCenter.x, gridY, worldCenter.y);
+
+            if (centerOverride.AsNull() is null)
+                centerOverride = objectToMove.GetComponent<GridCenterOverride>();
+            var overrideOffset = centerOverride.AsNull() is null
+                ? Vector3.zero
+                : moveTransform.position - centerOverride!.Offset.position;
+
+            moveTransform.position += overrideOffset;
+        }
 
         private static float RoundWithPrecision(float v, float precision)
         {

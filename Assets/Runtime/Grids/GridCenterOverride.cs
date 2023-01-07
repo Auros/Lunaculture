@@ -5,6 +5,6 @@ namespace Lunaculture.Grids
     public class GridCenterOverride : MonoBehaviour
     {
         [field: SerializeField]
-        public Transform Offset { get; private set; }
+        public Transform Offset { get; private set; } = null!;
     }
 }

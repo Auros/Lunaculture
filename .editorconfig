@@ -1,1 +1,3 @@
+[*.cs]
 dotnet_naming_style.private_prefix_style.required_prefix = _
+place_attribute_on_same_line = false
