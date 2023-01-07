@@ -5,7 +5,7 @@ namespace Lunaculture.Grids
     public class GridCellDetector : MonoBehaviour
     {
         [SerializeField]
-        private GridController _gridController;
+        private GridController _gridController = null!;
 
         private void Update()
         {
