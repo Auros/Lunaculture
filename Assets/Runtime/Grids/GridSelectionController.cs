@@ -21,12 +21,13 @@ namespace Lunaculture.Grids
         [SerializeField]
         private GridPlaceable _startWithSelection = null!;
 
+        private GridCell? _mostRecentCell;
         private bool? _currentPlaceableValid;
         private GridPlaceable? _currentPlaceable;
         private GameObject? _currentHologramInstance;
         private Func<GridCell, bool>? _validityEvaluator;
         private GridCenterOverride? _currentHologramOverride;
-
+        
         private void Start()
         {
             StartSelection(_startWithSelection, cell => cell.X >= 0);
@@ -34,11 +35,23 @@ namespace Lunaculture.Grids
 
         public void OnSelection(InputAction.CallbackContext context)
         {
+            if (!_mostRecentCell.HasValue)
+                return;
             
+            var isValid = _validityEvaluator?.Invoke(_mostRecentCell.Value) ?? true;
+            if (!isValid)
+                return;
+            
+            StopActiveSelection();
         }
 
         public void OnPositionChange(InputAction.CallbackContext context)
         {
+            // If we're not trying to place something, do nothing.
+            if (_currentPlaceable.AsNull() is null)
+                return;
+            
+            _mostRecentCell = null;
             var value = context.ReadValue<Vector2>();
             var ray = _camera.ScreenPointToRay(value);
 
@@ -65,7 +78,7 @@ namespace Lunaculture.Grids
             var placeable = _currentHologramInstance;
             if (placeable.AsNull() is null)
             {
-                Debug.LogWarning("Unexpected: cannot find placeable instance");
+                Debug.LogWarning("Unexpected: cannot find placeable hologram instance");
                 return; // ??
             }
             
@@ -79,12 +92,21 @@ namespace Lunaculture.Grids
                 : selectableTransform.position - _currentHologramOverride!.Offset.position;
             
             selectableTransform.position += overrideOffset;
+            _mostRecentCell = gridCell;
         }
 
         public void StartSelection(GridPlaceable gridPlaceable, Func<GridCell, bool>? validityEvaluator)
         {
             _currentPlaceable = gridPlaceable;
             _validityEvaluator = validityEvaluator;
+        }
+
+        public void StopActiveSelection()
+        {
+            DeleteHologramView();
+            _mostRecentCell = null;
+            _currentPlaceable = null;
+            _validityEvaluator = null;
         }
 
         private void SwitchHologramView(bool valid)
