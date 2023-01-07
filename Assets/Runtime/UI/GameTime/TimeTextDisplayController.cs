@@ -6,11 +6,11 @@ namespace Lunaculture.UI.GameTime
 {
     public class TimeTextDisplayController : MonoBehaviour
     {
-        [SerializeField] private GameUIInterconnect gameUIInterconnect;
-        [SerializeField] private TextMeshProUGUI dayText;
-        [SerializeField] private TextMeshProUGUI weekText;
+        [SerializeField] private GameUIInterconnect gameUIInterconnect = null!;
+        [SerializeField] private TextMeshProUGUI dayText = null!;
+        [SerializeField] private TextMeshProUGUI weekText = null!;
 
-        private TimeController timeController;
+        private TimeController timeController = null!;
 
         private void Start()
         {

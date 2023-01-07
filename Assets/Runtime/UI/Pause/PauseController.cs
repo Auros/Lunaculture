@@ -8,9 +8,9 @@ namespace Lunaculture.UI.Pause
     {
         public bool Paused { get; private set; } = false;
 
-        [SerializeField] private GameUIInterconnect gameUIInterconnect;
+        [SerializeField] private GameUIInterconnect gameUIInterconnect = null!;
 
-        private TimeController timeController;
+        private TimeController timeController = null!;
         private float previousGameSpeed = 1f;
 
         public void OnPause(InputAction.CallbackContext context)

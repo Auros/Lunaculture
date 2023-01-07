@@ -15,12 +15,12 @@ namespace Lunaculture.UI
     public class GameUIInterconnect : MonoBehaviour
     {
         [field: SerializeField]
-        public TimeController TimeController { get; private set; }
+        public TimeController TimeController { get; private set; } = null!;
 
         [field: SerializeField]
-        public InventoryService InventoryService { get; private set; }
+        public InventoryService InventoryService { get; private set; } = null!;
 
         [field: SerializeField]
-        public PauseController PauseController { get; private set; }
+        public PauseController PauseController { get; private set; } = null!;
     }
 }

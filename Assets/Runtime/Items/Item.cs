@@ -7,13 +7,13 @@ namespace Lunaculture.Items
     {
         [field: Header("Basic Item Properties")]
         [field: SerializeField]
-        public Sprite Icon { get; private set; }
-        
+        public Sprite Icon { get; private set; } = null!;
+
         [field: SerializeField]
-        public string Name { get; private set; }
+        public string Name { get; private set; } = string.Empty;
         
         [field: SerializeField] 
-        public string Tooltip { get; private set;  }
+        public string Tooltip { get; private set; } = null!;
 
         [field: Header("Money!")]
         [field: SerializeField]
@@ -32,6 +32,6 @@ namespace Lunaculture.Items
         public bool CanPlace { get; private set; }
 
         [field: SerializeField]
-        public GameObject PlacePrefab { get; private set; }
+        public GameObject PlacePrefab { get; private set; } = null!;
     }
 }

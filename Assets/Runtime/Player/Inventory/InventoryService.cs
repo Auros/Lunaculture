@@ -6,11 +6,11 @@ namespace Lunaculture.Player.Inventory
 {
     public class InventoryService : MonoBehaviour
     {
-        public event Action InventoryUpdatedEvent;
+        public event Action? InventoryUpdatedEvent;
 
-        public ItemStack[] Inventory { get; private set; }
+        public ItemStack?[] Inventory { get; private set; } = Array.Empty<ItemStack?>();
 
-        public Item SelectedItem { get; private set; }
+        public Item? SelectedItem { get; private set; }
 
         [SerializeField] private int numberOfSlots;
 
@@ -19,13 +19,13 @@ namespace Lunaculture.Player.Inventory
             Inventory = new ItemStack[numberOfSlots];
         }
 
-        public void AddItem(Item item, int count = 1)
+        public void AddItem(Item? item, int count = 1)
         {
             for (var i = 0; i < Inventory.Length; i++)
             {
-                if (Inventory[i] != null && Inventory[i].ItemType == item)
+                if (Inventory[i] != null && Inventory[i]!.ItemType == item)
                 {
-                    Inventory[i].Count += count;
+                    Inventory[i]!.Count += count;
                     InventoryUpdatedEvent?.Invoke();
                     return;
                 }
@@ -34,7 +34,7 @@ namespace Lunaculture.Player.Inventory
             // No item stack currently exists in the inventory. Time to add a new stack.
             for (var i = 0; i < Inventory.Length; i++)
             {
-                if (Inventory[i] == null || Inventory[i].Empty)
+                if (Inventory[i] == null || Inventory[i]!.Empty)
                 {
                     Inventory[i] = new ItemStack(item, count);
                     InventoryUpdatedEvent?.Invoke();
@@ -49,9 +49,9 @@ namespace Lunaculture.Player.Inventory
         {
             for (var i = 0; i < Inventory.Length; i++)
             {
-                if (Inventory[i] != null && Inventory[i].ItemType == item && Inventory[i].Count > 0)
+                if (Inventory[i] != null && Inventory[i]!.ItemType == item && Inventory[i]!.Count > 0)
                 {
-                    Inventory[i].Count--;
+                    Inventory[i]!.Count--;
                     InventoryUpdatedEvent?.Invoke();
                     return true;
                 }
@@ -64,9 +64,9 @@ namespace Lunaculture.Player.Inventory
         {
             for (var i = 0; i < Inventory.Length; i++)
             {
-                if (Inventory[i] != null && Inventory[i].ItemType == item && Inventory[i].Count > 0)
+                if (Inventory[i] != null && Inventory[i]!.ItemType == item && Inventory[i]!.Count > 0)
                 {
-                    Inventory[i].Count--;
+                    Inventory[i]!.Count--;
                     InventoryUpdatedEvent?.Invoke();
                     return;
                 }
@@ -82,15 +82,15 @@ namespace Lunaculture.Player.Inventory
                 if (Inventory[i] == target)
                 {
                     // If the target item stack is empty, simply move the stack over
-                    if (Inventory[newIndex] == null || Inventory[newIndex].Empty)
+                    if (Inventory[newIndex] == null || Inventory[newIndex]!.Empty)
                     {
                         Inventory[newIndex] = Inventory[i];
                         Inventory[i] = new ItemStack(null, 0);
                     }
                     // If both stacks are of the same item type, simply combine the stacks
-                    else if (Inventory[i].ItemType == Inventory[newIndex].ItemType)
+                    else if (Inventory[i]!.ItemType == Inventory[newIndex]!.ItemType)
                     {
-                        Inventory[newIndex].Count += Inventory[i].Count;
+                        Inventory[newIndex]!.Count += Inventory[i]!.Count;
                         Inventory[i] = new ItemStack(null, 0);
                     }
                     // Simply swap items around
@@ -109,13 +109,13 @@ namespace Lunaculture.Player.Inventory
             throw new InvalidOperationException("Target item stack is not present in the inventory.");
         }
 
-        public void SelectItem(Item item)
+        public void SelectItem(Item? item)
         {
             SelectedItem = item;
             InventoryUpdatedEvent?.Invoke();
         }
 
-        public void SelectItem(ItemStack target)
+        public void SelectItem(ItemStack? target)
         {
             if (target != null && !target.Empty)
             {
@@ -123,7 +123,7 @@ namespace Lunaculture.Player.Inventory
                 return;
             }
 
-            SelectItem((Item)null);
+            SelectItem((Item?)null);
         }
     }
 }

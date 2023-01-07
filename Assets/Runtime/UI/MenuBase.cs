@@ -8,7 +8,7 @@ namespace Lunaculture.UI
         [field: SerializeField]
         public bool PausesGame { get; private set; }
 
-        [SerializeField] private MenuPopupController menuPopupController;
+        [SerializeField] private MenuPopupController menuPopupController = null!;
 
         private bool openMenu = false;
 

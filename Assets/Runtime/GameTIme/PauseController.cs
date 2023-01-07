@@ -25,7 +25,7 @@ namespace Lunaculture.GameTime
             }
         }
 
-        [SerializeField] private TimeController timeController;
+        [SerializeField] private TimeController timeController = null!;
 
         private bool paused;
         private float previousGameSpeed;

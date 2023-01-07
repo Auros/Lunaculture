@@ -8,26 +8,24 @@ namespace Lunaculture.UI
     {
         public bool MenuOpen => currentlyOpenMenu != null;
 
-        [SerializeField] private GameUIInterconnect gameUIInterconnect;
+        [SerializeField] private GameUIInterconnect gameUIInterconnect = null!;
 
-        private MenuBase currentlyOpenMenu;
+        private MenuBase? currentlyOpenMenu;
         private int lastMenuOpenFrame;
 
         public bool TryOpenMenu(MenuBase menu)
         {
-            if (currentlyOpenMenu == null)
-            {
-                currentlyOpenMenu = menu;
-                menu.gameObject.SetActive(true);
+            if (currentlyOpenMenu != null)
+                return false;
+            
+            currentlyOpenMenu = menu;
+            menu.gameObject.SetActive(true);
 
-                gameUIInterconnect.PauseController.Paused = menu.PausesGame;
+            gameUIInterconnect.PauseController.Paused = menu.PausesGame;
 
-                lastMenuOpenFrame = Time.frameCount;
+            lastMenuOpenFrame = Time.frameCount;
 
-                return true;
-            }
-
-            return false;
+            return true;
         }
 
         public void CloseOpenMenu(InputAction.CallbackContext context)

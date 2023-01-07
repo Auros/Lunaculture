@@ -7,7 +7,12 @@ namespace Lunaculture.Player
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private float movementSpeed;
-        [SerializeField, FormerlySerializedAs("rigidbody")] private Rigidbody _rigidbody = null!;
+        
+        [SerializeField]
+        [FormerlySerializedAs("rigidbody")]
+        private Rigidbody _rigidbody = null!;
+        
+        [SerializeField] private CapsuleCollider outsideCollider = null!;
 
         private Vector3 intendedVelocity = Vector3.zero;
 

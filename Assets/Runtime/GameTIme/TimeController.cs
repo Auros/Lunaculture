@@ -5,9 +5,9 @@ namespace Lunaculture.GameTime
 {
     public class TimeController : MonoBehaviour
     {
-        public event Action<DayChangeEvent> OnDayChange;
+        public event Action<DayChangeEvent>? OnDayChange;
 
-        public event Action<WeekChangeEvent> OnWeekChange;
+        public event Action<WeekChangeEvent>? OnWeekChange;
 
         public float GameSpeed
         {

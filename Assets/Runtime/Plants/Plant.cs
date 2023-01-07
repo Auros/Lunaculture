@@ -1,3 +1,4 @@
+using System;
 using Lunaculture.Items;
 using UnityEngine;
 
@@ -20,10 +21,10 @@ namespace Lunaculture.Plants
 
         [field: Header("All item drops must have an associated drop percentage [0-1]")]
         [field: SerializeField]
-        public Item[] Drops { get; private set; }
+        public Item[] Drops { get; private set; } = Array.Empty<Item>();
 
         [field: SerializeField]
-        public float[] DropPercentages { get; private set; }
+        public float[] DropPercentages { get; private set; } = Array.Empty<float>();
 
         [field: Header("Contributes oxygen to the network (reserved for trees)")]
         [field: SerializeField]
@@ -37,7 +38,7 @@ namespace Lunaculture.Plants
             GrowthPercent = Mathf.Clamp01(GrowthPercent + (Time.deltaTime * Time.timeScale / GrowTime / 60f));
         
             // TODO(Caeden): Tween?
-            if (GrowthPercent != previousGrowth)
+            if (!Mathf.Approximately(GrowthPercent, previousGrowth))
             {
                 transform.localScale = GrowthPercent * Vector3.one;
             }

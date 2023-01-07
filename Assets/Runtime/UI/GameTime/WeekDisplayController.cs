@@ -7,12 +7,12 @@ namespace Lunaculture.UI.GameTime
 {
     public class WeekDisplayController : MonoBehaviour
     {
-        [SerializeField] private GameUIInterconnect interconnect;
-        [SerializeField] private SimpleFillController simpleFillPrefab;
+        [SerializeField] private GameUIInterconnect interconnect = null!;
+        [SerializeField] private SimpleFillController simpleFillPrefab = null!;
 
-        private TimeController timeController;
+        private TimeController timeController = null!;
 
-        private SimpleFillController[] dayUIElements;
+        private SimpleFillController[] dayUIElements = null!;
 
         private void Start()
         {

@@ -7,13 +7,13 @@ namespace Lunaculture.UI.Inventory
 {
     public class SlotCell : MonoBehaviour, IPointerClickHandler
     {
-        public ItemStack AssignedStack { get; private set; }
+        public ItemStack? AssignedStack { get; private set; }
 
-        [SerializeField] private Image itemIcon;
-        [SerializeField] private Image selectedIcon;
-        [SerializeField] private TextMeshProUGUI countLabel;
+        [SerializeField] private Image itemIcon = null!;
+        [SerializeField] private Image selectedIcon = null!;
+        [SerializeField] private TextMeshProUGUI countLabel = null!;
 
-        public void AssignItemStack(ItemStack stack = null)
+        public void AssignItemStack(ItemStack? stack = null)
         {
             AssignedStack = stack;
 

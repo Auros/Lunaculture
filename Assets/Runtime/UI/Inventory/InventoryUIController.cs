@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using Lunaculture.Items;
 using Lunaculture.Player.Inventory;
 using UnityEngine;
@@ -6,12 +7,15 @@ namespace Lunaculture.UI.Inventory
 {
     public class InventoryUIController : MonoBehaviour
     {
-        [SerializeField] private SlotCell slotCellPrefab;
-        [SerializeField] private Item debugItem;
-        [SerializeField] private GameUIInterconnect gameUIInterconnect;
+        [SerializeField] private SlotCell slotCellPrefab = null!;
+        [SerializeField] private GameUIInterconnect gameUIInterconnect = null!;
+        
+        [SerializeField]
+        [UsedImplicitly]
+        private Item debugItem = null!;
 
-        private SlotCell[] inventorySlots;
-        private InventoryService inventoryService;
+        private SlotCell[]? inventorySlots;
+        private InventoryService? inventoryService;
 
         private void OnEnable()
         {
@@ -34,18 +38,20 @@ namespace Lunaculture.UI.Inventory
 
         private void RebuildInventoryUI()
         {
-            for (var i = 0; i < inventoryService.Inventory.Length; i++)
+            for (var i = 0; i < inventoryService!.Inventory.Length; i++)
             {
-                inventorySlots[i].AssignItemStack(inventoryService.Inventory[i]);
+                var slot = inventorySlots![i];
+                slot.AssignItemStack(inventoryService.Inventory[i]);
 
-                var selectedSlot = inventorySlots[i].AssignedStack != null && inventorySlots[i].AssignedStack.ItemType == inventoryService.SelectedItem;
+                var assignedStack = slot.AssignedStack;
+                var selectedSlot = assignedStack != null && assignedStack.ItemType == inventoryService.SelectedItem;
                 inventorySlots[i].ToggleSelectionIcon(selectedSlot);
             }
         }
 
         private void OnDestroy()
         {
-            inventoryService.InventoryUpdatedEvent -= RebuildInventoryUI;
+            inventoryService!.InventoryUpdatedEvent -= RebuildInventoryUI;
         }
     }
 }

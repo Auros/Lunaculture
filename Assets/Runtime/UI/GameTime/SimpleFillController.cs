@@ -7,9 +7,9 @@ namespace Lunaculture.UI.GameTime
         public float Fill
         {
             get => fillTransform.anchorMax.x;
-            set => fillTransform.anchorMax = new(Mathf.Clamp01(value), 1);
+            set => fillTransform.anchorMax = new Vector2(Mathf.Clamp01(value), 1);
         }
 
-        [SerializeField] private RectTransform fillTransform;
+        [SerializeField] private RectTransform fillTransform = null!;
     }
 }

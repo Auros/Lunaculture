@@ -6,9 +6,9 @@ namespace Lunaculture.UI.Inventory
 {
     public class InventoryItemSelectionController : MonoBehaviour
     {
-        [SerializeField] private GameUIInterconnect gameUIInterconnect;
+        [SerializeField] private GameUIInterconnect gameUIInterconnect = null!;
 
-        private InventoryService inventoryService;
+        private InventoryService inventoryService = null!;
 
         private void Start()
         {
@@ -19,7 +19,7 @@ namespace Lunaculture.UI.Inventory
         {
             if (cell.AssignedStack == null || cell.AssignedStack.Empty || inventoryService.SelectedItem == cell.AssignedStack.ItemType)
             {
-                inventoryService.SelectItem((Item)null);
+                inventoryService.SelectItem((Item?)null);
                 return;
             }
 
