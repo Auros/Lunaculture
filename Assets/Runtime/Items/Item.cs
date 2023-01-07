@@ -27,5 +27,11 @@ namespace Lunaculture.Items
         
         [field: SerializeField]
         public int SellPrice { get; private set; }
+
+        [field: SerializeField]
+        public bool CanPlace { get; private set; }
+
+        [field: SerializeField]
+        public GameObject PlacePrefab { get; private set; }
     }
 }

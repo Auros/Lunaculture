@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Carrot Seeds
   m_EditorClassIdentifier: 
   <Icon>k__BackingField: {fileID: 0}
-  <Name>k__BackingField: 
-  <Tooltip>k__BackingField: 
-  <CanBuy>k__BackingField: 0
-  <BuyPrice>k__BackingField: 0
+  <Name>k__BackingField: Carrot Seeds
+  <Tooltip>k__BackingField: Carrots are the first crop sent on new settlement missions.
+  <CanBuy>k__BackingField: 1
+  <BuyPrice>k__BackingField: 5
   <CanSell>k__BackingField: 0
   <SellPrice>k__BackingField: 0
+  <CanPlace>k__BackingField: 0
+  <PlacePrefab>k__BackingField: {fileID: 0}
