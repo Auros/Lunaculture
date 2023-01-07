@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 namespace Lunaculture.Player
 {
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private float movementSpeed;
-        [SerializeField] private Rigidbody rigidbody;
+        [SerializeField] [FormerlySerializedAs("rigidbody")] private Rigidbody _rigidbody = null!;
         [SerializeField] private CapsuleCollider outsideCollider;
 
         private Vector3 intendedVelocity = Vector3.zero;
@@ -36,7 +37,7 @@ namespace Lunaculture.Player
         {
             transform.position += deltaTime * intendedVelocity;
             outsideCollider.radius = (deltaTime / Time.fixedDeltaTime) + 0.5f;
-            rigidbody.velocity = Vector3.zero;
+            _rigidbody.velocity = Vector3.zero;
         }
 
         // TODO(Caeden): Perhaps rethink how to lock player rotation when we add a model
