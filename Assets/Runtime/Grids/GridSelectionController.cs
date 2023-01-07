@@ -1,8 +1,7 @@
-using Lunaculture.Grids;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Lunaculture
+namespace Lunaculture.Grids
 {
     public class GridSelectionController : MonoBehaviour
     {
@@ -15,12 +14,15 @@ namespace Lunaculture
         [SerializeField]
         private GridController _gridController;
         
+        [SerializeField]
+        private GridCenterOverride _selectable;
+        
         public void OnSelection(InputAction.CallbackContext context)
         {
             
         }
 
-        public void OnMousePositionChange(InputAction.CallbackContext context)
+        public void OnPositionChange(InputAction.CallbackContext context)
         {
             var value = context.ReadValue<Vector2>();
             var ray = _camera.ScreenPointToRay(value);
@@ -31,11 +33,16 @@ namespace Lunaculture
             var (x, _, z) = hit.point;
 
             var gridCell = _gridController.GetCellAt(new Vector2(x, z));
-
+            
             if (!gridCell.HasValue)
                 return;
-            
-            print(gridCell.Value.Id);
+
+            var cellWorldCenter = _gridController.GetCellWorldCenter(gridCell.Value);
+
+            var selectableTransform = _selectable.transform;
+            var gridY = _gridController.transform.position.y;
+            var overrideOffset = selectableTransform.position - _selectable.Offset.position;
+            selectableTransform.position = new Vector3(cellWorldCenter.x, gridY, cellWorldCenter.y) + overrideOffset;
         }
     }
 }

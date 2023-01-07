@@ -35,6 +35,15 @@ namespace Lunaculture.Grids
             return new GridCell(cellX, cellY);
         }
 
+        public Vector2 GetCellWorldCenter(GridCell gridCell)
+        {
+            var (x, y, _) = gridCell;
+            var half = CellSize * 0.5f;
+            x += half;
+            y += half;
+            return new Vector2(x, y);
+        }
+
         private static float RoundWithPrecision(float v, float precision)
         {
             return Mathf.RoundToInt(v / precision) * precision;
