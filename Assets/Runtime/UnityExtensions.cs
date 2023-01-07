@@ -9,5 +9,18 @@ namespace Lunaculture
             x = vector2.x;
             y = vector2.y;
         }
+        
+        
+        public static void Deconstruct(this Vector3 vector2, out float x, out float y, out float z)
+        {
+            x = vector2.x;
+            y = vector2.y;
+            z = vector2.z;
+        }
+
+        public static T? AsNull<T>(this T? unityObject) where T : Object
+        {
+            return unityObject != null ? unityObject : null;
+        }
     }
 }

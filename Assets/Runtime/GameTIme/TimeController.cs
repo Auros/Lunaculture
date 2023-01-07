@@ -18,7 +18,7 @@ namespace Lunaculture.GameTime
         public int CurrentDay { get; private set; } = 0;
         public int CurrentWeek { get; private set; } = 0;
 
-        public float DayProgress => gameTime % 1;
+        public float DayProgress => gameTime / DayDuration % 1;
 
         public float CurrentDayExact
         {
@@ -27,22 +27,22 @@ namespace Lunaculture.GameTime
             {
                 gameTime = value;
                 CurrentDay = (int)value;
-                CurrentWeek = (int)(value / daysPerWeek);
+                CurrentWeek = (int)(value / DaysPerWeek);
             }
         }
 
         public float CurrentWeekExact
         {
-            get => gameTime / daysPerWeek;
-            set => CurrentDayExact = value * daysPerWeek;
+            get => gameTime / DaysPerWeek;
+            set => CurrentDayExact = value * DaysPerWeek;
         }
 
-        [Header("Day duration is in minutes")]
-        [SerializeField]
-        private float dayDuration = 2f;
+        [field: Header("Day duration is in minutes")]
+        [field: SerializeField]
+        public float DayDuration { get; private set; } = 2f;
 
-        [SerializeField]
-        private int daysPerWeek = 5;
+        [field: SerializeField]
+        public int DaysPerWeek { get; private set; } = 5;
 
         private float gameTime = 0;
 
@@ -50,14 +50,14 @@ namespace Lunaculture.GameTime
         {
             gameTime += Time.deltaTime * Time.timeScale / 60;
 
-            var day = (int)(gameTime / dayDuration);
+            var day = (int)(gameTime / DayDuration);
             if (CurrentDay != day)
             {
                 CurrentDay = day;
                 OnDayChange?.Invoke(new(CurrentDay));
             }
 
-            var week = CurrentDay / daysPerWeek;
+            var week = CurrentDay / DaysPerWeek;
             if (CurrentWeek != week)
             {
                 CurrentWeek = week;

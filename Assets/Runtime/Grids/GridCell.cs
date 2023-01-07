@@ -28,5 +28,12 @@ namespace Lunaculture.Grids
             Y = BitConverter.Int32BitsToSingle(yInt);
             Id = id;
         }
+
+        public void Deconstruct(out float x, out float y, out long id)
+        {
+            x = X;
+            y = Y;
+            id = Id;
+        }
     }
 }
