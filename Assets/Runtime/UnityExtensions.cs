@@ -17,5 +17,10 @@ namespace Lunaculture
             y = vector2.y;
             z = vector2.z;
         }
+
+        public static T? AsNull<T>(this T? unityObject) where T : Object
+        {
+            return unityObject != null ? unityObject : null;
+        }
     }
 }

@@ -6,18 +6,18 @@ namespace Lunaculture.Grids
     public class GridSelectionController : MonoBehaviour
     {
         [SerializeField]
-        private Camera _camera;
+        private Camera _camera = null!;
 
         [SerializeField]
         private LayerMask _gridLayer;
         
         [SerializeField]
-        private GridController _gridController;
+        private GridController _gridController = null!;
         
         [SerializeField]
-        private GridCenterOverride _selectable;
+        private GridCenterOverride _selectable = null!;
 
-        private GridPlaceable _currentPlaceable;
+        private GridPlaceable? _currentPlaceable;
         
         public void OnSelection(InputAction.CallbackContext context)
         {
