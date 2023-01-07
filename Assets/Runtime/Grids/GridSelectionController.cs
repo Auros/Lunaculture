@@ -1,4 +1,5 @@
 using System;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,25 +16,15 @@ namespace Lunaculture.Grids
         [SerializeField]
         private GridController _gridController = null!;
         
-        //[SerializeField]
-        //private GridCenterOverride _selectable = null!;
-
-        [SerializeField]
-        private GridPlaceable _startWithSelection = null!;
-
         private GridCell? _mostRecentCell;
         private bool? _currentPlaceableValid;
         private GridPlaceable? _currentPlaceable;
         private GameObject? _currentHologramInstance;
         private Func<GridCell, bool>? _validityEvaluator;
         private GridCenterOverride? _currentHologramOverride;
-        
-        private void Start()
-        {
-            StartSelection(_startWithSelection, cell => cell.X >= 0);
-        }
 
-        public void OnSelection(InputAction.CallbackContext context)
+        [UsedImplicitly]
+        protected void OnSelection(InputAction.CallbackContext _)
         {
             if (!_mostRecentCell.HasValue)
                 return;
@@ -45,14 +36,15 @@ namespace Lunaculture.Grids
             StopActiveSelection();
         }
 
-        public void OnPositionChange(InputAction.CallbackContext context)
+        [UsedImplicitly]
+        protected void OnPositionChange(InputAction.CallbackContext ctx)
         {
             // If we're not trying to place something, do nothing.
             if (_currentPlaceable.AsNull() is null)
                 return;
             
             _mostRecentCell = null;
-            var value = context.ReadValue<Vector2>();
+            var value = ctx.ReadValue<Vector2>();
             var ray = _camera.ScreenPointToRay(value);
 
             if (!Physics.Raycast(ray, out var hit, 100f, _gridLayer))
