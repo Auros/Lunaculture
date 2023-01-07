@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9609518baf8b5344d8158de2ed9b16e7, type: 3}
   m_Name: Loqua Seeds
   m_EditorClassIdentifier: 
-  <Icon>k__BackingField: {fileID: 0}
+  <Icon>k__BackingField: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   <Name>k__BackingField: Loqua Seeds
   <Tooltip>k__BackingField: Common plant native to Iridium.
   <CanBuy>k__BackingField: 0

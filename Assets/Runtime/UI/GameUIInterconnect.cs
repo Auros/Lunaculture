@@ -1,4 +1,5 @@
 using Lunaculture.GameTime;
+using Lunaculture.Player.Inventory;
 using UnityEngine;
 
 namespace Lunaculture.UI
@@ -15,5 +16,11 @@ namespace Lunaculture.UI
     {
         [field: SerializeField]
         public TimeController TimeController { get; private set; }
+
+        [field: SerializeField]
+        public InventoryService InventoryService { get; private set; }
+
+        [field: SerializeField]
+        public PauseController PauseController { get; private set; }
     }
 }

@@ -1,11 +1,8 @@
 using Lunaculture.GameTime;
-using Lunaculture.UI;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Lunaculture
+namespace Lunaculture.UI.Pause
 {
     public class PauseController : MonoBehaviour
     {
