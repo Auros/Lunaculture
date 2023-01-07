@@ -16,6 +16,8 @@ namespace Lunaculture.Grids
         
         [SerializeField]
         private GridCenterOverride _selectable;
+
+        private GridPlaceable _currentPlaceable;
         
         public void OnSelection(InputAction.CallbackContext context)
         {
@@ -43,6 +45,11 @@ namespace Lunaculture.Grids
             var gridY = _gridController.transform.position.y;
             var overrideOffset = selectableTransform.position - _selectable.Offset.position;
             selectableTransform.position = new Vector3(cellWorldCenter.x, gridY, cellWorldCenter.y) + overrideOffset;
+        }
+
+        public void StartSelection(GridPlaceable gridPlaceable)
+        {
+            
         }
     }
 }
