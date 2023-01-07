@@ -16,24 +16,38 @@ namespace Lunaculture.Grids
         [SerializeField]
         private GridController _gridController = null!;
         
+        [SerializeField]
+        private GridPlaceable _startWithSelection = null!;
+
         private GridCell? _mostRecentCell;
+        private Action<GridCell>? _onPlaced;
         private bool? _currentPlaceableValid;
         private GridPlaceable? _currentPlaceable;
         private GameObject? _currentHologramInstance;
         private Func<GridCell, bool>? _validityEvaluator;
         private GridCenterOverride? _currentHologramOverride;
 
+        private void Start()
+        {
+            if (_startWithSelection.AsNull() is null)
+                return;
+            
+            StartSelection(_startWithSelection, cell => cell.X >= 0 && cell.Y >= 0, null);
+        }
+
         [UsedImplicitly]
         protected void OnSelection(InputAction.CallbackContext _)
         {
             if (!_mostRecentCell.HasValue)
                 return;
-            
-            var isValid = _validityEvaluator?.Invoke(_mostRecentCell.Value) ?? true;
+
+            var cell = _mostRecentCell.Value;
+            var isValid = _validityEvaluator?.Invoke(cell) ?? true;
             if (!isValid)
                 return;
             
             StopActiveSelection();
+            _onPlaced?.Invoke(cell);
         }
 
         [UsedImplicitly]
@@ -62,9 +76,7 @@ namespace Lunaculture.Grids
                 DeleteHologramView();
                 return;
             }
-
             var validPlacement = _validityEvaluator?.Invoke(gridCell.Value) ?? true;
-            var cellWorldCenter = _gridController.GetCellWorldCenter(gridCell.Value);
             SwitchHologramView(validPlacement);
 
             var placeable = _currentHologramInstance;
@@ -74,21 +86,13 @@ namespace Lunaculture.Grids
                 return; // ??
             }
             
-            var selectableTransform = placeable!.transform;
-            var gridY = _gridController.transform.position.y;
-            
-            selectableTransform.position = new Vector3(cellWorldCenter.x, gridY, cellWorldCenter.y);
-            
-            var overrideOffset = _currentHologramOverride.AsNull() is null
-                ? Vector3.zero
-                : selectableTransform.position - _currentHologramOverride!.Offset.position;
-            
-            selectableTransform.position += overrideOffset;
+            _gridController.MoveGameObjectToCellCenter(gridCell.Value, placeable!, _currentHologramOverride);
             _mostRecentCell = gridCell;
         }
 
-        public void StartSelection(GridPlaceable gridPlaceable, Func<GridCell, bool>? validityEvaluator)
+        public void StartSelection(GridPlaceable gridPlaceable, Func<GridCell, bool>? validityEvaluator, Action<GridCell>? onPlaced)
         {
+            _onPlaced = onPlaced;
             _currentPlaceable = gridPlaceable;
             _validityEvaluator = validityEvaluator;
         }
