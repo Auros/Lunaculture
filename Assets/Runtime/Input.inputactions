@@ -83,6 +83,54 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "Selection",
+            "id": "2d591da1-1ae9-4c2e-a803-f3583ace0c51",
+            "actions": [
+                {
+                    "name": "Select",
+                    "type": "Button",
+                    "id": "f1c4f5cc-a883-4887-a297-7ba09703f1d9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Position",
+                    "type": "Value",
+                    "id": "978efc34-7484-4303-a6e0-c7985ee40c25",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5a4a73ed-dae0-4133-b0dd-10b23858431a",
+                    "path": "<Mouse>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7af5778d-540c-40a1-9fe2-cf15f513c70a",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
