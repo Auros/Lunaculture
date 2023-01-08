@@ -1254,13 +1254,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <GrowTime>k__BackingField: 2
-  <Drops>k__BackingField: []
-  <DropPercentages>k__BackingField: []
+  <Drops>k__BackingField:
+  - {fileID: 11400000, guid: 98885b9602cf92845af7c804986cbc1c, type: 2}
+  - {fileID: 11400000, guid: 994e189f28c2be746b2744c85c7e7ba7, type: 2}
+  <DropPercentages>k__BackingField:
+  - 1
+  - 0.8
   <RandomlyRotatedObjects>k__BackingField:
   - {fileID: 3524503129678361464}
   <OxygenProduction>k__BackingField: 0
   <Animator>k__BackingField: {fileID: 8078275842468739629}
-  GrowthStatus: 0
 --- !u!1 &7519098645443884217
 GameObject:
   m_ObjectHideFlags: 0
