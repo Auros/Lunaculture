@@ -46,6 +46,7 @@ namespace Lunaculture
                 
                 var plotGridObject = (gridObject as PlotGridObject)!;
                 plotGridObject.Watered = true;
+                _tryingToWater = false;
             }, () =>
             {
                 _tryingToWater = false;

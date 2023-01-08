@@ -94,12 +94,16 @@ namespace Lunaculture.Grids
             _validityEvaluator = validityEvaluator;
         }
 
-        public void StopActiveSelection()
+        public void StopActiveSelection(bool sendCancelEvent = false)
         {
             DeleteHologramView();
             _mostRecentCell = null;
             _currentPlaceable = null;
             _validityEvaluator = null;
+
+            if (!sendCancelEvent)
+                return;
+            
             _onCancel?.Invoke();
         }
 
@@ -149,7 +153,7 @@ namespace Lunaculture.Grids
         public void Disable(bool state)
         {
             if (state)
-                StopActiveSelection();
+                StopActiveSelection(true);
             Active = !state;
         }
     }

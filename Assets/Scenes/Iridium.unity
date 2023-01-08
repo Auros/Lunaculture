@@ -608,7 +608,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 415081405}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1549.6147, y: 25.835566, z: 17.795158}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -878,6 +878,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: a207c252-2366-4d41-9422-256334ee323b
     m_ActionName: UI/Buy (TEMP)[/Keyboard/b]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ff2c9ce2-e2ac-430c-b7c1-3b6fbd137e95
+    m_ActionName: UI/Tooltip Movement[/Mouse/position]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Selection

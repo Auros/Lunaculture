@@ -89,7 +89,7 @@ namespace Lunaculture.Machines.Miner
                 }
             }, () =>
             {
-                Destroy(miner);
+                Destroy(miner.gameObject);
                 _currentlyPlacing = null;
             });
             _currentlyPlacing = miner;

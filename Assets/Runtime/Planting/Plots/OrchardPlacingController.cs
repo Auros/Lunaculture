@@ -89,7 +89,7 @@ namespace Lunaculture.Planting.Plots
                 });
             }, () =>
             {
-                Destroy(orchard);
+                Destroy(orchard.gameObject);
                 _currentlyPlacing = null;
             });
             _currentlyPlacing = orchard;
