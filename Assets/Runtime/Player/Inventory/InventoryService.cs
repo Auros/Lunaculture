@@ -67,12 +67,13 @@ namespace Lunaculture.Player.Inventory
                 if (Inventory[i] != null && Inventory[i]!.ItemType == item && Inventory[i]!.Count > 0)
                 {
                     Inventory[i]!.Count--;
-                    InventoryUpdatedEvent?.Invoke();
 
                     if (item == SelectedItem && Inventory[i]!.Count == 0)
                     {
                         SelectedItem = null;
                     }
+
+                    InventoryUpdatedEvent?.Invoke();
 
                     return;
                 }
