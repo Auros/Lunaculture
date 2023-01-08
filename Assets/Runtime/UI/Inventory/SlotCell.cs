@@ -1,3 +1,4 @@
+using Lunaculture.UI.Tooltips;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -12,6 +13,7 @@ namespace Lunaculture.UI.Inventory
         [SerializeField] private Image itemIcon = null!;
         [SerializeField] private Image selectedIcon = null!;
         [SerializeField] private TextMeshProUGUI countLabel = null!;
+        [SerializeField] private TooltipSource tooltipSource = null!;
 
         public void AssignItemStack(ItemStack? stack = null)
         {
@@ -21,13 +23,18 @@ namespace Lunaculture.UI.Inventory
             {
                 itemIcon.gameObject.SetActive(false);
                 countLabel.gameObject.SetActive(false);
+                tooltipSource.enabled = false;
                 return;
             }
 
             itemIcon.gameObject.SetActive(true);
             countLabel.gameObject.SetActive(true);
+            tooltipSource.enabled = true;
 
             itemIcon.sprite = stack.ItemType!.Icon;
+
+            tooltipSource.TooltipName = stack.ItemType!.Name;
+            tooltipSource.TooltipText = stack.ItemType!.Tooltip;
 
             countLabel.text = LabelText;
         }
