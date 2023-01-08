@@ -43,6 +43,7 @@ namespace Lunaculture.Planting.Seeding
                     throw new InvalidOperationException("Could not find plot to place seed in");
                 
                 var plotGridObject = (gridObject as PlotGridObject)!;
+                _inventoryService.RemoveItem(_tryingToPlant!);
                 plotGridObject.Planted = _tryingToPlant;
                 plotGridObject.Empty = false;
                 _tryingToPlant = null;
