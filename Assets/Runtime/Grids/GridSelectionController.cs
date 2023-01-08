@@ -36,8 +36,12 @@ namespace Lunaculture.Grids
         }
 
         [UsedImplicitly]
-        protected void OnSelection(InputAction.CallbackContext _)
+        protected void OnSelection(InputAction.CallbackContext ctx)
         {
+            // Only repond to Mouse Down
+            if (!ctx.performed)
+                return;
+            
             if (!_mostRecentCell.HasValue)
                 return;
 
