@@ -27,7 +27,7 @@ namespace Lunaculture.UI.Inventory
             itemIcon.gameObject.SetActive(true);
             countLabel.gameObject.SetActive(true);
 
-            itemIcon.sprite = stack.ItemType.Icon;
+            itemIcon.sprite = stack.ItemType!.Icon;
 
             if (stack.Count > 99)
             {

@@ -12,7 +12,7 @@ namespace Lunaculture.UI.Objectives
         [SerializeField] private SimpleFillController progressFill = null!;
         [SerializeField] private TextMeshProUGUI objectiveText = null!;
 
-        private ObjectiveService objectiveService;
+        private ObjectiveService objectiveService = null!;
 
         private void Start()
         {
