@@ -971,10 +971,6 @@ MonoBehaviour:
     m_ActionId: 2294f7bf-0c3d-4996-9ea4-dd220b85f107
     m_ActionName: UI/Inventory[/Keyboard/e]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 15320f71-a902-4e0d-93e3-1401760c58da
-    m_ActionName: UI/Sell (TEMP)[/Keyboard/p]
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3967473919801794047}
         m_TargetAssemblyTypeName: Lunaculture.UI.MenuBase, Lunaculture
@@ -4325,11 +4321,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2521784254357992301}
     m_Modifications:
-    - target: {fileID: 121486154354856020, guid: 3bcf91d136682694e8c751858e39c5de,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 121486154354856020, guid: 3bcf91d136682694e8c751858e39c5de,
         type: 3}
       propertyPath: gameUIInterconnect
