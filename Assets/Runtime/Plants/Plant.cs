@@ -35,15 +35,18 @@ namespace Lunaculture.Plants
         [field: SerializeField]
         public Animator Animator { get; private set; }
 
-        public event Action<PlantGrowthStatus>? PlantStatusUpdated;
+        [field: SerializeField]
+        public GameObject NeedsWaterIcon { get; private set; }
+        
+        public event Action<PlantStatusEvent>? PlantStatusUpdated;
 
         public PlantGrowthStatus GrowthStatus
         {
             get { return _growthStatus; }
             set
             {
+                PlantStatusUpdated?.Invoke(new (value));
                 _growthStatus = value;
-                PlantStatusUpdated?.Invoke(_growthStatus);
             }
         }
 
@@ -57,7 +60,14 @@ namespace Lunaculture.Plants
             }
 
             // may need to redo stuff when auto watering is developed
+            PlantStatusUpdated += PlantStatusUpdatedInternal;
+            
             GrowthStatus = PlantGrowthStatus.NotWatered;
+        }
+
+        private void PlantStatusUpdatedInternal(PlantStatusEvent statusEvent)
+        {
+            NeedsWaterIcon.SetActive(statusEvent.GrowthStatus == PlantGrowthStatus.NotWatered || statusEvent.GrowthStatus == PlantGrowthStatus.GrownButNotWatered);
         }
 
         private void Update()
