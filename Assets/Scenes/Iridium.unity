@@ -908,7 +908,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &618365860
 Transform:
   m_ObjectHideFlags: 0
@@ -2581,7 +2581,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-350044
+  m_Name: pb_Mesh-303884
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4272,7 +4272,7 @@ PrefabInstance:
     - target: {fileID: 1038039476224852613, guid: 13b6050bd97a60b4c9ae636f88d90e7c,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 1415
+      value: 1418
       objectReference: {fileID: 0}
     - target: {fileID: 1038039476224852614, guid: 13b6050bd97a60b4c9ae636f88d90e7c,
         type: 3}
@@ -4292,7 +4292,7 @@ PrefabInstance:
     - target: {fileID: 4613908471581350577, guid: 13b6050bd97a60b4c9ae636f88d90e7c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.43
+      value: 3.952
       objectReference: {fileID: 0}
     - target: {fileID: 4613908471581350577, guid: 13b6050bd97a60b4c9ae636f88d90e7c,
         type: 3}
@@ -4338,6 +4338,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dome
+      objectReference: {fileID: 0}
+    - target: {fileID: 7005900240981064420, guid: 13b6050bd97a60b4c9ae636f88d90e7c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.39999998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13b6050bd97a60b4c9ae636f88d90e7c, type: 3}
