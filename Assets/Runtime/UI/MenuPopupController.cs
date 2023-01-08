@@ -1,5 +1,6 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace Lunaculture.UI
@@ -9,6 +10,8 @@ namespace Lunaculture.UI
         public bool MenuOpen => currentlyOpenMenu != null;
 
         [SerializeField] private GameUIInterconnect gameUIInterconnect = null!;
+
+        [SerializeField] private UnityEvent<bool>? _menuStateChanged;
 
         private MenuBase? currentlyOpenMenu;
         private int lastMenuOpenFrame;
@@ -25,6 +28,7 @@ namespace Lunaculture.UI
 
             lastMenuOpenFrame = Time.frameCount;
 
+            _menuStateChanged?.Invoke(true);
             return true;
         }
 
@@ -43,6 +47,7 @@ namespace Lunaculture.UI
             currentlyOpenMenu.gameObject.SetActive(false);
             currentlyOpenMenu = null;
             gameUIInterconnect.PauseController.Paused = false;
+            _menuStateChanged?.Invoke(false);
         }
     }
 }

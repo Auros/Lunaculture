@@ -36,7 +36,7 @@ namespace Lunaculture.Grids
         }
 
         [UsedImplicitly]
-        protected void OnSelection(InputAction.CallbackContext ctx)
+        public void OnSelection(InputAction.CallbackContext ctx)
         {
             // Only repond to Mouse Down
             if (!ctx.performed)
@@ -55,7 +55,7 @@ namespace Lunaculture.Grids
         }
 
         [UsedImplicitly]
-        protected void OnPositionChange(InputAction.CallbackContext ctx)
+        public void OnPositionChange(InputAction.CallbackContext ctx)
         {
             // If we're not trying to place something, do nothing.
             if (_currentPlaceable.AsNull() is null)
@@ -150,6 +150,13 @@ namespace Lunaculture.Grids
             _currentPlaceableValid = null;
             _currentHologramInstance = null;
             _currentHologramOverride = null;
+        }
+
+        public void Disable(bool state)
+        {
+            if (state)
+                StopActiveSelection();
+            enabled = !state;
         }
     }
 }
