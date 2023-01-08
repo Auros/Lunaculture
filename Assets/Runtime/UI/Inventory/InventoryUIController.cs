@@ -19,6 +19,7 @@ namespace Lunaculture.UI.Inventory
 
         private void OnEnable()
         {
+            _ = debugItem;
             if (inventorySlots == null)
             {
                 inventoryService = gameUIInterconnect.InventoryService;

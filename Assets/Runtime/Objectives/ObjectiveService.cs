@@ -7,9 +7,9 @@ namespace Lunaculture.Objectives
 {
     public class ObjectiveService : MonoBehaviour
     {
-        public event Action OnObjectiveComplete;
-        public event Action OnObjectiveFail;
-        public event Action<float> OnObjectiveProgress;
+        public event Action? OnObjectiveComplete;
+        public event Action? OnObjectiveFail;
+        public event Action<float>? OnObjectiveProgress;
 
         [field: SerializeField]
         public int SellTarget { get; private set; } = 100;

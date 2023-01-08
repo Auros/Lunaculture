@@ -18,6 +18,7 @@ namespace Lunaculture.Player
 
         public void OnMovement(InputAction.CallbackContext context)
         {
+            _ = outsideCollider;
             var velocity2d = context.ReadValue<Vector2>();
 
             var normalizedVelocity = velocity2d.normalized;

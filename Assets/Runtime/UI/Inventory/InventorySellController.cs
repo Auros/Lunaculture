@@ -20,7 +20,7 @@ namespace Lunaculture.UI.Inventory
 
         private void OnSlotCellClicked(SlotCell cell)
         {
-            if (cell.AssignedStack != null && !cell.AssignedStack.Empty && cell.AssignedStack.ItemType.CanSell)
+            if (cell.AssignedStack is { Empty: false } && cell.AssignedStack.ItemType!.CanSell)
             {
                 inventoryService.RemoveItem(cell.AssignedStack.ItemType);
 

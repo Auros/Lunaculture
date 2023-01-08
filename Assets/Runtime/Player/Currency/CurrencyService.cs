@@ -5,7 +5,7 @@ namespace Lunaculture.Player.Currency
 {
     public class CurrencyService : MonoBehaviour
     {
-        public event Action<CurrencyUpdateEvent> OnCurrencyUpdate;
+        public event Action<CurrencyUpdateEvent>? OnCurrencyUpdate;
 
         public int Currency
         {
@@ -16,7 +16,7 @@ namespace Lunaculture.Player.Currency
 
                 currency = value;
 
-                OnCurrencyUpdate?.Invoke(new(currency, deltaCurrency));
+                OnCurrencyUpdate?.Invoke(new CurrencyUpdateEvent(currency, deltaCurrency));
             }
         }
 
