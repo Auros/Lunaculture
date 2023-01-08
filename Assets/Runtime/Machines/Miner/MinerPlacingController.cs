@@ -102,9 +102,7 @@ namespace Lunaculture.Machines.Miner
 
             var selectedItem = _inventoryService.SelectedItem!;
             if (selectedItem != _machineItem)
-            {
                 return;
-            }
 
             if (_currentlyPlacing || !_gridSelectionController.Active)
                 return;

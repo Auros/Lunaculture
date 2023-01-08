@@ -67,9 +67,7 @@ namespace Lunaculture.Planting.Plots
 
             var selectedItem = _inventoryService.SelectedItem!;
             if (selectedItem != _plotPlacingItem)
-            {
                 return;
-            }
 
             if (_currentlyPlacing || !_gridSelectionController.Active)
                 return;

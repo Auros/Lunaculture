@@ -104,9 +104,7 @@ namespace Lunaculture.Planting.Plots
             
             // Only allow saplings to be planted into orchards
             if (Array.IndexOf(selectedItem.Tags, _saplingTagName) == -1)
-            {
                 return;
-            }
 
             if (_currentlyPlacing || !_gridSelectionController.Active)
                 return;

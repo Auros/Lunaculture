@@ -625,6 +625,7 @@ Transform:
   - {fileID: 1648728277}
   - {fileID: 1662091893}
   - {fileID: 1219933409}
+  - {fileID: 1913987898}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3572,6 +3573,56 @@ Transform:
   m_Father: {fileID: 5647582275315247435}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1913987897
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1913987898}
+  - component: {fileID: 1913987899}
+  m_Layer: 0
+  m_Name: Seed Planting Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1913987898
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913987897}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 415081406}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1913987899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913987897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 860f2182c37d446b87f4df009a3632a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gridObjectController: {fileID: 1584314787}
+  _gridSelectionController: {fileID: 599316692}
+  _inventoryService: {fileID: 962633878}
+  _hologram: {fileID: 2450330198703992208, guid: 259a32ef1c4918b44ac30d9672c6b467,
+    type: 3}
+  _seedTagName: Seeds
 --- !u!1 &2060453228
 GameObject:
   m_ObjectHideFlags: 0

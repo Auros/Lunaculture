@@ -23,3 +23,5 @@ MonoBehaviour:
   <CanPlace>k__BackingField: 1
   <PlacePrefab>k__BackingField: {fileID: 3276890218862022808, guid: fc2603fef7672cc4fa8cea13b2eb85e1,
     type: 3}
+  <Tags>k__BackingField:
+  - Seeds

@@ -1,13 +1,13 @@
-using System;
+﻿using System;
 using Lunaculture.Grids;
 using Lunaculture.Grids.Objects;
 using Lunaculture.Items;
 using Lunaculture.Player.Inventory;
 using UnityEngine;
 
-namespace Lunaculture
+namespace Lunaculture.Planting.Seeding
 {
-    public class WateringController : MonoBehaviour
+    public class SeedPlantingController : MonoBehaviour
     {
         [SerializeField]
         private GridObjectController _gridObjectController = null!;
@@ -19,14 +19,14 @@ namespace Lunaculture
         private InventoryService _inventoryService = null!;
         
         [SerializeField]
-        private Item _wateringItem = null!;
-
-        [SerializeField]
         private GridPlaceable _hologram = null!;
-
-        private bool _tryingToWater;
         
-        private void StartWateringProcess()
+        [SerializeField]
+        private string _seedTagName = "Seeds";
+
+        private Item? _tryingToPlant;
+        
+        private void StartSeedPlantingProcess()
         {
             _gridSelectionController.StartSelection(_hologram, cell =>
             {
@@ -35,21 +35,21 @@ namespace Lunaculture
                     return false;
 
                 var plotGridObject = (gridObject as PlotGridObject)!;
-                return !plotGridObject.Watered;
+                return plotGridObject.Empty;
             }, cell =>
             {
                 var gridObject = _gridObjectController.GetObjectAt(cell);
                 if (gridObject is null || gridObject.Type != GridObjectType.Plot)
-                    throw new InvalidOperationException("Could not find plot to water");
+                    throw new InvalidOperationException("Could not find plot to place seed in");
                 
                 var plotGridObject = (gridObject as PlotGridObject)!;
-                plotGridObject.Watered = true;
-                _tryingToWater = false;
+                plotGridObject.Planted = _tryingToPlant;
+                plotGridObject.Empty = false;
+                _tryingToPlant = null;
             }, () =>
             {
-                _tryingToWater = false;
+                _tryingToPlant = null;
             });
-            _tryingToWater = true;
         }
         
         private void Update()
@@ -58,13 +58,16 @@ namespace Lunaculture
                 return;
 
             var selectedItem = _inventoryService.SelectedItem!;
-            if (selectedItem != _wateringItem)
+            
+            // Only allow saplings to be planted into orchards
+            if (Array.IndexOf(selectedItem.Tags, _seedTagName) == -1)
                 return;
 
-            if (_tryingToWater || !_gridSelectionController.Active)
+            if (_tryingToPlant || !_gridSelectionController.Active)
                 return;
 
-            StartWateringProcess();
+            _tryingToPlant = selectedItem;
+            StartSeedPlantingProcess();
         }
     }
 }

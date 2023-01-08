@@ -15,10 +15,12 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: 21300000, guid: 1b4e68180bd11364590b784fde648a9c,
     type: 3}
   <Name>k__BackingField: Gas Giant Guava Seeds
-  <Tooltip>k__BackingField: 
+  <Tooltip>k__BackingField: The seeds seem to be emitting some sort of gas...
   <CanBuy>k__BackingField: 1
   <BuyPrice>k__BackingField: 5
   <CanSell>k__BackingField: 0
   <SellPrice>k__BackingField: 0
   <CanPlace>k__BackingField: 1
   <PlacePrefab>k__BackingField: {fileID: 0}
+  <Tags>k__BackingField:
+  - Seeds
