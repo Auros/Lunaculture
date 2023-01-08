@@ -15,10 +15,8 @@ namespace Lunaculture.Grids
         
         [SerializeField]
         private GridController _gridController = null!;
-        
-        [SerializeField]
-        private GridPlaceable _startWithSelection = null!;
 
+        private Action? _onCancel;
         private GridCell? _mostRecentCell;
         private Action<GridCell>? _onPlaced;
         private bool? _currentPlaceableValid;
@@ -27,13 +25,7 @@ namespace Lunaculture.Grids
         private Func<GridCell, bool>? _validityEvaluator;
         private GridCenterOverride? _currentHologramOverride;
 
-        private void Start()
-        {
-            if (_startWithSelection.AsNull() is null)
-                return;
-            
-            StartSelection(_startWithSelection, cell => cell.X >= 0 && cell.Y >= 0, null);
-        }
+        public bool Active { get; private set; }
 
         [UsedImplicitly]
         public void OnSelection(InputAction.CallbackContext ctx)
@@ -94,9 +86,10 @@ namespace Lunaculture.Grids
             _mostRecentCell = gridCell;
         }
 
-        public void StartSelection(GridPlaceable gridPlaceable, Func<GridCell, bool>? validityEvaluator, Action<GridCell>? onPlaced)
+        public void StartSelection(GridPlaceable gridPlaceable, Func<GridCell, bool>? validityEvaluator, Action<GridCell>? onPlaced, Action? onCancel = null)
         {
             _onPlaced = onPlaced;
+            _onCancel = onCancel;
             _currentPlaceable = gridPlaceable;
             _validityEvaluator = validityEvaluator;
         }
@@ -107,6 +100,7 @@ namespace Lunaculture.Grids
             _mostRecentCell = null;
             _currentPlaceable = null;
             _validityEvaluator = null;
+            _onCancel?.Invoke();
         }
 
         private void SwitchHologramView(bool valid)
@@ -156,7 +150,7 @@ namespace Lunaculture.Grids
         {
             if (state)
                 StopActiveSelection();
-            enabled = !state;
+            Active = !state;
         }
     }
 }
