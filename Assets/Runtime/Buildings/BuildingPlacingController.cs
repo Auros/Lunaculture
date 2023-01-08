@@ -26,6 +26,12 @@ namespace Lunaculture.Buildings
         [SerializeField]
         private Item _buildingItem = null!;
 
+        [SerializeField]
+        private Item _resourceItem = null!;
+        
+        [SerializeField]
+        private int _resourceCostPerBuilding = 100;
+
         private PhysicalBuildingController? _currentlyPlacing;
         
         private void StartPlaceNew()
@@ -34,6 +40,9 @@ namespace Lunaculture.Buildings
             building.PrepareMovement();
             _gridSelectionController.StartSelection(building.Placeable, cell =>
             {
+                if (!HasEnoughResources())
+                    return false;
+                
                 _gridController.MoveGameObjectToCellCenter(cell, building.gameObject);
                 return !building.OverlapDetector.IsOverlapping();
             }, cell =>
@@ -45,6 +54,10 @@ namespace Lunaculture.Buildings
                     Cell = cell,
                     Type = GridObjectType.Building
                 });
+                
+                for (int i = 0; i < _resourceCostPerBuilding; i++)
+                    _inventoryService.RemoveItem(_resourceItem);
+                
             }, () =>
             {
                 Destroy(building.gameObject);
@@ -66,6 +79,20 @@ namespace Lunaculture.Buildings
                 return;
 
             StartPlaceNew();
+        }
+
+        private bool HasEnoughResources()
+        {
+            var inventory = _inventoryService.Inventory;
+            // ReSharper disable once LoopCanBeConvertedToQuery
+            foreach (var stack in inventory)
+            {
+                if (stack is null || stack.ItemType != _resourceItem)
+                    continue;
+
+                return stack.Count >= _resourceCostPerBuilding;
+            }
+            return false;
         }
     }
 }
