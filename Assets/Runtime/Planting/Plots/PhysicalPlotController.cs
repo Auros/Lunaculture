@@ -23,6 +23,9 @@ namespace Lunaculture.Planting.Plots
 
         [SerializeField]
         private PhysicalPlotController _template = null!;
+
+        [SerializeField]
+        private LayerMask _indoorLayer;
         
         private void Start()
         {
@@ -36,8 +39,11 @@ namespace Lunaculture.Planting.Plots
             _gridSelectionController.StartSelection(_placeable,
                 cell =>
                 {
+                    var center = _gridController.GetCellWorldCenter(cell);
+                    var rayStart = new Vector3(center.x, _gridController.transform.position.y + 0.5f, center.y);
+                    var inside = Physics.Raycast(rayStart, Vector3.down, 10, _indoorLayer);
                     _gridController.MoveGameObjectToCellCenter(cell, gameObject);
-                    return !_overlapDetector.IsOverlapping();
+                    return inside && !_overlapDetector.IsOverlapping();
                 },
                 cell =>
                 {
