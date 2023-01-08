@@ -2,6 +2,7 @@
 {
     public enum PlantGrowthStatus
     {
+        Empty, // only used in PlotGridObject to denote a plant not existing
         NotWatered,
         Growing,
         GrownAndReadyToPermaHarvest, // normal plants, will destroy plant

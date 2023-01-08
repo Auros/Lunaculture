@@ -1,5 +1,6 @@
 ﻿using System;
 using Lunaculture.Grids;
+using Lunaculture.Plants;
 using Lunaculture.Grids.Objects;
 using Lunaculture.Items;
 using Lunaculture.Player.Inventory;
@@ -9,6 +10,9 @@ namespace Lunaculture.Planting.Seeding
 {
     public class SeedPlantingController : MonoBehaviour
     {
+        [SerializeField]
+        private GridController _gridController = null!;
+
         [SerializeField]
         private GridObjectController _gridObjectController = null!;
         
@@ -43,9 +47,14 @@ namespace Lunaculture.Planting.Seeding
                     throw new InvalidOperationException("Could not find plot to place seed in");
                 
                 var plotGridObject = (gridObject as PlotGridObject)!;
+                plotGridObject.PlantedItem = _tryingToPlant;
+
+                var plantPrefab = Instantiate(_tryingToPlant.PlacePrefab);
+                _gridController.MoveGameObjectToCellCenter(cell, plantPrefab);
+                plotGridObject.Plant = plantPrefab.GetComponent<Plant>();
+                
                 _inventoryService.RemoveItem(_tryingToPlant!);
-                plotGridObject.Planted = _tryingToPlant;
-                plotGridObject.Empty = false;
+
                 _tryingToPlant = null;
             }, () =>
             {

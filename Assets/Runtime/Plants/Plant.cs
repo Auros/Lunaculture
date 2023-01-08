@@ -35,9 +35,20 @@ namespace Lunaculture.Plants
         [field: SerializeField]
         public Animator Animator { get; private set; }
 
-        public event Action? OnPlantFinishedGrowing;
+        public event Action<PlantGrowthStatus>? PlantStatusUpdated;
 
-        public PlantGrowthStatus GrowthStatus = PlantGrowthStatus.NotWatered;
+        public PlantGrowthStatus GrowthStatus
+        {
+            get { return _growthStatus; }
+            set
+            {
+                _growthStatus = value;
+                PlantStatusUpdated?.Invoke(_growthStatus);
+            }
+        }
+
+        private PlantGrowthStatus _growthStatus = PlantGrowthStatus.NotWatered;
+        
         private void Start()
         {
             foreach (var gameObject in RandomlyRotatedObjects)
@@ -67,7 +78,7 @@ namespace Lunaculture.Plants
                     //TODO: properly handle trees 
                     GrowthStatus = PlantGrowthStatus.GrownAndReadyToPermaHarvest;
                     
-                    OnPlantFinishedGrowing?.Invoke();
+                    //OnPlantFinishedGrowing?.Invoke();
                 }
             }
         }
@@ -75,6 +86,8 @@ namespace Lunaculture.Plants
         // water the plant. used by whatever watering can
         public void Water()
         {
+            Debug.Log("Plant started growing");
+
             Animator.speed = Time.timeScale;
             GrowthStatus = PlantGrowthStatus.Growing;
         }

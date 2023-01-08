@@ -2,6 +2,7 @@ using System;
 using Lunaculture.Grids;
 using Lunaculture.Grids.Objects;
 using Lunaculture.Items;
+using Lunaculture.Plants;
 using Lunaculture.Player.Inventory;
 using UnityEngine;
 
@@ -35,7 +36,7 @@ namespace Lunaculture
                     return false;
 
                 var plotGridObject = (gridObject as PlotGridObject)!;
-                return !plotGridObject.Watered;
+                return plotGridObject.GrowthStatus == PlantGrowthStatus.NotWatered || plotGridObject.GrowthStatus == PlantGrowthStatus.GrownButNotWatered;
             }, cell =>
             {
                 var gridObject = _gridObjectController.GetObjectAt(cell);
@@ -43,7 +44,7 @@ namespace Lunaculture
                     throw new InvalidOperationException("Could not find plot to water");
                 
                 var plotGridObject = (gridObject as PlotGridObject)!;
-                plotGridObject.Watered = true;
+                plotGridObject.Plant.Water();
                 _tryingToWater = false;
             }, () =>
             {
