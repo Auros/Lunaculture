@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9609518baf8b5344d8158de2ed9b16e7, type: 3}
+  m_Name: Harvester
+  m_EditorClassIdentifier: 
+  <Icon>k__BackingField: {fileID: 21300000, guid: dc1a196e97d71cd478ff17309fa7cebb,
+    type: 3}
+  <Name>k__BackingField: Harvester
+  <Tooltip>k__BackingField: Harvest your well-grown crops with this tool.
+  <CanBuy>k__BackingField: 0
+  <BuyPrice>k__BackingField: 0
+  <CanSell>k__BackingField: 0
+  <SellPrice>k__BackingField: 0
+  <CanPlace>k__BackingField: 0
+  <PlacePrefab>k__BackingField: {fileID: 0}
+  <Tags>k__BackingField: []
