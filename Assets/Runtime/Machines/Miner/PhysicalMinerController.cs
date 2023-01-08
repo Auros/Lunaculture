@@ -46,7 +46,6 @@ namespace Lunaculture.Machines.Miner
             _currentItems = Math.Min(_currentItems + 1, _maxResourceSize);
         }
         
-        
         public void PrepareMovement()
         {
             OverlapDetector.enabled = true;
