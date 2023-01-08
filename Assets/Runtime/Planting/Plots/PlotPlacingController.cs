@@ -37,6 +37,9 @@ namespace Lunaculture.Planting.Plots
             plot.PrepareMovement();
             _gridSelectionController.StartSelection(plot.Placeable, cell =>
             {
+                var gridObject = _gridObjectController.GetObjectAt(cell);
+                if (gridObject != null) return false;
+                
                 var center = _gridController.GetCellWorldCenter(cell);
                 var rayStart = new Vector3(center.x, _gridController.transform.position.y + 0.5f, center.y);
                 var inside = Physics.Raycast(rayStart, Vector3.down, 10, _indoorLayer);
@@ -49,7 +52,6 @@ namespace Lunaculture.Planting.Plots
                 _gridObjectController.Register(new PlotGridObject
                 {
                     Cell = cell,
-                    Empty = true,
                     Type = GridObjectType.Plot
                 });
             }, () =>

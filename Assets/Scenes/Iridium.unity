@@ -3617,6 +3617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 860f2182c37d446b87f4df009a3632a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gridController: {fileID: 618365861}
   _gridObjectController: {fileID: 1584314787}
   _gridSelectionController: {fileID: 599316692}
   _inventoryService: {fileID: 962633878}
