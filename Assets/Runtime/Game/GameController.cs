@@ -2,6 +2,7 @@
 using Lunaculture.GameTime;
 using Lunaculture.UI;
 using System.Collections.Generic;
+using Lunaculture.Objectives;
 using Lunaculture.Player.Inventory;
 using UnityEngine;
 
@@ -17,6 +18,9 @@ namespace Lunaculture.Game
         
         [SerializeField] 
         private InventoryService _inventoryService = null!;
+        
+        [SerializeField] 
+        private ObjectiveService _objectiveService = null!;
 
         [SerializeField]
         private ItemReferenceProvider _itemReferenceProvider = null!;
@@ -26,7 +30,9 @@ namespace Lunaculture.Game
         
         [SerializeField] 
         private int _seedsGrantedUponUnlock = 10;
-
+        
+        private int _weekNumber = 0;
+        
         public void Start()
         {
             // give initial prompts. new prompts show up on the bottom
@@ -34,7 +40,17 @@ namespace Lunaculture.Game
             
             _toastNotificationController.SummonToast("You are on the desolate moon Iridium. Your goal is to sustain the colony by meeting food quotas.", _iridiumSprite, 15f);
             
-            _timeController.OnWeekChange += TimeControllerOnOnWeekChange;
+            _objectiveService.OnObjectiveComplete += ObjectiveServiceOnOnObjectiveComplete;
+        }
+
+        private void ObjectiveServiceOnOnObjectiveComplete()
+        {
+            _weekNumber++;
+
+            if (_itemReferenceProvider.WeekItemUnlockInfos.Count >= _weekNumber)
+            {
+                UnlockWeek(_itemReferenceProvider.WeekItemUnlockInfos[_weekNumber]);
+            }
         }
 
         public void UnlockWeek(WeekItemUnlockInfo weekItemUnlockInfo)
@@ -46,12 +62,8 @@ namespace Lunaculture.Game
                 
                 _toastNotificationController.SummonToast($"Received {_seedsGrantedUponUnlock} {item.Name}. {item.Tooltip}", icon, 15f);
                 _inventoryService.AddItem(item, _seedsGrantedUponUnlock);
+                if (item.CanBuy && !_itemReferenceProvider.ShopItems.Contains(item)) _itemReferenceProvider.ShopItems.Add(item);
             }
-        }
-
-        private void TimeControllerOnOnWeekChange(WeekChangeEvent weekChangeEvent)
-        {
-            Debug.Log(weekChangeEvent.Week);
         }
     }
 }
