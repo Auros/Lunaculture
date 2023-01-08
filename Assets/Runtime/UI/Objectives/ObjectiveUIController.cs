@@ -22,7 +22,8 @@ namespace Lunaculture.UI.Objectives
             objectiveService.OnObjectiveComplete += ObjectiveService_OnObjectiveComplete;
             objectiveService.OnObjectiveFail += ObjectiveService_OnObjectiveFail;
 
-            ObjectiveService_OnObjectiveComplete();
+            progressFill.Fill = 0;
+            objectiveText.text = $"Sell {objectiveService.SellTarget}cr";
         }
 
         private void ObjectiveService_OnObjectiveComplete()
