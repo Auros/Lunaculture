@@ -19,6 +19,37 @@ namespace Lunaculture.Planting.Plots
         private GameObject _visualContainer = null!;
 
         [SerializeField]
-        private PlaceableObjectOverlapChecker _overlapChecker = null!;
+        private PlaceableObjectOverlapChecker _overlapDetector = null!;
+
+        [SerializeField]
+        private PhysicalPlotController _template = null!;
+        
+        private void Start()
+        {
+            Move();
+        }
+
+        public void Move()
+        {
+            _overlapDetector.enabled = true;
+            _visualContainer.SetActive(false);
+            _gridSelectionController.StartSelection(_placeable,
+                cell =>
+                {
+                    _gridController.MoveGameObjectToCellCenter(cell, gameObject);
+                    return !_overlapDetector.IsOverlapping();
+                },
+                cell =>
+                {
+                    Place();
+                    Instantiate(_template);
+                });
+        }
+
+        public void Place()
+        {
+            _visualContainer.SetActive(true);
+            _overlapDetector.enabled = false;
+        }
     }
 }
