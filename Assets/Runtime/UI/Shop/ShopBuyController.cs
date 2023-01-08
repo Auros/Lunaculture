@@ -22,11 +22,15 @@ namespace Lunaculture
 
         private void OnSlotCellClicked(SlotCell cell)
         {
-            var item = cell.AssignedStack.ItemType;
+            var assignedStack = cell.AssignedStack;
+            if (assignedStack is null)
+                return;
+            
+            var item = assignedStack.ItemType;
 
             if (item!.CanBuy)
             {
-                var price = cell.AssignedStack.ItemType!.BuyPrice;
+                var price = item.BuyPrice;
 
                 if (currencyService.Currency >= price)
                 {

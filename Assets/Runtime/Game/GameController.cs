@@ -39,6 +39,7 @@ namespace Lunaculture.Game
         
         public void Start()
         {
+            _ = _timeController;
             // give initial prompts. new prompts show up on the bottom
             UnlockWeek(_itemReferenceProvider.WeekItemUnlockInfos[0]);
             

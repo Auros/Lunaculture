@@ -24,10 +24,10 @@ namespace Lunaculture.Machines.Miner
         private PlaceableObjectOverlapChecker _overlapDetector = null!;
 
         [SerializeField]
-        private PhysicalMinerController _template = null!;
+        private PhysicalMinerController? _template;
 
         [SerializeField]
-        private Item _generatedResource;
+        private Item _generatedResource = null!;
 
         [Header("Generation rate is measured in seconds.")]
         [SerializeField]
@@ -42,6 +42,7 @@ namespace Lunaculture.Machines.Miner
 
         private void Start()
         {
+            _ = _generatedResource;
             Move();
         }
 

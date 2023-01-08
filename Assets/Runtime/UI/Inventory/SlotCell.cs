@@ -32,7 +32,7 @@ namespace Lunaculture.UI.Inventory
             countLabel.text = LabelText;
         }
 
-        protected virtual string LabelText => AssignedStack.Count <= 99
+        protected virtual string LabelText => AssignedStack?.Count <= 99
             ? AssignedStack.Count.ToString()
             : "99+";
 

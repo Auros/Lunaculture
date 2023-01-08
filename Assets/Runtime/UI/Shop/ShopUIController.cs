@@ -11,6 +11,7 @@ namespace Lunaculture.UI.Shop
 
         private void Start()
         {
+            _ = gameUIInterconnect;
             for (var i = 0; i < initialStoreItems.Length; i++)
             {
                 AddShopItem(initialStoreItems[i]);
