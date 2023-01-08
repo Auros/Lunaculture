@@ -99,8 +99,8 @@ MonoBehaviour:
   <Placeable>k__BackingField: {fileID: 7434049321776769519}
   _visualContainer: {fileID: 8768791321907715516}
   <OverlapDetector>k__BackingField: {fileID: 8768791322262317995}
-  _generatedResource: {fileID: 0}
-  _generationRate: 1
+  _generatedResource: {fileID: 11400000, guid: 162e2683a0c18bb4d8bc0872bbbfda62, type: 2}
+  _generationRate: 10
   _maxResourceSize: 100
 --- !u!114 &8768791321828784702
 MonoBehaviour:

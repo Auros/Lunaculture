@@ -430,7 +430,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298227606}
-  m_LocalRotation: {x: 0.40230003, y: 0.00000001575258, z: -0.000000006922129, w: 0.9155079}
+  m_LocalRotation: {x: 0.40230003, y: -0.000000015752574, z: 0.0000000069221264, w: 0.9155079}
   m_LocalPosition: {x: 0, y: 18.314352, z: -15.804979}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -644,9 +644,141 @@ Transform:
   - {fileID: 1632913856}
   - {fileID: 1250488987}
   - {fileID: 199677316}
+  - {fileID: 516818173}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &516818172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 516818173}
+  - component: {fileID: 516818174}
+  - component: {fileID: 516818175}
+  m_Layer: 0
+  m_Name: Miner Collection Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &516818173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516818172}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 415081406}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &516818174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516818172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfe559fade7f40809c94188483ca1f13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gridObjectController: {fileID: 1584314787}
+  _gridSelectionController: {fileID: 599316692}
+  _inventoryService: {fileID: 962633878}
+--- !u!114 &516818175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516818172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 9a59bf507ecaf3145b8c59006ed9581e,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 81329b09-4323-4d84-81b8-66db86cfe495
+    m_ActionName: Player/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8f3403c4-8228-4db6-bb56-c0b348e94042
+    m_ActionName: Player/Zoom[/Mouse/scroll/y]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 516818174}
+        m_TargetAssemblyTypeName: Lunaculture.Machines.InteractionController, Lunaculture
+        m_MethodName: OnSelect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f1c4f5cc-a883-4887-a297-7ba09703f1d9
+    m_ActionName: Selection/Select[/Mouse/press]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 978efc34-7484-4303-a6e0-c7985ee40c25
+    m_ActionName: Selection/Position[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b5ee4cb8-e175-47ad-bf9e-e3bf076ac4c9
+    m_ActionName: UI/Pause[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2294f7bf-0c3d-4996-9ea4-dd220b85f107
+    m_ActionName: UI/Inventory[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b0330b55-a593-4447-8d0f-2939685584c6
+    m_ActionName: UI/Close Menu[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ff2c9ce2-e2ac-430c-b7c1-3b6fbd137e95
+    m_ActionName: UI/Tooltip Movement[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 15320f71-a902-4e0d-93e3-1401760c58da
+    m_ActionName: UI/Sell (TEMP)[/Keyboard/p]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a207c252-2366-4d41-9422-256334ee323b
+    m_ActionName: UI/Buy (TEMP)[/Keyboard/b]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Selection
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &562552782
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,7 +1145,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 720221547}
-  m_LocalRotation: {x: 0.40230003, y: 0.00000001575258, z: -0.000000006922129, w: 0.9155079}
+  m_LocalRotation: {x: 0.40230003, y: -0.000000015752574, z: 0.0000000069221264, w: 0.9155079}
   m_LocalPosition: {x: 0, y: 18.314352, z: -15.804979}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1176,11 +1308,21 @@ PrefabInstance:
     - target: {fileID: 2521784254357992299, guid: 494a0199c90150742a549378c4c76860,
         type: 3}
       propertyPath: _menuStateChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2521784254357992299, guid: 494a0199c90150742a549378c4c76860,
         type: 3}
       propertyPath: _menuStateChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521784254357992299, guid: 494a0199c90150742a549378c4c76860,
+        type: 3}
+      propertyPath: _menuStateChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521784254357992299, guid: 494a0199c90150742a549378c4c76860,
+        type: 3}
+      propertyPath: _menuStateChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2521784254357992299, guid: 494a0199c90150742a549378c4c76860,
@@ -1190,7 +1332,27 @@ PrefabInstance:
       objectReference: {fileID: 599316692}
     - target: {fileID: 2521784254357992299, guid: 494a0199c90150742a549378c4c76860,
         type: 3}
+      propertyPath: _menuStateChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1250488988}
+    - target: {fileID: 2521784254357992299, guid: 494a0199c90150742a549378c4c76860,
+        type: 3}
+      propertyPath: _menuStateChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 516818174}
+    - target: {fileID: 2521784254357992299, guid: 494a0199c90150742a549378c4c76860,
+        type: 3}
       propertyPath: _menuStateChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521784254357992299, guid: 494a0199c90150742a549378c4c76860,
+        type: 3}
+      propertyPath: _menuStateChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521784254357992299, guid: 494a0199c90150742a549378c4c76860,
+        type: 3}
+      propertyPath: _menuStateChanged.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2521784254357992299, guid: 494a0199c90150742a549378c4c76860,
@@ -1200,12 +1362,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2521784254357992299, guid: 494a0199c90150742a549378c4c76860,
         type: 3}
+      propertyPath: _menuStateChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Disable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521784254357992299, guid: 494a0199c90150742a549378c4c76860,
+        type: 3}
+      propertyPath: _menuStateChanged.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Disable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521784254357992299, guid: 494a0199c90150742a549378c4c76860,
+        type: 3}
       propertyPath: _menuStateChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Lunaculture.Grids.GridSelectionController, Lunaculture
       objectReference: {fileID: 0}
     - target: {fileID: 2521784254357992299, guid: 494a0199c90150742a549378c4c76860,
         type: 3}
+      propertyPath: _menuStateChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Lunaculture.Cameras.CameraZoomController, Lunaculture
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521784254357992299, guid: 494a0199c90150742a549378c4c76860,
+        type: 3}
+      propertyPath: _menuStateChanged.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: Lunaculture.Machines.InteractionController, Lunaculture
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521784254357992299, guid: 494a0199c90150742a549378c4c76860,
+        type: 3}
       propertyPath: _menuStateChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521784254357992299, guid: 494a0199c90150742a549378c4c76860,
+        type: 3}
+      propertyPath: _menuStateChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521784254357992299, guid: 494a0199c90150742a549378c4c76860,
+        type: 3}
+      propertyPath: _menuStateChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2521784254357992301, guid: 494a0199c90150742a549378c4c76860,
@@ -1695,6 +1887,12 @@ MonoBehaviour:
   - <ItemType>k__BackingField: {fileID: 11400000, guid: 98a42f31a2d924349a49ae4050ad8208,
       type: 2}
     <Count>k__BackingField: 12
+  - <ItemType>k__BackingField: {fileID: 11400000, guid: 98a42f31a2d924349a49ae4050ad8208,
+      type: 2}
+    <Count>k__BackingField: 12
+  - <ItemType>k__BackingField: {fileID: 11400000, guid: adceeac1c6b1f9544aab5c2e90b72cfa,
+      type: 2}
+    <Count>k__BackingField: 1
   inventoryService: {fileID: 962633878}
 --- !u!1 &1205110985
 GameObject:
@@ -1793,7 +1991,7 @@ MonoBehaviour:
   _indoorLayer:
     serializedVersion: 2
     m_Bits: 256
-  _machineItem: {fileID: 0}
+  _machineItem: {fileID: 11400000, guid: adceeac1c6b1f9544aab5c2e90b72cfa, type: 2}
 --- !u!1 &1250488986
 GameObject:
   m_ObjectHideFlags: 0
