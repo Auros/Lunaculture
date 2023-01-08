@@ -29,15 +29,12 @@ namespace Lunaculture.UI.Inventory
 
             itemIcon.sprite = stack.ItemType!.Icon;
 
-            if (stack.Count > 99)
-            {
-                countLabel.text = "99+";
-            }
-            else
-            {
-                countLabel.text = stack.Count.ToString();
-            }
+            countLabel.text = LabelText;
         }
+
+        protected virtual string LabelText => AssignedStack.Count <= 99
+            ? AssignedStack.Count.ToString()
+            : "99+";
 
         public void ToggleSelectionIcon(bool isSelected)
             => selectedIcon.enabled = isSelected;
