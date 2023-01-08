@@ -39,6 +39,7 @@ namespace Lunaculture.UI
         {
             if (currentlyOpenMenu == null) return;
 
+            currentlyOpenMenu.SendMessage("OnMenuClosed");
             currentlyOpenMenu.gameObject.SetActive(false);
             currentlyOpenMenu = null;
             gameUIInterconnect.PauseController.Paused = false;

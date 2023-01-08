@@ -19,12 +19,13 @@ namespace Lunaculture.UI
             if (openMenu)
             {
                 menuPopupController.CloseOpenMenu();
-                openMenu = false;
             }
             else
             {
                 openMenu = menuPopupController.TryOpenMenu(this);
             }
         }
+
+        private void OnMenuClosed() => openMenu = false;
     }
 }
