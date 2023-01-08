@@ -2411,7 +2411,9 @@ MonoBehaviour:
   _buildingPrefab: {fileID: 866057646243843696, guid: 13b6050bd97a60b4c9ae636f88d90e7c,
     type: 3}
   _inventoryService: {fileID: 962633878}
-  _buildingItem: {fileID: 11400000, guid: 98a42f31a2d924349a49ae4050ad8208, type: 2}
+  _buildingItem: {fileID: 11400000, guid: 326e183d393694645b86d003b2bd6cea, type: 2}
+  _resourceItem: {fileID: 11400000, guid: 162e2683a0c18bb4d8bc0872bbbfda62, type: 2}
+  _resourceCostPerBuilding: 100
 --- !u!1 &1648728276
 GameObject:
   m_ObjectHideFlags: 0
@@ -2553,7 +2555,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -2656,7 +2658,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-421936
+  m_Name: pb_Mesh-453464
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4347,7 +4349,7 @@ PrefabInstance:
     - target: {fileID: 1038039476224852613, guid: 13b6050bd97a60b4c9ae636f88d90e7c,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 1418
+      value: 1421
       objectReference: {fileID: 0}
     - target: {fileID: 1038039476224852614, guid: 13b6050bd97a60b4c9ae636f88d90e7c,
         type: 3}
@@ -4413,11 +4415,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dome
-      objectReference: {fileID: 0}
-    - target: {fileID: 7005900240981064420, guid: 13b6050bd97a60b4c9ae636f88d90e7c,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.39999998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13b6050bd97a60b4c9ae636f88d90e7c, type: 3}
