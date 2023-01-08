@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Icon>k__BackingField: {fileID: 21300000, guid: 081a57e1260024945959c3da10491045,
     type: 3}
-  <Name>k__BackingField: Avacado Seeds
-  <Tooltip>k__BackingField: 
+  <Name>k__BackingField: Avocado Seeds
+  <Tooltip>k__BackingField: Imported directly from California, USA, Earth, Solar
+    System.
   <CanBuy>k__BackingField: 1
   <BuyPrice>k__BackingField: 5
   <CanSell>k__BackingField: 0
