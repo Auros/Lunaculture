@@ -36,7 +36,7 @@ namespace Lunaculture
                     return false;
 
                 var plotGridObject = (gridObject as PlotGridObject)!;
-                return plotGridObject.GrowthStatus == PlantGrowthStatus.NotWatered || plotGridObject.GrowthStatus == PlantGrowthStatus.GrownButNotWatered;
+                return plotGridObject.GrowthStatus is PlantGrowthStatus.NotWatered or PlantGrowthStatus.GrownButNotWatered;
             }, cell =>
             {
                 var gridObject = _gridObjectController.GetObjectAt(cell);
@@ -44,7 +44,7 @@ namespace Lunaculture
                     throw new InvalidOperationException("Could not find plot to water");
                 
                 var plotGridObject = (gridObject as PlotGridObject)!;
-                plotGridObject.Plant.Water();
+                plotGridObject.Plant!.Water();
                 _tryingToWater = false;
             }, () =>
             {

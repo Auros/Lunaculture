@@ -5,10 +5,10 @@ namespace Lunaculture.Grids.Objects
 {
     public class PlotGridObject : GridObject
     {
-        public bool Empty { get { return Plant == null; } }
+        public bool Empty => !Plant;
 
-        public PlantGrowthStatus GrowthStatus { get { return Plant?.GrowthStatus ?? PlantGrowthStatus.Empty; } }
-        
+        public PlantGrowthStatus GrowthStatus => Plant.AsNull()?.GrowthStatus ?? PlantGrowthStatus.Empty;
+
         public Item? PlantedItem { get; set; }
         public Plant? Plant { get; set; }
         

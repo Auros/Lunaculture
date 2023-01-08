@@ -59,7 +59,9 @@ namespace Lunaculture.Planting.Harvesting
                     
                     _inventoryService.AddItem(drop);
                 }
-                
+
+                plotGridObject.PlantedItem = null;
+                plotGridObject.Plant = null;
                 Destroy(plant.gameObject);
                 _tryingToHarvest = false;
             }, () =>
