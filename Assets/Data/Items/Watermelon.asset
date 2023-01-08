@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9609518baf8b5344d8158de2ed9b16e7, type: 3}
-  m_Name: Carrot
+  m_Name: Watermelon
   m_EditorClassIdentifier: 
-  <Icon>k__BackingField: {fileID: 21300000, guid: 1da3e22c208cd9f4abf98878a6612ef2,
+  <Icon>k__BackingField: {fileID: 21300000, guid: 9180cfd97eccda542968dcc77a7f0cab,
     type: 3}
-  <Name>k__BackingField: Carrot
-  <Tooltip>k__BackingField: Carrots are the first crop sent on new settlement missions.
+  <Name>k__BackingField: Watermelon
+  <Tooltip>k__BackingField: 
   <CanBuy>k__BackingField: 0
   <BuyPrice>k__BackingField: 0
   <CanSell>k__BackingField: 1
