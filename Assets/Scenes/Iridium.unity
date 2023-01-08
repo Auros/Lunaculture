@@ -368,8 +368,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298227606}
-  m_LocalRotation: {x: 0.38268346, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 16.1, z: -15}
+  m_LocalRotation: {x: 0.40230003, y: 0.0000000157898, z: -0.000000006938484, w: 0.9155079}
+  m_LocalPosition: {x: 0, y: 18.314352, z: -15.804979}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -565,6 +565,7 @@ Transform:
   - {fileID: 1219933409}
   - {fileID: 1913987898}
   - {fileID: 1632913856}
+  - {fileID: 1250488987}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -930,8 +931,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 720221547}
-  m_LocalRotation: {x: 0.38268346, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 16.1, z: -15}
+  m_LocalRotation: {x: 0.40230003, y: 0.0000000157898, z: -0.000000006938484, w: 0.9155079}
+  m_LocalPosition: {x: 0, y: 18.314352, z: -15.804979}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1708,6 +1709,194 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _machineItem: {fileID: 0}
+--- !u!1 &1250488986
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1250488987}
+  - component: {fileID: 1250488988}
+  - component: {fileID: 1250488989}
+  m_Layer: 0
+  m_Name: Camera Zoom Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1250488987
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250488986}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 415081406}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1250488988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250488986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e616090a4c44118bea60a0c3245a37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _virtualCamera: {fileID: 720221548}
+  _yFollowOffsetCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 2.1226501
+      inSlope: 13.578671
+      outSlope: 13.578671
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.079213455
+      value: 3.1982636
+      inSlope: 28.315514
+      outSlope: 28.315514
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.17152499
+    - serializedVersion: 3
+      time: 1
+      value: 50
+      inSlope: 50.827995
+      outSlope: 50.827995
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _zFollowOffsetCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: -2
+      inSlope: -33.26501
+      outSlope: -33.26501
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.99160767
+      value: -34.98584
+      inSlope: -33.26501
+      outSlope: -33.26501
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _scrollSpeed: 0.07
+  <CurrentValue>k__BackingField: 0.415
+--- !u!114 &1250488989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250488986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 9a59bf507ecaf3145b8c59006ed9581e,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 81329b09-4323-4d84-81b8-66db86cfe495
+    m_ActionName: Player/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1250488988}
+        m_TargetAssemblyTypeName: Lunaculture.Cameras.CameraZoomController, Lunaculture
+        m_MethodName: OnScroll
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8f3403c4-8228-4db6-bb56-c0b348e94042
+    m_ActionName: Player/Zoom[/Mouse/scroll/y]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f1c4f5cc-a883-4887-a297-7ba09703f1d9
+    m_ActionName: Selection/Select[/Mouse/press]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 978efc34-7484-4303-a6e0-c7985ee40c25
+    m_ActionName: Selection/Position[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b5ee4cb8-e175-47ad-bf9e-e3bf076ac4c9
+    m_ActionName: UI/Pause[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2294f7bf-0c3d-4996-9ea4-dd220b85f107
+    m_ActionName: UI/Inventory[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b0330b55-a593-4447-8d0f-2939685584c6
+    m_ActionName: UI/Close Menu[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ff2c9ce2-e2ac-430c-b7c1-3b6fbd137e95
+    m_ActionName: UI/Tooltip Movement[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 15320f71-a902-4e0d-93e3-1401760c58da
+    m_ActionName: UI/Sell (TEMP)[/Keyboard/p]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a207c252-2366-4d41-9422-256334ee323b
+    m_ActionName: UI/Buy (TEMP)[/Keyboard/b]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1273299250
 GameObject:
   m_ObjectHideFlags: 0
@@ -1836,7 +2025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 15, z: -15}
+  m_FollowOffset: {x: 0, y: 17.214352, z: -15.804979}
   m_XDamping: 2
   m_YDamping: 1
   m_ZDamping: 1
