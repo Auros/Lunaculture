@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9609518baf8b5344d8158de2ed9b16e7, type: 3}
-  m_Name: Watering Can
+  m_Name: Hoe
   m_EditorClassIdentifier: 
-  <Icon>k__BackingField: {fileID: 21300000, guid: 823172da280062b46afb74b07fe69f5e,
+  <Icon>k__BackingField: {fileID: 21300000, guid: 95eebbe378b1ce848a192c5f640424e3,
     type: 3}
-  <Name>k__BackingField: Watering Can
-  <Tooltip>k__BackingField: Where does the water come from? Nobody knows.
+  <Name>k__BackingField: Hoe
+  <Tooltip>k__BackingField: Create new plots. Where does the dirt come? Nobody knows.
   <CanBuy>k__BackingField: 0
   <BuyPrice>k__BackingField: 0
   <CanSell>k__BackingField: 0

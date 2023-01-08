@@ -2418,6 +2418,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingInventory:
+  - <ItemType>k__BackingField: {fileID: 11400000, guid: 7c48caca07420ac4892988f2fe7102ea,
+      type: 2}
+    <Count>k__BackingField: 1
+  - <ItemType>k__BackingField: {fileID: 11400000, guid: 78bdd4f6ccbecf840b4158f2c02bcd4a,
+      type: 2}
+    <Count>k__BackingField: 1
   - <ItemType>k__BackingField: {fileID: 11400000, guid: 00fe2dfc21c94924d8c2210e596505c6,
       type: 2}
     <Count>k__BackingField: 32
