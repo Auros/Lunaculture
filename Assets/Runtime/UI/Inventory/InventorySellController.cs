@@ -6,6 +6,7 @@ namespace Lunaculture.UI.Inventory
 {
     public class InventorySellController : MonoBehaviour
     {
+        [SerializeField] private ToastNotificationController toastNotificationController = null!;
         [SerializeField] private GameUIInterconnect gameUIInterconnect = null!;
 
         private CurrencyService currencyService = null!;
@@ -22,7 +23,11 @@ namespace Lunaculture.UI.Inventory
             if (cell.AssignedStack != null && !cell.AssignedStack.Empty && cell.AssignedStack.ItemType.CanSell)
             {
                 inventoryService.RemoveItem(cell.AssignedStack.ItemType);
-                currencyService.Currency += cell.AssignedStack.ItemType.SellPrice;
+
+                var sell = cell.AssignedStack.ItemType.SellPrice;
+                currencyService.Currency += sell;
+
+                toastNotificationController.SummonToast($"+{sell} credits.");
             }
         }
     }

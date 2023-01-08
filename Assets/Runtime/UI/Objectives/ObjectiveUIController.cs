@@ -7,6 +7,7 @@ namespace Lunaculture.UI.Objectives
 {
     public class ObjectiveUIController : MonoBehaviour
     {
+        [SerializeField] private ToastNotificationController toastNotificationController = null!;
         [SerializeField] private GameUIInterconnect gameUIInterconnect = null!;
         [SerializeField] private SimpleFillController progressFill = null!;
         [SerializeField] private TextMeshProUGUI objectiveText = null!;
@@ -19,6 +20,7 @@ namespace Lunaculture.UI.Objectives
 
             objectiveService.OnObjectiveProgress += ObjectiveService_OnObjectiveProgress;
             objectiveService.OnObjectiveComplete += ObjectiveService_OnObjectiveComplete;
+            objectiveService.OnObjectiveFail += ObjectiveService_OnObjectiveFail;
 
             ObjectiveService_OnObjectiveComplete();
         }
@@ -28,6 +30,12 @@ namespace Lunaculture.UI.Objectives
             // TODO: Tween
             progressFill.Fill = 0;
             objectiveText.text = $"Sell {objectiveService.SellTarget}cr";
+
+            toastNotificationController.SummonToast("Weekly Objective complete.");
+        }
+        private void ObjectiveService_OnObjectiveFail()
+        {
+            toastNotificationController.SummonToast("Weekly Objective failed.", ToastNotificationController.ToastType.Fail);
         }
 
         private void ObjectiveService_OnObjectiveProgress(float obj)
@@ -40,6 +48,7 @@ namespace Lunaculture.UI.Objectives
         {
             objectiveService.OnObjectiveProgress -= ObjectiveService_OnObjectiveProgress;
             objectiveService.OnObjectiveComplete -= ObjectiveService_OnObjectiveComplete;
+            objectiveService.OnObjectiveFail -= ObjectiveService_OnObjectiveFail;
         }
     }
 }
