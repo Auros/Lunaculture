@@ -3298,11 +3298,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ba29e8b3f714ba4e816b91a0dd0f60e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeController: {fileID: 2060453229}
-  baseRotation: {x: 0, y: 0, z: 0}
-  rotationDirection: {x: 1, y: 0, z: 0}
-  sinRotationDirection: {x: 0, y: 1, z: 0}
-  sinRotationStrength: 30
+  _timeController: {fileID: 2060453229}
+  _light: {fileID: 1705890308}
+  _baseRotation: {x: 0, y: -90, z: 0}
+  _rotationDirection: {x: 1, y: 0, z: 0}
+  _sinRotationDirection: {x: 0, y: 1, z: 0}
+  _sinRotationStrength: 30
 --- !u!1 &1762914824
 GameObject:
   m_ObjectHideFlags: 0
