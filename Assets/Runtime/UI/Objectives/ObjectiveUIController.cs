@@ -25,12 +25,14 @@ namespace Lunaculture.UI.Objectives
 
         private void ObjectiveService_OnObjectiveComplete()
         {
+            // TODO: Tween
             progressFill.Fill = 0;
             objectiveText.text = $"Sell {objectiveService.SellTarget}cr";
         }
 
         private void ObjectiveService_OnObjectiveProgress(float obj)
         {
+            // TODO: Tween
             progressFill.Fill = obj;
         }
 
