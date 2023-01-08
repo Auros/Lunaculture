@@ -788,6 +788,7 @@ Transform:
   - {fileID: 1584314786}
   - {fileID: 1648728277}
   - {fileID: 1662091893}
+  - {fileID: 1219933409}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1345,6 +1346,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &811184214 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7212167648660500357, guid: e35094b2be3734047957d6dd42cd8a2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2000273322}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728e433654da4798984a1f3b64d93a18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &820456320
 GameObject:
   m_ObjectHideFlags: 0
@@ -2062,6 +2075,59 @@ Transform:
   m_Father: {fileID: 415081406}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1219933408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1219933409}
+  - component: {fileID: 1219933410}
+  m_Layer: 0
+  m_Name: Miner Placing Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1219933409
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219933408}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 415081406}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1219933410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219933408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7af898a367034f6c917c8a65a3187a33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gridController: {fileID: 618365861}
+  _gridObjectController: {fileID: 1584314787}
+  _gridSelectionController: {fileID: 599316692}
+  _minerPrefab: {fileID: 811184214}
+  _inventoryService: {fileID: 962633878}
+  _indoorLayer:
+    serializedVersion: 2
+    m_Bits: 939524343
+  _machineItem: {fileID: 11400000, guid: 98a42f31a2d924349a49ae4050ad8208, type: 2}
 --- !u!1 &1273299250
 GameObject:
   m_ObjectHideFlags: 0
@@ -3649,16 +3715,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Miner
       objectReference: {fileID: 0}
-    - target: {fileID: 7434049321776769302, guid: e35094b2be3734047957d6dd42cd8a2a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8768791321907715402, guid: e35094b2be3734047957d6dd42cd8a2a,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 115259987}
+    - target: {fileID: 8768791321907715402, guid: e35094b2be3734047957d6dd42cd8a2a,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 83
+      objectReference: {fileID: 0}
     - target: {fileID: 8768791321907715509, guid: e35094b2be3734047957d6dd42cd8a2a,
         type: 3}
       propertyPath: m_Mesh

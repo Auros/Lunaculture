@@ -57,7 +57,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7434049321776769302}
-  m_LocalRotation: {x: -0, y: -0.70710695, z: -0, w: 0.7071066}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -3, y: 0, z: 4.0000005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -96,12 +96,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 728e433654da4798984a1f3b64d93a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gridController: {fileID: 0}
-  _gridSelectionController: {fileID: 0}
-  _placeable: {fileID: 7434049321776769519}
+  <Placeable>k__BackingField: {fileID: 7434049321776769519}
   _visualContainer: {fileID: 8768791321907715516}
-  _overlapDetector: {fileID: 8768791322262317995}
-  _template: {fileID: 0}
+  <OverlapDetector>k__BackingField: {fileID: 8768791322262317995}
+  _generatedResource: {fileID: 0}
+  _generationRate: 1
+  _maxResourceSize: 100
 --- !u!114 &8768791321828784702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 8768791321907715509}
   - component: {fileID: 8768791321907715510}
   - component: {fileID: 8768791321907715401}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visual Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +388,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 68
+  m_VersionIndex: 80
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
