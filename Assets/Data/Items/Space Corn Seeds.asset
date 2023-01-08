@@ -15,7 +15,7 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: 21300000, guid: 6ee49fa34cae71b4ebf3815dc5709d4f,
     type: 3}
   <Name>k__BackingField: Space Corn Seeds
-  <Tooltip>k__BackingField: 
+  <Tooltip>k__BackingField: They're corn(?) seeds
   <CanBuy>k__BackingField: 1
   <BuyPrice>k__BackingField: 5
   <CanSell>k__BackingField: 0

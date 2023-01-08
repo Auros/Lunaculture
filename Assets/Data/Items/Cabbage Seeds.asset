@@ -15,7 +15,8 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: 21300000, guid: b512cd301c7b9a64da244269e898cc68,
     type: 3}
   <Name>k__BackingField: Cabbage Seeds
-  <Tooltip>k__BackingField: 
+  <Tooltip>k__BackingField: The amount of vegetables that are secretly cabbage would
+    surprise you.
   <CanBuy>k__BackingField: 1
   <BuyPrice>k__BackingField: 5
   <CanSell>k__BackingField: 0

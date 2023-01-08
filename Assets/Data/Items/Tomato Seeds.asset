@@ -15,7 +15,7 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: 21300000, guid: 4814e2257e5ec694f81618312addc0e3,
     type: 3}
   <Name>k__BackingField: Tomato Seeds
-  <Tooltip>k__BackingField: 
+  <Tooltip>k__BackingField: Tomatoes go good on everything...
   <CanBuy>k__BackingField: 1
   <BuyPrice>k__BackingField: 5
   <CanSell>k__BackingField: 0

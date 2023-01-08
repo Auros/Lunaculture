@@ -15,7 +15,7 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: 21300000, guid: f48975d5bb0574d478856905cb1eab81,
     type: 3}
   <Name>k__BackingField: Pineapple Seeds
-  <Tooltip>k__BackingField: 
+  <Tooltip>k__BackingField: The start of a tropical fruit.
   <CanBuy>k__BackingField: 1
   <BuyPrice>k__BackingField: 5
   <CanSell>k__BackingField: 0

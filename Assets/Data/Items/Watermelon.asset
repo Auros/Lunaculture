@@ -15,7 +15,7 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: 21300000, guid: 9180cfd97eccda542968dcc77a7f0cab,
     type: 3}
   <Name>k__BackingField: Watermelon
-  <Tooltip>k__BackingField: 
+  <Tooltip>k__BackingField: It's a watermelone, INSIDE A WATERMELONE!
   <CanBuy>k__BackingField: 0
   <BuyPrice>k__BackingField: 0
   <CanSell>k__BackingField: 1

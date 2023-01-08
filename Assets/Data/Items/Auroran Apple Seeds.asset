@@ -15,10 +15,13 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: 21300000, guid: aa4014289b5e9a14c9525af8ac34af9b,
     type: 3}
   <Name>k__BackingField: Auroran Apple Seeds
-  <Tooltip>k__BackingField: 
+  <Tooltip>k__BackingField: If you put 12 seeds under your pillow and wait... nothing
+    happens!
   <CanBuy>k__BackingField: 1
   <BuyPrice>k__BackingField: 5
   <CanSell>k__BackingField: 0
   <SellPrice>k__BackingField: 0
   <CanPlace>k__BackingField: 1
   <PlacePrefab>k__BackingField: {fileID: 0}
+  <Tags>k__BackingField:
+  - Sapling

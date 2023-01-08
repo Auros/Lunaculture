@@ -1,5 +1,5 @@
-﻿using System;
-using Lunaculture.Grids;
+﻿using Lunaculture.Grids;
+using Lunaculture.Grids.Objects;
 using Lunaculture.Items;
 using Lunaculture.Player.Inventory;
 using UnityEngine;
@@ -11,6 +11,9 @@ namespace Lunaculture.Planting.Plots
         [SerializeField]
         private GridController _gridController = null!;
 
+        [SerializeField]
+        private GridObjectController _gridObjectController = null!;
+        
         [SerializeField]
         private GridSelectionController _gridSelectionController = null!;
         
@@ -39,10 +42,16 @@ namespace Lunaculture.Planting.Plots
                 var inside = Physics.Raycast(rayStart, Vector3.down, 10, _indoorLayer);
                 _gridController.MoveGameObjectToCellCenter(cell, plot.gameObject);
                 return inside && !plot.OverlapDetector.IsOverlapping();
-            }, _ =>
+            }, cell =>
             {
                 plot.PreparePlacement();
                 _currentlyPlacing = null;
+                _gridObjectController.Register(new PlotGridObject
+                {
+                    Cell = cell,
+                    Empty = true,
+                    Type = GridObjectType.Plot
+                });
             }, () =>
             {
                 Destroy(plot);
@@ -58,7 +67,9 @@ namespace Lunaculture.Planting.Plots
 
             var selectedItem = _inventoryService.SelectedItem!;
             if (selectedItem != _plotPlacingItem)
+            {
                 return;
+            }
 
             if (_currentlyPlacing || !_gridSelectionController.Active)
                 return;

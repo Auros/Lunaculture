@@ -621,6 +621,10 @@ Transform:
   - {fileID: 952133959}
   - {fileID: 599316690}
   - {fileID: 203262326}
+  - {fileID: 1584314786}
+  - {fileID: 1648728277}
+  - {fileID: 1662091893}
+  - {fileID: 1219933409}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -870,6 +874,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 15320f71-a902-4e0d-93e3-1401760c58da
     m_ActionName: UI/Sell (TEMP)[/Keyboard/p]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a207c252-2366-4d41-9422-256334ee323b
+    m_ActionName: UI/Buy (TEMP)[/Keyboard/b]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Selection
@@ -1986,6 +1994,60 @@ Transform:
   m_Father: {fileID: 415081406}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1219933408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1219933409}
+  - component: {fileID: 1219933410}
+  m_Layer: 0
+  m_Name: Miner Placing Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1219933409
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219933408}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 415081406}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1219933410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219933408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7af898a367034f6c917c8a65a3187a33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gridController: {fileID: 618365861}
+  _gridObjectController: {fileID: 1584314787}
+  _gridSelectionController: {fileID: 599316692}
+  _minerPrefab: {fileID: 7212167648660500357, guid: e35094b2be3734047957d6dd42cd8a2a,
+    type: 3}
+  _inventoryService: {fileID: 962633878}
+  _indoorLayer:
+    serializedVersion: 2
+    m_Bits: 939524343
+  _machineItem: {fileID: 11400000, guid: 98a42f31a2d924349a49ae4050ad8208, type: 2}
 --- !u!1 &1273299250
 GameObject:
   m_ObjectHideFlags: 0
@@ -2031,6 +2093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gridController: {fileID: 618365861}
+  _gridObjectController: {fileID: 1584314787}
   _gridSelectionController: {fileID: 599316692}
   _plotPrefab: {fileID: 7519098644441595788, guid: 45db6d4b0a4593549a1bedb30bdf9cd0,
     type: 3}
@@ -2208,7 +2271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a29f2aa269844499aac9ab3ae508c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1570665895
+--- !u!1 &1584314785
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2216,62 +2279,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1570665896}
-  - component: {fileID: 1570665897}
-  - component: {fileID: 1570665898}
+  - component: {fileID: 1584314786}
+  - component: {fileID: 1584314787}
   m_Layer: 0
-  m_Name: Plot
+  m_Name: Grid Object Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1570665896
+--- !u!4 &1584314786
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1570665895}
+  m_GameObject: {fileID: 1584314785}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 0, z: -5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 415081406}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1570665897
+--- !u!114 &1584314787
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1570665895}
+  m_GameObject: {fileID: 1584314785}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f261be7f12fb461b91410cf47ccf53d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 6cea5df087374fdbb0e7cb57e3f1faa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ValidHologramPrefab>k__BackingField: {fileID: 1607152703833403544, guid: aff07521fb228bd4ebb96bfe80012d5e,
-    type: 3}
-  <InvalidHologramPrefab>k__BackingField: {fileID: 5273668402940509457, guid: 2d253c869bbabe64e9f68c956413fae0,
-    type: 3}
---- !u!114 &1570665898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1570665895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 290c2cb7dcf5479eacdcc4aed98a9bbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Placeable>k__BackingField: {fileID: 0}
-  <OverlapDetector>k__BackingField: {fileID: 0}
-  _visualContainer: {fileID: 0}
 --- !u!1 &1626876325
 GameObject:
   m_ObjectHideFlags: 0
@@ -2371,6 +2414,110 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.007, y: 0.07, z: 0.05}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1648728276
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1648728277}
+  - component: {fileID: 1648728278}
+  m_Layer: 0
+  m_Name: Watering Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1648728277
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648728276}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 415081406}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1648728278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648728276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 095d8a7712ab9294ea4e03cdea5736c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gridObjectController: {fileID: 1584314787}
+  _gridSelectionController: {fileID: 599316692}
+  _inventoryService: {fileID: 962633878}
+  _wateringItem: {fileID: 11400000, guid: 7c48caca07420ac4892988f2fe7102ea, type: 2}
+  _hologram: {fileID: 2450330198703992208, guid: 259a32ef1c4918b44ac30d9672c6b467,
+    type: 3}
+--- !u!1 &1662091892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1662091893}
+  - component: {fileID: 1662091894}
+  m_Layer: 0
+  m_Name: Orchard Placing Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1662091893
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662091892}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 415081406}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1662091894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662091892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5ab305274b64179acc563a1da906d6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gridController: {fileID: 618365861}
+  _gridObjectController: {fileID: 1584314787}
+  _gridSelectionController: {fileID: 599316692}
+  _orchardPrefab: {fileID: 2077440580211230310, guid: 119a9815bda395440b5ac659f8d15aa8,
+    type: 3}
+  _inventoryService: {fileID: 962633878}
+  _indoorLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  _saplingTagName: Sapling
 --- !u!1 &1705890307
 GameObject:
   m_ObjectHideFlags: 0
@@ -2635,7 +2782,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh141268
+  m_Name: pb_Mesh34200
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3414,7 +3561,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1845997946}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.29301354, y: -0.59, z: 0.9110028}
+  m_LocalPosition: {x: -0.29301354, y: -0.499, z: 0.9110028}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 095d8a7712ab9294ea4e03cdea5736c8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _gridController: {instanceID: 0}
+  - _gridObjectController: {instanceID: 0}
+  - _gridSelectionController: {instanceID: 0}
+  - _inventoryService: {instanceID: 0}
+  - _wateringItem: {fileID: 11400000, guid: 7c48caca07420ac4892988f2fe7102ea, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
