@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731329, g: 0.13414457, b: 0.121081956, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -238,7 +238,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28934
+  m_Name: pb_Mesh117480
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -507,6 +507,7 @@ MonoBehaviour:
   _inventoryService: {fileID: 962633878}
   _objectiveService: {fileID: 85955511}
   _itemReferenceProvider: {fileID: 952133960}
+  _shopUIController: {fileID: 879721788}
   _iridiumSprite: {fileID: 21300000, guid: 5f4f82337c962d74bb77c55f7631cebf, type: 3}
   _seedsGrantedUponUnlock: 10
 --- !u!4 &228790029 stripped
@@ -2277,6 +2278,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 494a0199c90150742a549378c4c76860, type: 3}
+--- !u!114 &879721788 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4095739393960555047, guid: 494a0199c90150742a549378c4c76860,
+    type: 3}
+  m_PrefabInstance: {fileID: 879721787}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e55723f2163109449bcb2021c81bf0fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &890843217
 GameObject:
   m_ObjectHideFlags: 0
@@ -3168,6 +3181,7 @@ GameObject:
   - component: {fileID: 1705890309}
   - component: {fileID: 1705890308}
   - component: {fileID: 1705890310}
+  - component: {fileID: 1705890311}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -3244,14 +3258,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1705890307}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0, y: -0.258819, z: 0, w: 0.9659259}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -30, z: 0}
 --- !u!114 &1705890310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3272,6 +3286,23 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!114 &1705890311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705890307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ba29e8b3f714ba4e816b91a0dd0f60e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeController: {fileID: 2060453229}
+  baseRotation: {x: 0, y: 0, z: 0}
+  rotationDirection: {x: 1, y: 0, z: 0}
+  sinRotationDirection: {x: 0, y: 1, z: 0}
+  sinRotationStrength: 30
 --- !u!1 &1762914824
 GameObject:
   m_ObjectHideFlags: 0
@@ -3402,7 +3433,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-47524
+  m_Name: pb_Mesh117706
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

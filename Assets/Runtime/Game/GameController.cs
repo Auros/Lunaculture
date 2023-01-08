@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Lunaculture.Objectives;
 using Lunaculture.Player.Inventory;
 using UnityEngine;
+using Lunaculture.UI.Shop;
 
 namespace Lunaculture.Game
 {
@@ -24,6 +25,9 @@ namespace Lunaculture.Game
 
         [SerializeField]
         private ItemReferenceProvider _itemReferenceProvider = null!;
+
+        [SerializeField]
+        private ShopUIController _shopUIController = null!;
             
         [SerializeField] 
         private Sprite _iridiumSprite = null!;
@@ -59,9 +63,10 @@ namespace Lunaculture.Game
             {
                 var item = weekItemUnlockInfo.Items[i];
                 var icon = weekItemUnlockInfo.ToastNotificationSprites[i];
-                
+
                 _toastNotificationController.SummonToast($"Received {_seedsGrantedUponUnlock} {item.Name}. {item.Tooltip}", icon, 15f);
                 _inventoryService.AddItem(item, _seedsGrantedUponUnlock);
+                _shopUIController.AddShopItem(item);
                 if (item.CanBuy && !_itemReferenceProvider.ShopItems.Contains(item)) _itemReferenceProvider.ShopItems.Add(item);
             }
         }

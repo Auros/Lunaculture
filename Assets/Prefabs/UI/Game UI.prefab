@@ -3730,8 +3730,7 @@ MonoBehaviour:
   gameUIInterconnect: {fileID: 2521784254357992289}
   shopCellPrefab: {fileID: 2047491799194994641, guid: bdb2f4770409ba44381895e0070f00d3,
     type: 3}
-  initialStoreItems:
-  - {fileID: 11400000, guid: b28f7cd027cdc3d41bb03a2a951a0717, type: 2}
+  initialStoreItems: []
 --- !u!224 &3143439832185302117 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 121486156058350517, guid: 3bcf91d136682694e8c751858e39c5de,
