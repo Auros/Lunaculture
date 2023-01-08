@@ -1,4 +1,5 @@
-﻿using Lunaculture.Grids;
+﻿using System;
+using Lunaculture.Grids;
 using Lunaculture.Grids.Objects;
 using Lunaculture.Items;
 using Lunaculture.Player.Inventory;
@@ -27,7 +28,7 @@ namespace Lunaculture.Planting.Plots
         private LayerMask _indoorLayer;
 
         [SerializeField]
-        private Item _plotPlacingItem = null!;
+        private string _saplingTagName = "Sapling";
 
         private PhysicalOrchardController? _currentlyPlacing;
         
@@ -101,7 +102,9 @@ namespace Lunaculture.Planting.Plots
                 return;
 
             var selectedItem = _inventoryService.SelectedItem!;
-            if (selectedItem != _plotPlacingItem)
+            
+            // Only allow saplings to be planted into orchards
+            if (Array.IndexOf(selectedItem.Tags, _saplingTagName) == -1)
             {
                 return;
             }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Lunaculture.Items
@@ -33,5 +34,8 @@ namespace Lunaculture.Items
 
         [field: SerializeField]
         public GameObject PlacePrefab { get; private set; } = null!;
+
+        [field: SerializeField]
+        public string[] Tags { get; private set; } = Array.Empty<string>();
     }
 }
