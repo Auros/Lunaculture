@@ -21,6 +21,12 @@ namespace Lunaculture.UI
             var toast = Instantiate(toastNotificationPrefab, transform);
             toast.AssignToastDetails(details, sprite, lifetime);
         }
+        
+        public void SummonToast(string details, Sprite sprite, float lifetime = 2)
+        {
+            var toast = Instantiate(toastNotificationPrefab, transform);
+            toast.AssignToastDetails(details, sprite, lifetime);
+        }
 
         public enum ToastType { Complete, Plus, Fail }
     }

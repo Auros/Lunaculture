@@ -22,6 +22,10 @@ namespace Lunaculture.Items
         [field: SerializeField]
         public int BuyPrice { get; private set; }
 
+        // Doesn't do anything if CanBuy is false
+        [field: SerializeField]
+        public bool UnlockedInShop { get; private set; } = true;
+
         [field: SerializeField]
         public bool CanSell { get; private set; }
         
