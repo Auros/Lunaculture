@@ -58,7 +58,7 @@ namespace Lunaculture.Machines.Miner
                     if (_gridObjectController.GetObjectAt(neighbor) is not null)
                         return false;
                 
-                return inside && !miner.OverlapDetector.IsOverlapping();
+                return !inside && !miner.OverlapDetector.IsOverlapping();
             }, cell =>
             {
                 miner.PreparePlacement();
@@ -66,7 +66,7 @@ namespace Lunaculture.Machines.Miner
                 _gridObjectController.Register(new MinerGridObject
                 {
                     Cell = cell,
-                    Type = GridObjectType.Orchard
+                    Type = GridObjectType.Miner
                 });
                 
                 _neighbors[0] = new GridCell(cell.X + 1, cell.Y);
