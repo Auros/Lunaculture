@@ -2046,7 +2046,7 @@ MonoBehaviour:
   _inventoryService: {fileID: 962633878}
   _indoorLayer:
     serializedVersion: 2
-    m_Bits: 939524343
+    m_Bits: 256
   _machineItem: {fileID: 11400000, guid: 98a42f31a2d924349a49ae4050ad8208, type: 2}
 --- !u!1 &1273299250
 GameObject:
