@@ -22,6 +22,7 @@ namespace Lunaculture.UI
             }
             else
             {
+                menuPopupController.CloseOpenMenu();
                 openMenu = menuPopupController.TryOpenMenu(this);
             }
         }

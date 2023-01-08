@@ -714,7 +714,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2521784254357992301}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -811,9 +811,9 @@ RectTransform:
   - {fileID: 2521784255803583387}
   - {fileID: 2521784254393154262}
   - {fileID: 2254415421935666151}
-  - {fileID: 2521784254310232759}
   - {fileID: 5745554460924166386}
   - {fileID: 2521784255514311074}
+  - {fileID: 2521784254310232759}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1017,6 +1017,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ff2c9ce2-e2ac-430c-b7c1-3b6fbd137e95
     m_ActionName: UI/Tooltip Movement[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8f3403c4-8228-4db6-bb56-c0b348e94042
+    m_ActionName: Player/Zoom[/Mouse/scroll/y]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: UI
@@ -2150,7 +2154,7 @@ GameObject:
   - component: {fileID: 2521784255514311074}
   - component: {fileID: 2521784255514311075}
   m_Layer: 5
-  m_Name: Pause Menu (MUST BE BOTTOM)
+  m_Name: Pause Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2171,7 +2175,7 @@ RectTransform:
   - {fileID: 2521784255928997920}
   - {fileID: 2521784255237251272}
   m_Father: {fileID: 2521784254357992301}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3435,7 +3439,7 @@ RectTransform:
   - {fileID: 4643011250475044434}
   - {fileID: 3547296643028864963}
   m_Father: {fileID: 2521784254357992301}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
