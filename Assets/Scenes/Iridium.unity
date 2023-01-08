@@ -238,7 +238,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28908
+  m_Name: pb_Mesh28934
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -505,6 +505,7 @@ MonoBehaviour:
   _toastNotificationController: {fileID: 1566011535}
   _timeController: {fileID: 2060453229}
   _inventoryService: {fileID: 962633878}
+  _objectiveService: {fileID: 85955511}
   _itemReferenceProvider: {fileID: 952133960}
   _iridiumSprite: {fileID: 21300000, guid: 5f4f82337c962d74bb77c55f7631cebf, type: 3}
   _seedsGrantedUponUnlock: 10
@@ -2427,6 +2428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e324affa934f6788846259b14a6925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShopItems: []
   Foods:
   - {fileID: 11400000, guid: 01a909d162dd7e2458cf0d135972ee31, type: 2}
   - {fileID: 11400000, guid: 7562c6a3e14443d4f96cf9dcc3321b8e, type: 2}
