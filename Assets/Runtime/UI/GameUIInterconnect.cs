@@ -1,4 +1,6 @@
 using Lunaculture.GameTime;
+using Lunaculture.Objectives;
+using Lunaculture.Player.Currency;
 using Lunaculture.Player.Inventory;
 using UnityEngine;
 
@@ -22,5 +24,11 @@ namespace Lunaculture.UI
 
         [field: SerializeField]
         public PauseController PauseController { get; private set; } = null!;
+
+        [field: SerializeField]
+        public CurrencyService CurrencyService { get; private set; } = null!;
+
+        [field: SerializeField]
+        public ObjectiveService ObjectiveService{ get; private set; } = null!;
     }
 }

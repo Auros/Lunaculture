@@ -17,7 +17,7 @@ namespace Lunaculture.UI.Inventory
         {
             AssignedStack = stack;
 
-            if (stack == null || stack.ItemType == null || stack.Count == 0)
+            if (stack == null || stack.Empty)
             {
                 itemIcon.gameObject.SetActive(false);
                 countLabel.gameObject.SetActive(false);
