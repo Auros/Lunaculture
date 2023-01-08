@@ -14,6 +14,10 @@ namespace Lunaculture.Objectives
         [field: SerializeField]
         public int SellTarget { get; private set; } = 100;
 
+        [Header("Sell target increases by this amount after every complete objective.")]
+        [SerializeField]
+        private int sellTargetIncrease = 100;
+
         [SerializeField] private CurrencyService currencyService = null!;
         [SerializeField] private TimeController timeController = null!;
 
@@ -39,7 +43,7 @@ namespace Lunaculture.Objectives
         {
             if (sellProgress >= SellTarget)
             {
-                SellTarget += 100;
+                SellTarget += sellTargetIncrease;
                 sellProgress = 0;
                 OnObjectiveComplete?.Invoke();
             }

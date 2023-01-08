@@ -16,11 +16,13 @@ namespace Lunaculture.UI.Inventory
 
         private SlotCell[]? inventorySlots;
         private InventoryService? inventoryService;
+        
+        private bool _ready = false;
 
-        private void OnEnable()
+        private void Start()
         {
             _ = debugItem;
-            if (inventorySlots == null)
+            if (!_ready)
             {
                 inventoryService = gameUIInterconnect.InventoryService;
 
@@ -32,6 +34,8 @@ namespace Lunaculture.UI.Inventory
                 }
 
                 inventoryService.InventoryUpdatedEvent += RebuildInventoryUI;
+
+                _ready = true;
             }
 
             RebuildInventoryUI();
@@ -39,6 +43,8 @@ namespace Lunaculture.UI.Inventory
 
         private void RebuildInventoryUI()
         {
+            if (!_ready) return;
+
             for (var i = 0; i < inventoryService!.Inventory.Length; i++)
             {
                 var slot = inventorySlots![i];

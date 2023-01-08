@@ -30,5 +30,13 @@ namespace Lunaculture.UI.Inventory
                 toastNotificationController.SummonToast($"+{sell} credits.");
             }
         }
+
+        private void OnSlotCellAssigned(SlotCell cell)
+        {
+            if (cell.AssignedStack is { Empty: false} && !cell.AssignedStack.ItemType!.CanSell)
+            {
+                cell.Transparency = 0.2f;
+            }
+        }
     }
 }
