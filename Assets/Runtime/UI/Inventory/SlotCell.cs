@@ -36,6 +36,11 @@ namespace Lunaculture.UI.Inventory
             tooltipSource.TooltipName = stack.ItemType!.Name;
             tooltipSource.TooltipText = stack.ItemType!.Tooltip;
 
+            if (stack.ItemType!.CanSell)
+            {
+                tooltipSource.TooltipText += $"\nSells for {stack.ItemType!.SellPrice}cr";
+            }
+
             countLabel.text = LabelText;
         }
 
