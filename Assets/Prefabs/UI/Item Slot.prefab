@@ -299,6 +299,7 @@ GameObject:
   - component: {fileID: 4538374370990855132}
   - component: {fileID: 4538374370990855133}
   - component: {fileID: 4538374370990855130}
+  - component: {fileID: 2115862406318920344}
   m_Layer: 5
   m_Name: Item Slot
   m_TagString: Untagged
@@ -382,3 +383,18 @@ MonoBehaviour:
   itemIcon: {fileID: 4538374369847870481}
   selectedIcon: {fileID: 7110611648241197116}
   countLabel: {fileID: 4538374370624975615}
+  tooltipSource: {fileID: 2115862406318920344}
+--- !u!114 &2115862406318920344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4538374370990855128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccdcbeae079542a4c92eb56f1f603103, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TooltipName>k__BackingField: 
+  <TooltipText>k__BackingField: 
