@@ -819,6 +819,11 @@ MonoBehaviour:
   <OxygenProduction>k__BackingField: 0
   <Animator>k__BackingField: {fileID: 3746415914760750985}
   <NeedsWaterIcon>k__BackingField: {fileID: 5730093832849876961}
+  <CropBottom>k__BackingField: {fileID: 7519098645463014957}
+  <UnwateredDirt>k__BackingField: {fileID: 2100000, guid: 77e9bf3915a34254d9642cec6c867a9a,
+    type: 2}
+  <WateredDirt>k__BackingField: {fileID: 2100000, guid: 4d9720dda988f0c4bb04cc51919c8939,
+    type: 2}
 --- !u!1 &7519098645443884217
 GameObject:
   m_ObjectHideFlags: 0
@@ -1193,7 +1198,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 25a9fb42d361f46ad89221f6d301e96e, type: 2}
+  - {fileID: 2100000, guid: 77e9bf3915a34254d9642cec6c867a9a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -45,6 +45,15 @@ namespace Lunaculture.Plants
         [field: SerializeField]
         public GameObject NeedsWaterIcon { get; private set; }
         
+        [field: SerializeField]
+        public MeshRenderer CropBottom { get; private set; }
+        
+        [field: SerializeField]
+        public Material UnwateredDirt { get; private set; }
+        
+        [field: SerializeField]
+        public Material WateredDirt { get; private set; }
+        
         public event Action<PlantStatusEvent>? PlantStatusUpdated;
         
         private int _cachedGrowthPropertyID = 0;
@@ -80,7 +89,10 @@ namespace Lunaculture.Plants
 
         private void PlantStatusUpdatedInternal(PlantStatusEvent statusEvent)
         {
-            NeedsWaterIcon.SetActive(statusEvent.GrowthStatus == PlantGrowthStatus.NotWatered || statusEvent.GrowthStatus == PlantGrowthStatus.GrownButNotWatered);
+            var unwatered = statusEvent.GrowthStatus == PlantGrowthStatus.NotWatered || statusEvent.GrowthStatus == PlantGrowthStatus.GrownButNotWatered;
+            
+            NeedsWaterIcon.SetActive(unwatered);
+            CropBottom.sharedMaterial = unwatered ? UnwateredDirt : WateredDirt;
         }
 
         private void Update()
