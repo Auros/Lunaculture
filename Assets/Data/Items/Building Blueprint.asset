@@ -15,7 +15,7 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: 21300000, guid: b550a682f68e9824f9a970641af01fff,
     type: 3}
   <Name>k__BackingField: Building Blueprint
-  <Tooltip>k__BackingField: Use this to build new buildings! Costs 100 resources
+  <Tooltip>k__BackingField: Use this to build new buildings (domes)! Costs 100 resources
     per placement.
   <CanBuy>k__BackingField: 1
   <BuyPrice>k__BackingField: 500
