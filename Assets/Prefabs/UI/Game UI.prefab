@@ -2521,6 +2521,9 @@ MonoBehaviour:
   gameUIInterconnect: {fileID: 2521784254357992289}
   progressFill: {fileID: 5172160566502753654}
   objectiveText: {fileID: 2521784255580307376}
+  noCompletionColor: {r: 0.96862745, g: 0.22745098, b: 0.4117647, a: 1}
+  closeToCompletionColor: {r: 0.9764706, g: 0.972549, b: 0.44313726, a: 1}
+  completionColor: {r: 0, g: 0.7882353, b: 0.36086383, a: 1}
 --- !u!1 &2521784254961089557
 GameObject:
   m_ObjectHideFlags: 0

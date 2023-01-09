@@ -51,6 +51,8 @@ namespace Lunaculture.Objectives
             {
                 OnObjectiveFail?.Invoke();
             }
+
+            OnObjectiveProgress?.Invoke(0);
         }
 
         private void OnDestroy()

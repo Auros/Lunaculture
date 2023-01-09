@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fillTransform: {fileID: 7293607955858921946}
+  image: {fileID: 7293607955858921925}
 --- !u!1 &7293607955570961684
 GameObject:
   m_ObjectHideFlags: 0
