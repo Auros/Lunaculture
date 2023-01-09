@@ -67,7 +67,8 @@ namespace Lunaculture.Planting.Plots
                 {
                     Cell = cell,
                     Type = GridObjectType.Orchard,
-                    Plant = plantComponent
+                    Plant = plantComponent,
+                    Controller = orchard
                 });
                 
                 GridCell left = new(cell.X, cell.Y + 1);

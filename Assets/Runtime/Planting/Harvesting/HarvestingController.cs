@@ -94,7 +94,7 @@ namespace Lunaculture.Planting.Harvesting
                     }
                 }
 
-                if(plant is null) throw new InvalidOperationException("Could not find plot to water");
+                if (plant is null) throw new InvalidOperationException("Could not find plot to water");
                 
                 for (int i = 0; i < plant.Drops.Length; i++)
                 {

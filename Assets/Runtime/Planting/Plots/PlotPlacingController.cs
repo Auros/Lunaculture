@@ -52,7 +52,8 @@ namespace Lunaculture.Planting.Plots
                 _gridObjectController.Register(new PlotGridObject
                 {
                     Cell = cell,
-                    Type = GridObjectType.Plot
+                    Type = GridObjectType.Plot,
+                    Controller = plot
                 });
             }, () =>
             {
