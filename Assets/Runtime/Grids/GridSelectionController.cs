@@ -57,6 +57,9 @@ namespace Lunaculture.Grids
             _mostRecentCell = null;
             var tryingToPlace = _currentPlaceable.AsNull() is null;
             var value = ctx.ReadValue<Vector2>();
+
+            if (_camera == null) return;
+
             var ray = _camera.ScreenPointToRay(value);
 
             if (!Physics.Raycast(ray, out var hit, 100f, _gridLayer))

@@ -12,12 +12,12 @@ namespace Lunaculture.UI.Tooltips
         public string TooltipText { get; set; } = string.Empty;
 
         public void OnPointerEnter(PointerEventData eventData)
-            => SendMessageUpwards("OnTooltipEnter", this, SendMessageOptions.DontRequireReceiver);
+            => SendMessageUpwards("ShowTooltip", this, SendMessageOptions.DontRequireReceiver);
 
         public void OnPointerExit(PointerEventData eventData)
-            => SendMessageUpwards("OnTooltipExit", this, SendMessageOptions.DontRequireReceiver);
+            => SendMessageUpwards("CloseTooltip", null, SendMessageOptions.DontRequireReceiver);
 
         private void OnDisable()
-            => SendMessageUpwards("OnTooltipExit", this, SendMessageOptions.DontRequireReceiver);
+            => SendMessageUpwards("CloseTooltip", null, SendMessageOptions.DontRequireReceiver);
     }
 }
