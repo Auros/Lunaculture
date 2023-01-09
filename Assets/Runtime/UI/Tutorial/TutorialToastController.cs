@@ -28,7 +28,7 @@ namespace Lunaculture.UI.Tutorial
 
             await UniTask.Delay(TimeSpan.FromSeconds(_delayBetweenToasts), true);
 
-            _toastNotificationController.SummonToast("Plots can only be prepared inside domes.", _tutorialSprite, _toastLifetime);
+            _toastNotificationController.SummonToast("Plots can only be placed inside domes.", _tutorialSprite, _toastLifetime);
 
             await UniTask.Delay(TimeSpan.FromSeconds(_delayBetweenToasts), true);
 
@@ -40,7 +40,7 @@ namespace Lunaculture.UI.Tutorial
 
             await UniTask.Delay(TimeSpan.FromSeconds(_delayBetweenToasts), true);
 
-            _toastNotificationController.SummonToast("Once crops are grown, collect them with the Harvester.", _tutorialSprite, _toastLifetime);
+            _toastNotificationController.SummonToast("Collect grown crops with the Harvester.", _tutorialSprite, _toastLifetime);
 
             await UniTask.Delay(TimeSpan.FromSeconds(_delayBetweenToasts), true);
 
@@ -48,7 +48,7 @@ namespace Lunaculture.UI.Tutorial
 
             await UniTask.Delay(TimeSpan.FromSeconds(_delayBetweenToasts), true);
 
-            _toastNotificationController.SummonToast("Sell your crops to meet the weekly quotas.", _tutorialSprite, _toastLifetime);
+            _toastNotificationController.SummonToast("Sell crops to meet the weekly quotas.", _tutorialSprite, _toastLifetime);
 
             await UniTask.Delay(TimeSpan.FromSeconds(_delayBetweenToasts), true);
 
