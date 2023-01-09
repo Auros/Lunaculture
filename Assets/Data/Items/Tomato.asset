@@ -19,7 +19,7 @@ MonoBehaviour:
   <CanBuy>k__BackingField: 0
   <BuyPrice>k__BackingField: 0
   <CanSell>k__BackingField: 1
-  <SellPrice>k__BackingField: 8
+  <SellPrice>k__BackingField: 5
   <CanPlace>k__BackingField: 0
   <PlacePrefab>k__BackingField: {fileID: 7519098644441595777, guid: 4da77f3fb7eb6c749a31cc9db9616f3f,
     type: 3}

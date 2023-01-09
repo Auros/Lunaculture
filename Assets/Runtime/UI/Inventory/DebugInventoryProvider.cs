@@ -8,7 +8,7 @@ namespace Lunaculture.Player.Inventory
         [SerializeField] private ItemStack[] startingInventory = Array.Empty<ItemStack>();
         [SerializeField] private InventoryService inventoryService = null!;
 
-        private void Start()
+        private void Awake()
         {
             for (var i = 0; i < inventoryService.Inventory.Length; i++)
             {

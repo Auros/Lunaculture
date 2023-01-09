@@ -17,7 +17,7 @@ MonoBehaviour:
   <Name>k__BackingField: Carrot Seeds
   <Tooltip>k__BackingField: Carrots are the first crop sent on new settlement missions.
   <CanBuy>k__BackingField: 1
-  <BuyPrice>k__BackingField: 5
+  <BuyPrice>k__BackingField: 4
   <CanSell>k__BackingField: 0
   <SellPrice>k__BackingField: 0
   <CanPlace>k__BackingField: 1

@@ -1736,10 +1736,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23a69e863f6e03543aa4453bbb428671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <GrowTime>k__BackingField: 4
+  <GrowTime>k__BackingField: 2
   <Drops>k__BackingField:
   - {fileID: 11400000, guid: 7562c6a3e14443d4f96cf9dcc3321b8e, type: 2}
+  - {fileID: 11400000, guid: 7562c6a3e14443d4f96cf9dcc3321b8e, type: 2}
+  - {fileID: 11400000, guid: 7562c6a3e14443d4f96cf9dcc3321b8e, type: 2}
+  - {fileID: 11400000, guid: 7562c6a3e14443d4f96cf9dcc3321b8e, type: 2}
+  - {fileID: 11400000, guid: 7562c6a3e14443d4f96cf9dcc3321b8e, type: 2}
   <DropPercentages>k__BackingField:
+  - 1
+  - 1
+  - 1
+  - 1
   - 1
   <IsTree>k__BackingField: 1
   <RandomlyRotatedObjects>k__BackingField:

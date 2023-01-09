@@ -1338,7 +1338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23a69e863f6e03543aa4453bbb428671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <GrowTime>k__BackingField: 2
+  <GrowTime>k__BackingField: 1
   <Drops>k__BackingField:
   - {fileID: 11400000, guid: 98885b9602cf92845af7c804986cbc1c, type: 2}
   - {fileID: 11400000, guid: 994e189f28c2be746b2744c85c7e7ba7, type: 2}

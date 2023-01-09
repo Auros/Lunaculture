@@ -18,7 +18,7 @@ MonoBehaviour:
   <Tooltip>k__BackingField: Imported directly from California, USA, Earth, Solar
     System.
   <CanBuy>k__BackingField: 1
-  <BuyPrice>k__BackingField: 5
+  <BuyPrice>k__BackingField: 15
   <CanSell>k__BackingField: 0
   <SellPrice>k__BackingField: 0
   <CanPlace>k__BackingField: 1
