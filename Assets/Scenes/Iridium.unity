@@ -345,6 +345,7 @@ MonoBehaviour:
   _objectiveService: {fileID: 85955511}
   _itemReferenceProvider: {fileID: 952133960}
   _shopUIController: {fileID: 879721788}
+  _loreBoxController: {fileID: 0}
   _iridiumSprite: {fileID: 21300000, guid: 5f4f82337c962d74bb77c55f7631cebf, type: 3}
   _seedsGrantedUponUnlock: 10
 --- !u!4 &228790029 stripped
@@ -2033,12 +2034,6 @@ MonoBehaviour:
   - <ItemType>k__BackingField: {fileID: 11400000, guid: 1f4e9d50a0a563b4289a81ee56e78120,
       type: 2}
     <Count>k__BackingField: 1
-  - <ItemType>k__BackingField: {fileID: 11400000, guid: 00fe2dfc21c94924d8c2210e596505c6,
-      type: 2}
-    <Count>k__BackingField: 32
-  - <ItemType>k__BackingField: {fileID: 11400000, guid: 98a42f31a2d924349a49ae4050ad8208,
-      type: 2}
-    <Count>k__BackingField: 12
   inventoryService: {fileID: 962633878}
 --- !u!1 &1205110985
 GameObject:
