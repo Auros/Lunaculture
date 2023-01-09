@@ -669,25 +669,25 @@ MonoBehaviour:
 
 
     When you''re
-    receiving this message, you should''ve touched down on the surface. At least,
-    we hope so.
+    receiving this message, you should''ve touched down on the surface. I hope everything
+    went smoothly while setting up your farm?
 
 
-    Providing enough food for an off-world settlement is no easy
-    task. Especially for a new, growing settlement. Meeting the settlement''s food
-    demands is imperative for its survival.
+    Providing enough food for an
+    off-world settlement is no easy task. Especially for a new, growing settlement.
+    Meeting the settlement''s food demands is imperative for its survival.
 
 
-    While the resources you currently
-    have are... limited, as the settlement continues to grow, new shipments of seeds
-    will be sent. For the time being, you will have to grow and sell the crops you
-    have on hand.
+    While
+    the resources you currently have are... limited, as the settlement continues
+    to grow, you will be sent new shipments of seeds. For the time being, you will
+    have to grow and sell the crops you have on hand.
 
 
-    We know you are the right man for the job, Dr. Mamon.
+    We know you are the right
+    man for the job, Dr. Mamon.
 
-    Don''t
-    let us down.'
+    Don''t let us down.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
