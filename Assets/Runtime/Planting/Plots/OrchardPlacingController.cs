@@ -1,6 +1,7 @@
 ﻿using System;
 using Lunaculture.Grids;
 using Lunaculture.Grids.Objects;
+using Lunaculture.Plants;
 using Lunaculture.Player.Inventory;
 using UnityEngine;
 
@@ -57,10 +58,16 @@ namespace Lunaculture.Planting.Plots
             {
                 orchard.PreparePlacement();
                 _currentlyPlacing = null;
+                
+                var plantComponent = orchard.gameObject.GetComponent<Plant>();
+                plantComponent.enabled = true;
+                //plotGridObject.Plant = plantPrefab.GetComponent<Plant>();
+
                 _gridObjectController.Register(new OrchardGridObject
                 {
                     Cell = cell,
-                    Type = GridObjectType.Orchard
+                    Type = GridObjectType.Orchard,
+                    Plant = plantComponent
                 });
                 
                 GridCell left = new(cell.X, cell.Y + 1);
