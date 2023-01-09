@@ -193,18 +193,99 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Sell (TEMP)",
+                    "name": "Buy (TEMP)",
                     "type": "Button",
-                    "id": "15320f71-a902-4e0d-93e3-1401760c58da",
+                    "id": "a207c252-2366-4d41-9422-256334ee323b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Buy (TEMP)",
+                    "name": "Select Item 0",
                     "type": "Button",
-                    "id": "a207c252-2366-4d41-9422-256334ee323b",
+                    "id": "b630c3c7-1dbb-4515-90a2-956e3d2130b6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Select Item 1",
+                    "type": "Button",
+                    "id": "07827d20-3e0c-434b-807d-8ec42aa63fa7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Select Item 2",
+                    "type": "Button",
+                    "id": "7f5fb0cf-baf4-4fa7-9e93-a8aa622be90a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Select Item 3",
+                    "type": "Button",
+                    "id": "e0d73923-d46a-44e9-8c19-605e1f48b4ae",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Select Item 4",
+                    "type": "Button",
+                    "id": "134c5e1b-3854-4cc7-9f5a-066dafe264b4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Select Item 5",
+                    "type": "Button",
+                    "id": "c7eb9d89-ee3d-4c92-b040-f18008691fd1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Select Item 6",
+                    "type": "Button",
+                    "id": "b6e94052-578a-4c0b-9fca-9bad68344bda",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Select Item 7",
+                    "type": "Button",
+                    "id": "f6597e6f-2d42-44d0-9c7e-ef8e3ceb6f01",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Select Item 8",
+                    "type": "Button",
+                    "id": "30ed4f88-6c5f-4665-9e39-57de5904680c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Select Item 9",
+                    "type": "Button",
+                    "id": "6dfad51c-315c-4d32-ac39-4e2a0f8bf436",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -258,17 +339,6 @@
                 },
                 {
                     "name": "",
-                    "id": "7592892d-2f95-42ca-be52-9a4dd8cf3b4a",
-                    "path": "<Keyboard>/p",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Sell (TEMP)",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "457b8557-b5b4-43f8-b908-d1ae69e6543a",
                     "path": "<Keyboard>/b",
                     "interactions": "",
@@ -286,6 +356,116 @@
                     "processors": "",
                     "groups": "",
                     "action": "Tooltip Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cfd75f23-2399-49bd-b1dc-74a6d85d4e88",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select Item 0",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f5d0a827-15b7-4adf-aa1a-23cfd053d015",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select Item 1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e33a7364-b268-4dc7-8dcf-5775643ec8b5",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select Item 2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d02ec785-ace8-4bb0-951a-6ba068b365b9",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select Item 3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "576042e4-49fa-4b1f-b33f-212fe167447d",
+                    "path": "<Keyboard>/5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select Item 4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8ad463b3-01dc-4a2a-b9e1-c325b6bfff4b",
+                    "path": "<Keyboard>/6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select Item 5",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "145bdea0-8169-4b03-954f-a0fad5872d1c",
+                    "path": "<Keyboard>/7",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select Item 6",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3d587106-38fe-4bbc-bc13-db85465ec87c",
+                    "path": "<Keyboard>/8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select Item 7",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3648987b-177b-43fa-9625-822f9e9ee8bd",
+                    "path": "<Keyboard>/9",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select Item 8",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c426da37-4559-4de0-8aaa-b641b1931a60",
+                    "path": "<Keyboard>/0",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select Item 9",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

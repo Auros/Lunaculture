@@ -66,6 +66,7 @@ namespace Lunaculture.Machines.Miner
                 _gridObjectController.Register(new MinerGridObject
                 {
                     Cell = cell,
+                    Controller = miner,
                     Type = GridObjectType.Miner
                 });
                 
@@ -87,9 +88,12 @@ namespace Lunaculture.Machines.Miner
                         Type = GridObjectType.Child
                     });
                 }
+                
+                _inventoryService.RemoveItem(_machineItem);
+                
             }, () =>
             {
-                Destroy(miner.gameObject);
+                Destroy(_currentlyPlacing!.gameObject);
                 _currentlyPlacing = null;
             });
             _currentlyPlacing = miner;

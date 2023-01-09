@@ -10,10 +10,24 @@ namespace Lunaculture.UI.Inventory
     {
         public ItemStack? AssignedStack { get; private set; }
 
+        public float Transparency
+        {
+            get => transparency;
+            set
+            {
+                transparency = value;
+                itemIcon.color = itemIcon.color.WithAlpha(value);
+                selectedIcon.color = selectedIcon.color.WithAlpha(value);
+                countLabel.color = countLabel.color.WithAlpha(value);
+            }
+        }
+
         [SerializeField] private Image itemIcon = null!;
         [SerializeField] private Image selectedIcon = null!;
         [SerializeField] private TextMeshProUGUI countLabel = null!;
         [SerializeField] private TooltipSource tooltipSource = null!;
+
+        private float transparency = 1f;
 
         public void AssignItemStack(ItemStack? stack = null)
         {
@@ -42,6 +56,7 @@ namespace Lunaculture.UI.Inventory
             }
 
             countLabel.text = LabelText;
+            SendMessageUpwards("OnSlotCellAssigned", this, SendMessageOptions.DontRequireReceiver);
         }
 
         protected virtual string LabelText => AssignedStack?.Count <= 99

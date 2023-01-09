@@ -25,11 +25,16 @@ namespace Lunaculture.Grids
         private Func<GridCell, bool>? _validityEvaluator;
         private GridCenterOverride? _currentHologramOverride;
 
-        public bool Active { get; private set; }
+        public bool Active { get; private set; } = true;
+
+        public GridCell? CurrentCell => _mostRecentCell;
 
         [UsedImplicitly]
         public void OnSelection(InputAction.CallbackContext ctx)
         {
+            if (!Active)
+                return;
+            
             // Only repond to Mouse Down
             if (!ctx.performed)
                 return;
@@ -42,30 +47,31 @@ namespace Lunaculture.Grids
             if (!isValid)
                 return;
             
-            StopActiveSelection();
             _onPlaced?.Invoke(cell);
+            StopActiveSelection();
         }
 
         [UsedImplicitly]
         public void OnPositionChange(InputAction.CallbackContext ctx)
         {
-            // If we're not trying to place something, do nothing.
-            if (_currentPlaceable.AsNull() is null)
-                return;
-            
             _mostRecentCell = null;
+            var tryingToPlace = _currentPlaceable.AsNull() is null;
             var value = ctx.ReadValue<Vector2>();
             var ray = _camera.ScreenPointToRay(value);
 
             if (!Physics.Raycast(ray, out var hit, 100f, _gridLayer))
             {
-                DeleteHologramView();
+                if (tryingToPlace)
+                    DeleteHologramView();
                 return;
             }
 
             var (x, _, z) = hit.point;
-
             var gridCell = _gridController.GetCellAt(new Vector2(x, z));
+            _mostRecentCell = gridCell;
+
+            if (tryingToPlace)
+                return;
 
             if (!gridCell.HasValue)
             {
@@ -83,7 +89,6 @@ namespace Lunaculture.Grids
             }
             
             _gridController.MoveGameObjectToCellCenter(gridCell.Value, placeable!, _currentHologramOverride);
-            _mostRecentCell = gridCell;
         }
 
         public void StartSelection(GridPlaceable gridPlaceable, Func<GridCell, bool>? validityEvaluator, Action<GridCell>? onPlaced, Action? onCancel = null)
@@ -97,14 +102,15 @@ namespace Lunaculture.Grids
         public void StopActiveSelection(bool sendCancelEvent = false)
         {
             DeleteHologramView();
+            
+            if (sendCancelEvent)
+                _onCancel?.Invoke();
+            
+            _onPlaced = null;
+            _onCancel = null;
             _mostRecentCell = null;
             _currentPlaceable = null;
             _validityEvaluator = null;
-
-            if (!sendCancelEvent)
-                return;
-            
-            _onCancel?.Invoke();
         }
 
         private void SwitchHologramView(bool valid)

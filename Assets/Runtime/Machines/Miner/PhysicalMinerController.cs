@@ -30,13 +30,11 @@ namespace Lunaculture.Machines.Miner
         private float _generationTime = 0;
         private int _currentItems = 0;
 
-        private void Start()
-        {
-            _ = _generatedResource;
-        }
-
         private void Update()
         {
+            if (!_visualContainer.activeSelf)
+                return;
+            
             _generationTime += Time.deltaTime * Time.timeScale;
 
             if (_generationRate >= _generationTime)
@@ -57,5 +55,11 @@ namespace Lunaculture.Machines.Miner
             _visualContainer.SetActive(true);
             OverlapDetector.enabled = false;
         }
+
+        public Item GetItem() => _generatedResource;
+        
+        public int GetItemCount() => _currentItems;
+
+        public void Clear() => _currentItems = 0;
     }
 }
