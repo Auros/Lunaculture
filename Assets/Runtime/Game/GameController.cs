@@ -75,7 +75,7 @@ namespace Lunaculture.Game
                 var item = weekItemUnlockInfo.Items[i];
                 var icon = weekItemUnlockInfo.ToastNotificationSprites[i];
 
-                _toastNotificationController.SummonToast($"Received {_seedsGrantedUponUnlock} {item.Name}.", icon, 15f);
+                _toastNotificationController.SummonToast($"+{_seedsGrantedUponUnlock} {item.Name}.", icon, 15f);
                 _inventoryService.AddItem(item, _seedsGrantedUponUnlock);
                 _shopUIController.AddShopItem(item);
                 if (item.CanBuy && !_itemReferenceProvider.ShopItems.Contains(item)) _itemReferenceProvider.ShopItems.Add(item);

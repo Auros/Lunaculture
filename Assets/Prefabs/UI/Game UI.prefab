@@ -1813,6 +1813,7 @@ GameObject:
   - component: {fileID: 2521784254310232757}
   - component: {fileID: 2521784254310232756}
   - component: {fileID: 2521784254310232754}
+  - component: {fileID: 4847456335714017500}
   m_Layer: 5
   m_Name: Toast
   m_TagString: Untagged
@@ -1888,9 +1889,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toastNotificationPrefab: {fileID: 5137208675213164933, guid: 15427315edd4a924d80d52e799337e24,
     type: 3}
-  plusSprite: {fileID: 21300000, guid: a6fbd5a181bc51e42a61a73fe8d727c8, type: 3}
-  completeSprite: {fileID: 21300000, guid: 4a231ba0e81e63849a8f985c228e8acd, type: 3}
-  failSprite: {fileID: 21300000, guid: a3ced8f7044b9de4787602a9e9b20ea7, type: 3}
+  plusSprite: {fileID: 21300000, guid: 9f9a0345b463f36429433af456854831, type: 3}
+  completeSprite: {fileID: 21300000, guid: 0087c1a4844b7704bb93dbfd155c93e8, type: 3}
+  failSprite: {fileID: 21300000, guid: b8c96ab97d0619e41ace8c379598d7f6, type: 3}
+--- !u!114 &4847456335714017500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2521784254310232758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bb225c8b6de5da4bb2513f7a95d6c90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _toastNotificationController: {fileID: 2521784254310232754}
+  _tutorialSprite: {fileID: 21300000, guid: f5e00dda23721bf4b8e5281c3b456776, type: 3}
+  _initialDelay: 20
+  _delayBetweenToasts: 10
+  _toastLifetime: 5
 --- !u!1 &2521784254357992288
 GameObject:
   m_ObjectHideFlags: 0
