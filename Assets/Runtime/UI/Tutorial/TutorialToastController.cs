@@ -21,7 +21,7 @@ namespace Lunaculture
 
             await UniTask.Delay(TimeSpan.FromSeconds(_delayBetweenToasts), true);
 
-            _toastNotificationController.SummonToast("Use the Hoe to prepare land for farming.", _tutorialSprite, _toastLifetime);
+            _toastNotificationController.SummonToast("Use the Hoe to prepare land for farming (creates plots).", _tutorialSprite, _toastLifetime);
 
             await UniTask.Delay(TimeSpan.FromSeconds(_delayBetweenToasts), true);
 
@@ -42,6 +42,7 @@ namespace Lunaculture
             await UniTask.Delay(TimeSpan.FromSeconds(_delayBetweenToasts), true);
 
             _toastNotificationController.SummonToast("Sell your crops to meet the weekly quotas.", _tutorialSprite, _toastLifetime);
+            
         }
     }
 }
