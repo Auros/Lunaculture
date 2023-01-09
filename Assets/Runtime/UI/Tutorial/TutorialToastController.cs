@@ -3,7 +3,7 @@ using Lunaculture.UI;
 using System;
 using UnityEngine;
 
-namespace Lunaculture
+namespace Lunaculture.UI.Tutorial
 {
     public class TutorialToastController : MonoBehaviour
     {
@@ -13,7 +13,10 @@ namespace Lunaculture
         [SerializeField] private float _delayBetweenToasts = 10f;
         [SerializeField] private float _toastLifetime = 5f;
 
-        private async UniTask Start()
+        private void Start()
+            => Tutorial().AttachExternalCancellation(this.GetCancellationTokenOnDestroy()).Forget();
+
+        private async UniTask Tutorial()
         {
             await UniTask.Delay(TimeSpan.FromSeconds(_initialDelay), true);
 

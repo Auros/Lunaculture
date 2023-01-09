@@ -627,6 +627,11 @@ PrefabInstance:
       propertyPath: movementSpeed
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 2375371354058694696, guid: 369abb28dc0e4c0499d3f0a01dfb8946,
+        type: 3}
+      propertyPath: timeController
+      value: 
+      objectReference: {fileID: 2060453229}
     - target: {fileID: 2375371354058694697, guid: 369abb28dc0e4c0499d3f0a01dfb8946,
         type: 3}
       propertyPath: m_RootOrder
@@ -746,6 +751,7 @@ Transform:
   - {fileID: 199677316}
   - {fileID: 516818173}
   - {fileID: 1012691413}
+  - {fileID: 1091535511}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2231,6 +2237,55 @@ MonoBehaviour:
   _deletionIcon: {fileID: 11400000, guid: 38496544902f20e499a28a326bfd1d66, type: 2}
   _hologram: {fileID: 2450330198703992208, guid: 259a32ef1c4918b44ac30d9672c6b467,
     type: 3}
+--- !u!1 &1091535510
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1091535511}
+  - component: {fileID: 1091535512}
+  m_Layer: 0
+  m_Name: Skip to Next Week Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1091535511
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091535510}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 415081406}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1091535512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091535510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fbffc706df78f24fa95fc70658c465c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _virtualCamera: {fileID: 720221548}
+  _cameraZoomController: {fileID: 1250488988}
+  _timeController: {fileID: 2060453229}
+  _objectiveService: {fileID: 85955511}
+  _menuPopupController: {fileID: 1996763161}
 --- !u!1 &1205110985
 GameObject:
   m_ObjectHideFlags: 0
@@ -3367,6 +3422,18 @@ MonoBehaviour:
   _hologram: {fileID: 2450330198703992208, guid: 259a32ef1c4918b44ac30d9672c6b467,
     type: 3}
   _seedTagName: Seeds
+--- !u!114 &1996763161 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2521784254357992299, guid: 494a0199c90150742a549378c4c76860,
+    type: 3}
+  m_PrefabInstance: {fileID: 879721787}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5460d9a0e0fac714a8802b429d74f2aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2060453228
 GameObject:
   m_ObjectHideFlags: 0
