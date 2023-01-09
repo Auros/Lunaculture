@@ -345,6 +345,7 @@ MonoBehaviour:
   _objectiveService: {fileID: 85955511}
   _itemReferenceProvider: {fileID: 952133960}
   _shopUIController: {fileID: 879721788}
+  _loreBoxController: {fileID: 1528967843}
   _iridiumSprite: {fileID: 21300000, guid: 5f4f82337c962d74bb77c55f7631cebf, type: 3}
   _seedsGrantedUponUnlock: 10
 --- !u!4 &228790029 stripped
@@ -2610,6 +2611,18 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 5a63569ee35b92440acea794e41e9cc6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 252f0d28b76c37e4fbafcf0b51060188, type: 3}
+--- !u!114 &1528967843 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4698907621937667840, guid: 494a0199c90150742a549378c4c76860,
+    type: 3}
+  m_PrefabInstance: {fileID: 879721787}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9b48473e307ac43a16ebe65a80aec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1566011535 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2521784254310232754, guid: 494a0199c90150742a549378c4c76860,
@@ -2963,7 +2976,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-912742
+  m_Name: pb_Mesh-997836
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

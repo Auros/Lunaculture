@@ -6,6 +6,7 @@ using Lunaculture.Objectives;
 using Lunaculture.Player.Inventory;
 using UnityEngine;
 using Lunaculture.UI.Shop;
+using Lunaculture.UI.Dialog;
 
 namespace Lunaculture.Game
 {
@@ -28,6 +29,9 @@ namespace Lunaculture.Game
 
         [SerializeField]
         private ShopUIController _shopUIController = null!;
+
+        [SerializeField]
+        private LoreBoxController _loreBoxController = null!;
             
         [SerializeField] 
         private Sprite _iridiumSprite = null!;
@@ -55,6 +59,12 @@ namespace Lunaculture.Game
             if (_itemReferenceProvider.WeekItemUnlockInfos.Count > _weekNumber)
             {
                 UnlockWeek(_itemReferenceProvider.WeekItemUnlockInfos[_weekNumber]);
+            }
+            else if (_weekNumber == _itemReferenceProvider.WeekItemUnlockInfos.Count)
+            {
+                _loreBoxController.DumpLore("Well done, DATT MAMON!!\n\n" +
+                    "You have reached the end of content for Lunaculture.\n\n" + 
+                    "Thanks for playing! We hope you enjoyed the game and would appreciate a rating. Feel free to continue completing weekly quotas!");
             }
         }
 
