@@ -84,11 +84,10 @@ namespace Lunaculture.Machines.Miner
                 foreach (var neighbor in _neighbors)
                     if (_gridObjectController.GetObjectAt(neighbor) is not null)
                     {
-                        if (miner)
-                        {
-                            Destroy(miner.gameObject);
-                            _currentlyPlacing = null;
-                        }
+                        if (!miner)
+                            return;
+                        Destroy(miner.gameObject);
+                        _currentlyPlacing = null;
                         return;
                     }
 
