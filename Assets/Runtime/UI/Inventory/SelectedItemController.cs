@@ -1,4 +1,5 @@
 using Lunaculture.Player.Inventory;
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -34,7 +35,10 @@ namespace Lunaculture.UI.Inventory
                     }
                 }
 
-                selectedItemText.text = $"Selected: {selectedItem.Name} x{count}";
+                selectedItemText.text = $"Selected: {selectedItem.Name}";
+
+                if (Array.IndexOf(selectedItem.Tags, "Infinite") != -1)
+                    selectedItemText.text += $" x{count}";
             }
             else
             {

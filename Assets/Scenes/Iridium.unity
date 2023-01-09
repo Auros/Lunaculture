@@ -266,7 +266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <SellTarget>k__BackingField: 200
   sellTargetIncrease: 200
-  sellTargetMultiplier: 1.4
+  sellTargetMultiplier: 1.2
   currencyService: {fileID: 1205110986}
   timeController: {fileID: 2060453229}
 --- !u!850595691 &110029471
