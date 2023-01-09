@@ -24,7 +24,7 @@ namespace Lunaculture.UI.Tutorial
 
             await UniTask.Delay(TimeSpan.FromSeconds(_delayBetweenToasts), true);
 
-            _toastNotificationController.SummonToast("Use the Hoe to prepare land for farming (creates plots).", _tutorialSprite, _toastLifetime);
+            _toastNotificationController.SummonToast("Use the Hoe to create plots for farming.", _tutorialSprite, _toastLifetime);
 
             await UniTask.Delay(TimeSpan.FromSeconds(_delayBetweenToasts), true);
 
@@ -32,7 +32,7 @@ namespace Lunaculture.UI.Tutorial
 
             await UniTask.Delay(TimeSpan.FromSeconds(_delayBetweenToasts), true);
 
-            _toastNotificationController.SummonToast("Plant seeds on prepared plots to grow crops.", _tutorialSprite, _toastLifetime);
+            _toastNotificationController.SummonToast("Plant seeds on plots to grow crops.", _tutorialSprite, _toastLifetime);
 
             await UniTask.Delay(TimeSpan.FromSeconds(_delayBetweenToasts), true);
 
@@ -40,12 +40,19 @@ namespace Lunaculture.UI.Tutorial
 
             await UniTask.Delay(TimeSpan.FromSeconds(_delayBetweenToasts), true);
 
-            _toastNotificationController.SummonToast("Once crops are grown, use the Harvester to collect your yield.", _tutorialSprite, _toastLifetime);
+            _toastNotificationController.SummonToast("Once crops are grown, collect them with the Harvester.", _tutorialSprite, _toastLifetime);
+
+            await UniTask.Delay(TimeSpan.FromSeconds(_delayBetweenToasts), true);
+
+            _toastNotificationController.SummonToast("Press R to open the shop.", _tutorialSprite, _toastLifetime);
 
             await UniTask.Delay(TimeSpan.FromSeconds(_delayBetweenToasts), true);
 
             _toastNotificationController.SummonToast("Sell your crops to meet the weekly quotas.", _tutorialSprite, _toastLifetime);
-            
+
+            await UniTask.Delay(TimeSpan.FromSeconds(_delayBetweenToasts), true);
+
+            _toastNotificationController.SummonToast("Buy items from the shop to grow your farm.", _tutorialSprite, _toastLifetime);
         }
     }
 }

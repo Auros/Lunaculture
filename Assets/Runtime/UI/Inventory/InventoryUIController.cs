@@ -41,6 +41,11 @@ namespace Lunaculture.UI.Inventory
             RebuildInventoryUI();
         }
 
+        private void OnEnable()
+        {
+            if (_ready) RebuildInventoryUI();   
+        }
+
         private void RebuildInventoryUI()
         {
             if (!_ready) return;
@@ -51,7 +56,7 @@ namespace Lunaculture.UI.Inventory
                 slot.AssignItemStack(inventoryService.Inventory[i]);
 
                 var assignedStack = slot.AssignedStack;
-                var selectedSlot = assignedStack != null && assignedStack.ItemType == inventoryService.SelectedItem;
+                var selectedSlot = assignedStack != null && !assignedStack.Empty && assignedStack.ItemType == inventoryService.SelectedItem;
                 inventorySlots[i].ToggleSelectionIcon(selectedSlot);
             }
         }

@@ -84,7 +84,7 @@ namespace Lunaculture.GameTime
 
         private void ObjectiveService_OnObjectiveProgress(float progress)
         {
-            if (progress != 1) return;
+            if (progress != 1 || _timeSpeedUp) return;
 
             _timeSpeedUp = true;
 

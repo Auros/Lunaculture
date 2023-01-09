@@ -266,7 +266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <SellTarget>k__BackingField: 200
   sellTargetIncrease: 200
-  sellTargetMultiplier: 1.4
+  sellTargetMultiplier: 1.2
   currencyService: {fileID: 1205110986}
   timeController: {fileID: 2060453229}
 --- !u!850595691 &110029471
@@ -2328,7 +2328,7 @@ MonoBehaviour:
   _timeController: {fileID: 2060453229}
   _objectiveService: {fileID: 85955511}
   _menuPopupController: {fileID: 1996763161}
-  _hijackCamera: 1
+  _hijackCamera: 0
 --- !u!1 &1205110985
 GameObject:
   m_ObjectHideFlags: 0

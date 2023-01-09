@@ -124,7 +124,6 @@ namespace Lunaculture.Plants
                 GrowthPercent = Mathf.Clamp01(GrowthPercent + (Time.deltaTime * Time.timeScale / GrowTime / 60f));
                 if (GrowthPercent >= 1)
                 {
-                    Debug.Log("Plant finished growing");
                     //TODO: properly handle trees 
                     GrowthStatus = IsTree ? PlantGrowthStatus.GrownAndReadyToNonPermaHarvest : PlantGrowthStatus.GrownAndReadyToPermaHarvest;
                     
@@ -141,15 +140,11 @@ namespace Lunaculture.Plants
 
             if (GrowthStatus == PlantGrowthStatus.NotWatered)
             {
-                Debug.Log("Plant started growing");
-
                 Animator.speed = animationSpeed;
                 GrowthStatus = PlantGrowthStatus.Growing;
             }
             else if (GrowthStatus == PlantGrowthStatus.GrownButNotWatered)
             {
-                Debug.Log("Plant started growing again");
-                
                 Animator.speed = animationSpeed;
                 GrowthStatus = PlantGrowthStatus.GrownButGrowingAgain;
                 //_cachedGrowthPropertyID
@@ -164,7 +159,6 @@ namespace Lunaculture.Plants
             Animator.SetBool(_cachedGrowthPropertyID, false);
             Animator.SetBool(_cachedGrowthPropertyID, true);
             
-            Debug.Log("Player harvested tree. begin the regrowth.");
             GrowthStatus = PlantGrowthStatus.GrownButNotWatered;
         }
     }

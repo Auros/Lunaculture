@@ -17,7 +17,7 @@ MonoBehaviour:
   <Name>k__BackingField: Resource Collector
   <Tooltip>k__BackingField: Digs into the moon and extracts resources over time.
     Click on them to get the resources they've drilled.
-  <CanBuy>k__BackingField: 0
+  <CanBuy>k__BackingField: 1
   <BuyPrice>k__BackingField: 250
   <CanSell>k__BackingField: 0
   <SellPrice>k__BackingField: 0
