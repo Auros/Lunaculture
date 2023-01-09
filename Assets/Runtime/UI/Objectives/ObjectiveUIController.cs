@@ -3,7 +3,6 @@ using ElRaccoone.Tweens;
 using Lunaculture.Objectives;
 using Lunaculture.UI.GameTime;
 using TMPro;
-using Unity.VisualScripting.YamlDotNet.Core.Tokens;
 using UnityEngine;
 
 namespace Lunaculture.UI.Objectives
