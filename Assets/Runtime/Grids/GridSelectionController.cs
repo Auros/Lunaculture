@@ -25,6 +25,7 @@ namespace Lunaculture.Grids
         private Func<GridCell, bool>? _validityEvaluator;
         private GridCenterOverride? _currentHologramOverride;
 
+        private bool _holdingDownSelect;
         public bool Active { get; private set; } = true;
 
         public GridCell? CurrentCell => _mostRecentCell;
@@ -32,13 +33,27 @@ namespace Lunaculture.Grids
         [UsedImplicitly]
         public void OnSelection(InputAction.CallbackContext ctx)
         {
+            _holdingDownSelect = ctx.performed || ctx.started;
             if (!Active)
                 return;
-            
+
             // Only repond to Mouse Down
             if (!ctx.performed)
                 return;
             
+            TryPlace();
+        }
+
+        private void Update()
+        {
+            if (!_holdingDownSelect || !Active)
+                return;
+            
+            TryPlace();
+        }
+
+        private void TryPlace()
+        {
             if (!_mostRecentCell.HasValue)
                 return;
 
