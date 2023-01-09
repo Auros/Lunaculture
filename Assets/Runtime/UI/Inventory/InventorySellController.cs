@@ -1,6 +1,7 @@
 using Lunaculture.Player.Currency;
 using Lunaculture.Player.Inventory;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Lunaculture.UI.Inventory
 {
@@ -12,19 +13,28 @@ namespace Lunaculture.UI.Inventory
         private CurrencyService currencyService = null!;
         private InventoryService inventoryService = null!;
 
+        private bool massSell = false;
+
         private void Start()
         {
             currencyService = gameUIInterconnect.CurrencyService;
             inventoryService = gameUIInterconnect.InventoryService;
         }
 
+        public void OnShift(InputAction.CallbackContext context) => massSell = context.performed;
+
         private void OnSlotCellClicked(SlotCell cell)
         {
             if (cell.AssignedStack is { Empty: false } && cell.AssignedStack.ItemType!.CanSell)
             {
-                inventoryService.RemoveItem(cell.AssignedStack.ItemType);
+                var count = massSell ? cell.AssignedStack.Count : 1;
 
-                var sell = cell.AssignedStack.ItemType.SellPrice;
+                for (var i = 0; i < count; i++)
+                {
+                    inventoryService.RemoveItem(cell.AssignedStack.ItemType);
+                }
+
+                var sell = cell.AssignedStack.ItemType.SellPrice * count;
                 currencyService.Currency += sell;
 
                 toastNotificationController.SummonToast($"+{sell} credits.");
