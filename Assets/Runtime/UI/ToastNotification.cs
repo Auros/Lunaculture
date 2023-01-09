@@ -24,7 +24,7 @@ namespace Lunaculture
 
             labelText.text = details;
             image.sprite = sprite;
-            Lifetime(lifetime).Forget();
+            Lifetime(lifetime).AttachExternalCancellation(this.GetCancellationTokenOnDestroy()).Forget();
         }
 
         // TODO: Tween in/out of lifetime
