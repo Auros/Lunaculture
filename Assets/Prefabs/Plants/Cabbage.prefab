@@ -1345,6 +1345,7 @@ MonoBehaviour:
   <DropPercentages>k__BackingField:
   - 1
   - 0.8
+  <IsTree>k__BackingField: 0
   <RandomlyRotatedObjects>k__BackingField:
   - {fileID: 3524503129678361464}
   <OxygenProduction>k__BackingField: 0

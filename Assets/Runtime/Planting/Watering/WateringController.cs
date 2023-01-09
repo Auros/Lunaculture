@@ -32,19 +32,66 @@ namespace Lunaculture
             _gridSelectionController.StartSelection(_hologram, cell =>
             {
                 var gridObject = _gridObjectController.GetObjectAt(cell);
-                if (gridObject is null || gridObject.Type != GridObjectType.Plot)
-                    return false;
+                
+                if (gridObject is null) return false;
+                
+                // handle plot
+                if (gridObject.Type == GridObjectType.Plot)
+                {
+                    var plotGridObject = (gridObject as PlotGridObject)!;
+                    return plotGridObject.GrowthStatus is PlantGrowthStatus.NotWatered or PlantGrowthStatus.GrownButNotWatered;
+                }
+                
+                // handle trees
+                if (gridObject.Type == GridObjectType.Orchard)
+                {
+                    var orchardGridObject = (gridObject as OrchardGridObject)!;
+                    return orchardGridObject.GrowthStatus is PlantGrowthStatus.NotWatered or PlantGrowthStatus.GrownButNotWatered;
+                }
+                if (gridObject.Type == GridObjectType.Child)
+                {
+                    var childGridObject = (gridObject as ChildGridObject)!;
+                    var parentGridObject = _gridObjectController.GetObjectAt(childGridObject.Parent);
 
-                var plotGridObject = (gridObject as PlotGridObject)!;
-                return plotGridObject.GrowthStatus is PlantGrowthStatus.NotWatered or PlantGrowthStatus.GrownButNotWatered;
+                    if (parentGridObject != null && parentGridObject.Type == GridObjectType.Orchard)
+                    {
+                        var orchardGridObject = (parentGridObject as OrchardGridObject)!;
+
+                        return orchardGridObject.GrowthStatus is PlantGrowthStatus.NotWatered or PlantGrowthStatus.GrownButNotWatered;
+                    }
+                }
+                return false;
             }, cell =>
             {
                 var gridObject = _gridObjectController.GetObjectAt(cell);
-                if (gridObject is null || gridObject.Type != GridObjectType.Plot)
-                    throw new InvalidOperationException("Could not find plot to water");
                 
-                var plotGridObject = (gridObject as PlotGridObject)!;
-                plotGridObject.Plant!.Water();
+                if (gridObject is null) throw new InvalidOperationException("Could not find plot to water");
+                
+                // handle plot
+                if (gridObject.Type == GridObjectType.Plot)
+                {
+                    var plotGridObject = (gridObject as PlotGridObject)!;
+                    plotGridObject.Plant!.Water();
+                }
+                
+                // handle trees
+                if (gridObject.Type == GridObjectType.Orchard)
+                {
+                    var orchardGridObject = (gridObject as OrchardGridObject)!;
+                    orchardGridObject.Plant!.Water();
+                }
+                if (gridObject.Type == GridObjectType.Child)
+                {
+                    var childGridObject = (gridObject as ChildGridObject)!;
+                    var parentGridObject = _gridObjectController.GetObjectAt(childGridObject.Parent);
+
+                    if (parentGridObject.Type == GridObjectType.Orchard)
+                    {
+                        var orchardGridObject = (parentGridObject as OrchardGridObject)!;
+                        orchardGridObject.Plant!.Water();
+                    }
+                }
+                
                 _tryingToWater = false;
             }, () =>
             {
