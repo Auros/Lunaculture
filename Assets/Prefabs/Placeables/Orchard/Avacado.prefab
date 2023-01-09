@@ -1761,6 +1761,8 @@ MonoBehaviour:
     type: 2}
   <WateredDirt>k__BackingField: {fileID: 2100000, guid: 4d9720dda988f0c4bb04cc51919c8939,
     type: 2}
+  <Item>k__BackingField: {fileID: 11400000, guid: 7562c6a3e14443d4f96cf9dcc3321b8e,
+    type: 2}
 --- !u!1 &2077440580333321287
 GameObject:
   m_ObjectHideFlags: 0
@@ -2998,6 +3000,7 @@ MonoBehaviour:
   <CropBottom>k__BackingField: {fileID: 0}
   <UnwateredDirt>k__BackingField: {fileID: 0}
   <WateredDirt>k__BackingField: {fileID: 0}
+  <Item>k__BackingField: {fileID: 0}
 --- !u!1 &3311473301140932938
 GameObject:
   m_ObjectHideFlags: 0

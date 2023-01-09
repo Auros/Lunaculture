@@ -1320,6 +1320,8 @@ MonoBehaviour:
     type: 2}
   <WateredDirt>k__BackingField: {fileID: 2100000, guid: 4d9720dda988f0c4bb04cc51919c8939,
     type: 2}
+  <Item>k__BackingField: {fileID: 11400000, guid: 204ab3b09150ada448391d5772372c95,
+    type: 2}
 --- !u!1 &7519098645443884217
 GameObject:
   m_ObjectHideFlags: 0
