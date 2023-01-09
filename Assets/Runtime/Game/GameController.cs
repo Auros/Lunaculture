@@ -7,6 +7,7 @@ using Lunaculture.Player.Inventory;
 using UnityEngine;
 using Lunaculture.UI.Shop;
 using Lunaculture.UI.Dialog;
+using Cysharp.Threading.Tasks;
 
 namespace Lunaculture.Game
 {
@@ -62,10 +63,17 @@ namespace Lunaculture.Game
             }
             else if (_weekNumber == _itemReferenceProvider.WeekItemUnlockInfos.Count)
             {
-                _loreBoxController.DumpLore("Well done, DATT MAMON!!\n\n" +
-                    "You have reached the end of content for Lunaculture.\n\n" + 
-                    "Thanks for playing! We hope you enjoyed the game and would appreciate a rating. Feel free to continue completing weekly quotas!");
+                StupidFix().Forget();
             }
+        }
+
+        private async UniTask StupidFix()
+        {
+            await UniTask.Yield();
+
+            _loreBoxController.DumpLore("Well done, DATT MAMON!!\n\n" +
+                "You have reached the end of content for Lunaculture.\n\n" +
+                "Thanks for playing! We hope you enjoyed the game and would appreciate a rating. Feel free to continue completing weekly quotas!");
         }
 
         public void UnlockWeek(WeekItemUnlockInfo weekItemUnlockInfo)

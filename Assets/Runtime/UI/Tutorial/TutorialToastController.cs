@@ -44,8 +44,15 @@ namespace Lunaculture.UI.Tutorial
 
             await UniTask.Delay(TimeSpan.FromSeconds(_delayBetweenToasts), true);
 
+            _toastNotificationController.SummonToast("Press R to open the shop.", _tutorialSprite, _toastLifetime);
+
+            await UniTask.Delay(TimeSpan.FromSeconds(_delayBetweenToasts), true);
+
             _toastNotificationController.SummonToast("Sell your crops to meet the weekly quotas.", _tutorialSprite, _toastLifetime);
-            
+
+            await UniTask.Delay(TimeSpan.FromSeconds(_delayBetweenToasts), true);
+
+            _toastNotificationController.SummonToast("Buy items from the shop to continue growing your farm.", _tutorialSprite, _toastLifetime);
         }
     }
 }
