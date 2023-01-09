@@ -49,11 +49,11 @@ namespace Lunaculture.Buildings
             {
                 building.PreparePlacement();
                 _currentlyPlacing = null;
-                _gridObjectController.Register(new BuildingGridObject
+                /*_gridObjectController.Register(new BuildingGridObject
                 {
                     Cell = cell,
                     Type = GridObjectType.Building
-                });
+                });*/
                 
                 for (int i = 0; i < _resourceCostPerBuilding; i++)
                     _inventoryService.RemoveItem(_resourceItem);
