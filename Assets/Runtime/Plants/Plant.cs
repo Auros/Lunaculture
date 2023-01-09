@@ -44,6 +44,8 @@ namespace Lunaculture.Plants
 
         [field: SerializeField]
         public GameObject NeedsWaterIcon { get; private set; }
+
+        private GameObject? DoneGrowingIcon = null;
         
         [field: SerializeField]
         public MeshRenderer CropBottom { get; private set; }
@@ -54,6 +56,10 @@ namespace Lunaculture.Plants
         [field: SerializeField]
         public Material WateredDirt { get; private set; }
         
+        [field: SerializeField]
+        public Item Item { get; private set; }
+
+
         public event Action<PlantStatusEvent>? PlantStatusUpdated;
         
         private int _cachedGrowthPropertyID = 0;
@@ -72,6 +78,12 @@ namespace Lunaculture.Plants
         
         private void Start()
         {
+            DoneGrowingIcon = Instantiate(NeedsWaterIcon);
+            
+            DoneGrowingIcon.transform.parent = transform;
+            DoneGrowingIcon.transform.position = NeedsWaterIcon.transform.position;
+            
+            DoneGrowingIcon.GetComponent<SpriteRenderer>().sprite = Item.Icon;
             if(IsTree) _cachedGrowthPropertyID = Animator.StringToHash("SecondGrowth");
 
             if (!Animator.enabled) Animator.enabled = true;
@@ -90,8 +102,11 @@ namespace Lunaculture.Plants
         private void PlantStatusUpdatedInternal(PlantStatusEvent statusEvent)
         {
             var unwatered = statusEvent.GrowthStatus == PlantGrowthStatus.NotWatered || statusEvent.GrowthStatus == PlantGrowthStatus.GrownButNotWatered;
+            var grown = statusEvent.GrowthStatus == PlantGrowthStatus.GrownAndReadyToNonPermaHarvest || statusEvent.GrowthStatus == PlantGrowthStatus.GrownAndReadyToPermaHarvest;
             
             NeedsWaterIcon.SetActive(unwatered);
+            DoneGrowingIcon?.SetActive(grown);
+            
             CropBottom.sharedMaterial = unwatered ? UnwateredDirt : WateredDirt;
         }
 
