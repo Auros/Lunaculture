@@ -264,8 +264,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85a41bf9a02c47843a5b7017eba5843a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SellTarget>k__BackingField: 500
+  <SellTarget>k__BackingField: 200
   sellTargetIncrease: 200
+  sellTargetMultiplier: 1.4
   currencyService: {fileID: 1205110986}
   timeController: {fileID: 2060453229}
 --- !u!850595691 &110029471
@@ -3263,7 +3264,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-721628
+  m_Name: pb_Mesh-1972168
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
