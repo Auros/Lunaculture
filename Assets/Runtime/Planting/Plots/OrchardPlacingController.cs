@@ -1,5 +1,6 @@
 ﻿using System;
 using Lunaculture.Grids;
+using Lunaculture.Items;
 using Lunaculture.Grids.Objects;
 using Lunaculture.Plants;
 using Lunaculture.Player.Inventory;
@@ -32,6 +33,8 @@ namespace Lunaculture.Planting.Plots
 
         private PhysicalOrchardController? _currentlyPlacing;
         
+        private Item? _tryingToPlant;
+
         private void StartPlaceNew()
         {
             var orchard = Instantiate(_orchardPrefab);
@@ -95,10 +98,15 @@ namespace Lunaculture.Planting.Plots
                     Parent = cell,
                     Type = GridObjectType.Child
                 });
+                
+                _inventoryService.RemoveItem(_tryingToPlant!);
+
+                _tryingToPlant = null;
             }, () =>
             {
                 Destroy(orchard.gameObject);
                 _currentlyPlacing = null;
+                _tryingToPlant = null;
             });
             _currentlyPlacing = orchard;
         }
@@ -117,7 +125,9 @@ namespace Lunaculture.Planting.Plots
             if (_currentlyPlacing || !_gridSelectionController.Active)
                 return;
 
+            _tryingToPlant = selectedItem;
             _orchardPrefab = selectedItem.PlacePrefab.GetComponent<PhysicalOrchardController>();
+            
             StartPlaceNew();
         }
     }

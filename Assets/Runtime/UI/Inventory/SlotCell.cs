@@ -59,9 +59,9 @@ namespace Lunaculture.UI.Inventory
             SendMessageUpwards("OnSlotCellAssigned", this, SendMessageOptions.DontRequireReceiver);
         }
 
-        protected virtual string LabelText => AssignedStack?.Count <= 99
+        protected virtual string LabelText => AssignedStack?.Count <= 999
             ? AssignedStack.Count.ToString()
-            : "99+";
+            : "999+";
 
         public void ToggleSelectionIcon(bool isSelected)
             => selectedIcon.enabled = isSelected;

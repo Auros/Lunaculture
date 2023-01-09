@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using Lunaculture.Grids;
 using Lunaculture.Grids.Objects;
 using Lunaculture.Items;
 using Lunaculture.Plants;
 using Lunaculture.Player.Inventory;
+using Lunaculture.UI;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -22,6 +24,9 @@ namespace Lunaculture.Planting.Harvesting
         
         [SerializeField]
         private Item _harvestingItem = null!;
+
+        [SerializeField]
+        private ToastNotificationController _toastNotificationController = null!;
 
         [SerializeField]
         private GridPlaceable _hologram = null!;
@@ -96,6 +101,8 @@ namespace Lunaculture.Planting.Harvesting
 
                 if (plant is null) throw new InvalidOperationException("Could not find plot to water");
                 
+                var iAmNotOptimizationPilled = new Dictionary<Item, int>();
+
                 for (int i = 0; i < plant.Drops.Length; i++)
                 {
                     var drop = plant.Drops[i];
@@ -104,8 +111,19 @@ namespace Lunaculture.Planting.Harvesting
                     var chance = Random.value;
                     if (dropPercentage < 1 && chance >= dropPercentage)
                         continue;
-                    
+
+                    if (!iAmNotOptimizationPilled.TryGetValue(drop, out var count))
+                    {
+                        iAmNotOptimizationPilled.Add(drop, 0);
+                    }
+                    iAmNotOptimizationPilled[drop] += 1;
+
                     _inventoryService.AddItem(drop);
+                }
+
+                foreach (var forgiveMe in iAmNotOptimizationPilled)
+                {
+                    _toastNotificationController.SummonToast($"+{forgiveMe.Value} {forgiveMe.Key.Name}.", forgiveMe.Key.Icon, 3f);
                 }
 
                 if (plant.GrowthStatus == PlantGrowthStatus.GrownAndReadyToPermaHarvest)

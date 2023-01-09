@@ -293,6 +293,7 @@ MonoBehaviour:
   _gridSelectionController: {fileID: 599316692}
   _inventoryService: {fileID: 962633878}
   _harvestingItem: {fileID: 11400000, guid: 1f4e9d50a0a563b4289a81ee56e78120, type: 2}
+  _toastNotificationController: {fileID: 1566011535}
   _hologram: {fileID: 2450330198703992208, guid: 259a32ef1c4918b44ac30d9672c6b467,
     type: 3}
 --- !u!1 &203262325
@@ -3895,7 +3896,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: fb132bf91c531cd459df538517c37042,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb132bf91c531cd459df538517c37042,
         type: 3}
