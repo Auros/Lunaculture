@@ -3,7 +3,7 @@ using Lunaculture.UI;
 using System;
 using UnityEngine;
 
-namespace Lunaculture
+namespace Lunaculture.UI.Tutorial
 {
     public class TutorialToastController : MonoBehaviour
     {
