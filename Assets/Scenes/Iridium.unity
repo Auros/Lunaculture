@@ -1828,47 +1828,42 @@ PrefabInstance:
     - target: {fileID: 7727462418094184089, guid: 494a0199c90150742a549378c4c76860,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7727462418094184089, guid: 494a0199c90150742a549378c4c76860,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    - target: {fileID: 7727462418094184090, guid: 494a0199c90150742a549378c4c76860,
+    - target: {fileID: 7727462419577967940, guid: 494a0199c90150742a549378c4c76860,
         type: 3}
-      propertyPath: m_IsActive
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7727462419577967940, guid: 494a0199c90150742a549378c4c76860,
         type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7727462419577967940, guid: 494a0199c90150742a549378c4c76860,
-        type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7727462419577967940, guid: 494a0199c90150742a549378c4c76860,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 970
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7727462419577967940, guid: 494a0199c90150742a549378c4c76860,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7727462419577967940, guid: 494a0199c90150742a549378c4c76860,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 500
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7727462419577967940, guid: 494a0199c90150742a549378c4c76860,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -22.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7727462419659562068, guid: 494a0199c90150742a549378c4c76860,
         type: 3}
