@@ -37,7 +37,7 @@ namespace Lunaculture.UI.Inventory
 
                 selectedItemText.text = $"Selected: {selectedItem.Name}";
 
-                if (Array.IndexOf(selectedItem.Tags, "Infinite") != -1)
+                if (Array.IndexOf(selectedItem.Tags, "Infinite") == -1)
                     selectedItemText.text += $" x{count}";
             }
             else
