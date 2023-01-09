@@ -38,6 +38,7 @@ namespace Lunaculture.UI.Inventory
                 itemIcon.gameObject.SetActive(false);
                 countLabel.gameObject.SetActive(false);
                 tooltipSource.enabled = false;
+                Transparency = 1f;
                 return;
             }
 
