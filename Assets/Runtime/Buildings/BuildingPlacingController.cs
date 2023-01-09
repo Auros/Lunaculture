@@ -1,5 +1,4 @@
 ﻿using Lunaculture.Grids;
-using Lunaculture.Grids.Objects;
 using Lunaculture.Items;
 using Lunaculture.Player.Inventory;
 using UnityEngine;
@@ -60,7 +59,8 @@ namespace Lunaculture.Buildings
                 
             }, () =>
             {
-                Destroy(building.gameObject);
+                if (building)
+                    Destroy(building.gameObject);
                 _currentlyPlacing = null;
             });
             _currentlyPlacing = building;
@@ -73,7 +73,14 @@ namespace Lunaculture.Buildings
 
             var selectedItem = _inventoryService.SelectedItem!;
             if (selectedItem != _buildingItem)
+            {
+                if (!_currentlyPlacing)
+                    return;
+                
+                Destroy(_currentlyPlacing!.gameObject);
+                _currentlyPlacing = null;
                 return;
+            }
 
             if (_currentlyPlacing || !_gridSelectionController.Active)
                 return;

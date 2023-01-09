@@ -7,6 +7,7 @@ namespace Lunaculture.Player.Inventory
     public class InventoryService : MonoBehaviour
     {
         public event Action? InventoryUpdatedEvent;
+        public event Action? HotSwapEvent; // IM SORRY
 
         public ItemStack?[] Inventory { get; private set; } = Array.Empty<ItemStack?>();
 
@@ -122,15 +123,14 @@ namespace Lunaculture.Player.Inventory
             InventoryUpdatedEvent?.Invoke();
         }
 
-        public void SelectItem(ItemStack? target)
+        public void SelectItem(ItemStack? target, bool fromHotswap = false)
         {
-            if (target != null && !target.Empty)
-            {
-                SelectItem(target.ItemType);
-                return;
-            }
+            SelectItem(target is not null && !target.Empty ? target.ItemType : null);
 
-            SelectItem((Item?)null);
+            if (!fromHotswap)
+                return;
+            
+            HotSwapEvent?.Invoke();
         }
     }
 }

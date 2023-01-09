@@ -68,7 +68,7 @@ namespace Lunaculture
 
         private void QuickSelectItem(int idx)
         {
-            inventoryService.SelectItem(inventoryService.Inventory[idx]);
+            inventoryService.SelectItem(inventoryService.Inventory[idx], true);
         }
     }
 }

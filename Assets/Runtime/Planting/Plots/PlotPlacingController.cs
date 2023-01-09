@@ -57,7 +57,8 @@ namespace Lunaculture.Planting.Plots
                 });
             }, () =>
             {
-                Destroy(plot.gameObject);
+                if (plot)
+                    Destroy(plot.gameObject);
                 _currentlyPlacing = null;
             });
             _currentlyPlacing = plot;

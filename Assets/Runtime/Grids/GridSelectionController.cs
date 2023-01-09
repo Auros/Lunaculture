@@ -111,6 +111,7 @@ namespace Lunaculture.Grids
 
         public void StartSelection(GridPlaceable gridPlaceable, Func<GridCell, bool>? validityEvaluator, Action<GridCell>? onPlaced, Action? onCancel = null)
         {
+            StopActiveSelection(true);
             _onPlaced = onPlaced;
             _onCancel = onCancel;
             _currentPlaceable = gridPlaceable;
