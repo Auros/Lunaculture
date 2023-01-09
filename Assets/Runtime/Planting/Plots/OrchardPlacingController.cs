@@ -46,6 +46,7 @@ namespace Lunaculture.Planting.Plots
                 var inside = Physics.Raycast(rayStart, Vector3.down, 10, _indoorLayer);
                 _gridController.MoveGameObjectToCellCenter(cell, orchard.gameObject);
 
+                GridCell self = new(cell.X, cell.Y);
                 GridCell left = new(cell.X, cell.Y + 1);
                 GridCell right = new(cell.X + 1, cell.Y);
                 GridCell far = new(cell.X + 1, cell.Y + 1);
@@ -53,12 +54,29 @@ namespace Lunaculture.Planting.Plots
                 // Check if adjacent in 2x2 are clear
                 if (_gridObjectController.GetObjectAt(left) is not null ||
                     _gridObjectController.GetObjectAt(right) is not null ||
-                    _gridObjectController.GetObjectAt(far) is not null)
+                    _gridObjectController.GetObjectAt(far) is not null ||
+                    _gridObjectController.GetObjectAt(self) is not null)
                     return false;
                 
                 return inside && !orchard.OverlapDetector.IsOverlapping();
             }, cell =>
             {
+                GridCell left = new(cell.X, cell.Y + 1);
+                GridCell right = new(cell.X + 1, cell.Y);
+                GridCell far = new(cell.X + 1, cell.Y + 1);
+                GridCell self = new(cell.X, cell.Y);
+                // Check if adjacent in 2x2 are clear
+                if ( _gridObjectController.GetObjectAt(left) is not null ||
+                    _gridObjectController.GetObjectAt(right) is not null ||
+                    _gridObjectController.GetObjectAt(far) is not null ||
+                    _gridObjectController.GetObjectAt(self) is not null)
+                {
+                    if (orchard)
+                        Destroy(orchard.gameObject);
+                    _currentlyPlacing = null;
+                    return;
+                }
+                
                 orchard.PreparePlacement();
                 _currentlyPlacing = null;
                 
@@ -73,10 +91,6 @@ namespace Lunaculture.Planting.Plots
                     Plant = plantComponent,
                     Controller = orchard
                 });
-                
-                GridCell left = new(cell.X, cell.Y + 1);
-                GridCell right = new(cell.X + 1, cell.Y);
-                GridCell far = new(cell.X + 1, cell.Y + 1);
                 
                 _gridObjectController.Register(new ChildGridObject
                 {

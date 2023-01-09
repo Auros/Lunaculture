@@ -530,7 +530,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298227606}
-  m_LocalRotation: {x: 0.40230003, y: 0.00000001575258, z: -0.000000006922129, w: 0.9155079}
+  m_LocalRotation: {x: 0.40230003, y: -0.000000015752574, z: 0.0000000069221264, w: 0.9155079}
   m_LocalPosition: {x: 0, y: 18.314352, z: -15.804979}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1335,7 +1335,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 720221547}
-  m_LocalRotation: {x: 0.40230003, y: 0.00000001575258, z: -0.000000006922129, w: 0.9155079}
+  m_LocalRotation: {x: 0.40230003, y: -0.000000015752574, z: 0.0000000069221264, w: 0.9155079}
   m_LocalPosition: {x: 0, y: 18.314352, z: -15.804979}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2158,6 +2158,9 @@ MonoBehaviour:
       type: 2}
     <Count>k__BackingField: 1
   - <ItemType>k__BackingField: {fileID: 11400000, guid: 162e2683a0c18bb4d8bc0872bbbfda62,
+      type: 2}
+    <Count>k__BackingField: 500
+  - <ItemType>k__BackingField: {fileID: 11400000, guid: adceeac1c6b1f9544aab5c2e90b72cfa,
       type: 2}
     <Count>k__BackingField: 500
   inventoryService: {fileID: 962633878}

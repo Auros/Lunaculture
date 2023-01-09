@@ -78,6 +78,19 @@ namespace Lunaculture.Machines.Miner
                 _neighbors[5] = new GridCell(cell.X - 1, cell.Y + 1);
                 _neighbors[6] = new GridCell(cell.X + 1, cell.Y - 1);
                 _neighbors[7] = new GridCell(cell.X - 1, cell.Y - 1);
+                
+                // Check if neighbors are empty
+                // ReSharper disable once LoopCanBeConvertedToQuery
+                foreach (var neighbor in _neighbors)
+                    if (_gridObjectController.GetObjectAt(neighbor) is not null)
+                    {
+                        if (miner)
+                        {
+                            Destroy(miner.gameObject);
+                            _currentlyPlacing = null;
+                        }
+                        return;
+                    }
 
                 foreach (var neighbor in _neighbors)
                 {
