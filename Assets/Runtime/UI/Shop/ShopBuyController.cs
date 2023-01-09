@@ -34,7 +34,7 @@ namespace Lunaculture
 
                 if (currencyService.Currency >= price)
                 {
-                    toastNotificationController.SummonToast($"Purchased {item.Name}. {item.Tooltip}", item.Icon, 5f);
+                    toastNotificationController.SummonToast($"Purchased {item.Name}.", item.Icon, 5f);
                     inventoryService.AddItem(item);
 
                     currencyService.Currency -= price;
