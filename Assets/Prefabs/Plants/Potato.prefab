@@ -1949,6 +1949,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WatermelonGwoth
       objectReference: {fileID: 0}
+    - target: {fileID: 4774326757834888916, guid: 73ccb56d62182f04d9925bb8c437426d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73ccb56d62182f04d9925bb8c437426d, type: 3}
 --- !u!4 &5864040859550738518 stripped
@@ -1968,6 +1973,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Potato
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878688945438414127, guid: 9efa47df9afcf3848aef7da5f831fde4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7190432369023966150, guid: 9efa47df9afcf3848aef7da5f831fde4,
         type: 3}
