@@ -37,5 +37,8 @@ namespace Lunaculture.Items
 
         [field: SerializeField]
         public string[] Tags { get; private set; } = Array.Empty<string>();
+        
+        [field: SerializeField]
+        public bool DoNotGrantAutomatically { get; set; }
     }
 }

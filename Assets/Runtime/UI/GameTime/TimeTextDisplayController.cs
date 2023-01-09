@@ -21,12 +21,12 @@ namespace Lunaculture.UI.GameTime
 
         private void TimeController_OnDayChange(DayChangeEvent obj)
         {
-            dayText.text = $"Day {obj.Day}";
+            dayText.text = $"Day {obj.Day + 1}";
         }
 
         private void TimeController_OnWeekChange(WeekChangeEvent obj)
         {
-            weekText.text = $"Week {obj.Week}";
+            weekText.text = $"Week {obj.Week + 1}";
         }
 
         private void OnDestroy()

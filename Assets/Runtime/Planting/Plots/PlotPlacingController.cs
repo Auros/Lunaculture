@@ -47,6 +47,16 @@ namespace Lunaculture.Planting.Plots
                 return inside && !plot.OverlapDetector.IsOverlapping();
             }, cell =>
             {
+                var gridObject = _gridObjectController.GetObjectAt(cell);
+                
+                if (gridObject != null)
+                {
+                    if (plot)
+                        Destroy(plot.gameObject);
+                    _currentlyPlacing = null;
+                    return;
+                }
+                
                 plot.PreparePlacement();
                 _currentlyPlacing = null;
                 _gridObjectController.Register(new PlotGridObject

@@ -46,6 +46,14 @@ namespace Lunaculture.Buildings
                 return !building.OverlapDetector.IsOverlapping();
             }, cell =>
             {
+                if (!HasEnoughResources())
+                {
+                    if (building)
+                        Destroy(building.gameObject);
+                    _currentlyPlacing = null;
+                    return;
+                }
+                
                 building.PreparePlacement();
                 _currentlyPlacing = null;
                 /*_gridObjectController.Register(new BuildingGridObject

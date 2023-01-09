@@ -14,12 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Icon>k__BackingField: {fileID: 21300000, guid: fe81c5b27e4a9344e8fa7f8173eea777,
     type: 3}
-  <Name>k__BackingField: Miner
+  <Name>k__BackingField: Resource Collector
   <Tooltip>k__BackingField: Digs into the moon and extracts resources over time.
+    Click on them to get the resources they've drilled.
   <CanBuy>k__BackingField: 0
-  <BuyPrice>k__BackingField: 0
+  <BuyPrice>k__BackingField: 250
   <CanSell>k__BackingField: 0
   <SellPrice>k__BackingField: 0
   <CanPlace>k__BackingField: 1
   <PlacePrefab>k__BackingField: {fileID: 0}
-  <Tags>k__BackingField: []
+  <Tags>k__BackingField:
+  - Infinite
+  <DoNotGrantAutomatically>k__BackingField: 1

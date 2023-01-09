@@ -35,15 +35,13 @@ namespace Lunaculture.UI.Objectives
 
         private void ObjectiveService_OnObjectiveComplete()
         {
-            // TODO: Tween
-            progressFill.Fill = 0;
             objectiveText.text = $"Sell {objectiveService.SellTarget}cr";
 
-            toastNotificationController.SummonToast("Weekly Objective complete.");
+            toastNotificationController.SummonToast("Weekly Objective complete.", ToastNotificationController.ToastType.Complete, 10);
         }
         private void ObjectiveService_OnObjectiveFail()
         {
-            toastNotificationController.SummonToast("Weekly Objective failed.", ToastNotificationController.ToastType.Fail);
+            toastNotificationController.SummonToast("Weekly Objective failed.", ToastNotificationController.ToastType.Fail, 10);
         }
 
         private void ObjectiveService_OnObjectiveProgress(float obj)

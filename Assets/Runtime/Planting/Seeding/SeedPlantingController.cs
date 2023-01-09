@@ -47,9 +47,16 @@ namespace Lunaculture.Planting.Seeding
                     throw new InvalidOperationException("Could not find plot to place seed in");
                 
                 var plotGridObject = (gridObject as PlotGridObject)!;
+
+                if (!plotGridObject.Empty)
+                {
+                    _tryingToPlant = null;
+                    return;
+                }
+
                 plotGridObject.PlantedItem = _tryingToPlant;
 
-                var plantPrefab = Instantiate(_tryingToPlant.PlacePrefab);
+                var plantPrefab = Instantiate(_tryingToPlant!.PlacePrefab);
                 _gridController.MoveGameObjectToCellCenter(cell, plantPrefab);
                 plotGridObject.Plant = plantPrefab.GetComponent<Plant>();
                 

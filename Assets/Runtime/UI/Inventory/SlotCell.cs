@@ -1,3 +1,4 @@
+using System;
 using Lunaculture.UI.Tooltips;
 using TMPro;
 using UnityEngine;
@@ -38,6 +39,7 @@ namespace Lunaculture.UI.Inventory
                 itemIcon.gameObject.SetActive(false);
                 countLabel.gameObject.SetActive(false);
                 tooltipSource.enabled = false;
+                Transparency = 1f;
                 return;
             }
 
@@ -59,9 +61,22 @@ namespace Lunaculture.UI.Inventory
             SendMessageUpwards("OnSlotCellAssigned", this, SendMessageOptions.DontRequireReceiver);
         }
 
-        protected virtual string LabelText => AssignedStack?.Count <= 999
-            ? AssignedStack.Count.ToString()
-            : "999+";
+        protected virtual string LabelText
+        {
+            get
+            {
+                if (AssignedStack is null)
+                    return "?";
+
+                var item = AssignedStack.ItemType!;
+                if (Array.IndexOf(item.Tags, "Infinite") != -1)
+                    return string.Empty;
+                
+                return AssignedStack?.Count <= 999
+                    ? AssignedStack.Count.ToString()
+                    : "999+";
+            }
+        }
 
         public void ToggleSelectionIcon(bool isSelected)
             => selectedIcon.enabled = isSelected;

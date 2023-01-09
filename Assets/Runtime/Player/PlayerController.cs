@@ -1,3 +1,4 @@
+using Lunaculture.GameTime;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -15,6 +16,8 @@ namespace Lunaculture.Player
         [SerializeField] private CapsuleCollider outsideCollider = null!;
 
         private Vector3 intendedVelocity = Vector3.zero;
+
+        [SerializeField] private TimeController timeController = null!;
 
         [SerializeField]
         private Animator _animator = null!;
@@ -43,7 +46,7 @@ namespace Lunaculture.Player
 
         private void FixedUpdate()
         {
-            _rigidbody.velocity = intendedVelocity;
+            _rigidbody.velocity = intendedVelocity / timeController.GameSpeed;
 
             var currentlyWalking = _rigidbody.velocity != Vector3.zero;
             if (currentlyWalking != walking)
