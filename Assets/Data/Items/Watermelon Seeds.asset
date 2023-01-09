@@ -21,6 +21,7 @@ MonoBehaviour:
   <CanSell>k__BackingField: 0
   <SellPrice>k__BackingField: 0
   <CanPlace>k__BackingField: 1
-  <PlacePrefab>k__BackingField: {fileID: 0}
+  <PlacePrefab>k__BackingField: {fileID: 7519098644441595777, guid: 379e9ecc104cde7419ccf896ea07faa1,
+    type: 3}
   <Tags>k__BackingField:
   - Seeds

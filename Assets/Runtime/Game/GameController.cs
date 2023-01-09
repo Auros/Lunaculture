@@ -52,7 +52,7 @@ namespace Lunaculture.Game
         {
             _weekNumber++;
 
-            if (_itemReferenceProvider.WeekItemUnlockInfos.Count >= _weekNumber)
+            if (_itemReferenceProvider.WeekItemUnlockInfos.Count > _weekNumber)
             {
                 UnlockWeek(_itemReferenceProvider.WeekItemUnlockInfos[_weekNumber]);
             }

@@ -116,6 +116,7 @@ namespace Lunaculture.Planting.Plots
             if (_currentlyPlacing || !_gridSelectionController.Active)
                 return;
 
+            _orchardPrefab = selectedItem.PlacePrefab.GetComponent<PhysicalOrchardController>();
             StartPlaceNew();
         }
     }

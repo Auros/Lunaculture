@@ -22,6 +22,7 @@ MonoBehaviour:
   <CanSell>k__BackingField: 0
   <SellPrice>k__BackingField: 0
   <CanPlace>k__BackingField: 1
-  <PlacePrefab>k__BackingField: {fileID: 0}
+  <PlacePrefab>k__BackingField: {fileID: 2077440580211230309, guid: 119a9815bda395440b5ac659f8d15aa8,
+    type: 3}
   <Tags>k__BackingField:
   - Sapling
