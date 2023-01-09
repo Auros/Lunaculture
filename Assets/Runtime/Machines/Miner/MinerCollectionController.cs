@@ -1,6 +1,7 @@
 ﻿using Lunaculture.Grids;
 using Lunaculture.Grids.Objects;
 using Lunaculture.Player.Inventory;
+using Lunaculture.UI.Tooltips;
 using UnityEngine;
 
 namespace Lunaculture.Machines.Miner
@@ -9,6 +10,9 @@ namespace Lunaculture.Machines.Miner
     {
         [SerializeField]
         private InventoryService _inventoryService = null!;
+
+        [SerializeField]
+        private TooltipController _tooltipController = null!;
         
         protected override void OnGridObjectClicked(GridObject gridObject)
         {
@@ -26,7 +30,15 @@ namespace Lunaculture.Machines.Miner
 
         protected override void OnHoveredGridObjectChange(GridObject? gridObject)
         {
-            // unused atm
+            if (gridObject is not MinerGridObject miner)
+            {
+                _tooltipController.CloseTooltip();
+                return;
+            }
+
+            var count = miner.Controller.GetItemCount();
+            var plural = count == 1 ? string.Empty : "s";
+            _tooltipController.ShowTooltip("Resource Collector", $"Currently has {count} resource{plural}. Click to harvest.");
         }
     }
 }
