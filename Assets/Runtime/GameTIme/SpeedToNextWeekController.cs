@@ -77,6 +77,7 @@ namespace Lunaculture.GameTime
                         .SetEase(EaseType.QuartOut);
                 }
 
+                _activeSpeed.AsNull()?.Cancel();
                 _timeController.GameSpeed = _menuPopupController.MenuOpen ? 0f : 1f;
             }
         }

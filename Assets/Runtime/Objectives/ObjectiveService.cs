@@ -18,6 +18,10 @@ namespace Lunaculture.Objectives
         [SerializeField]
         private int sellTargetIncrease = 100;
 
+        [Header("Sell target is multiplied by this amount after every complete objective.")]
+        [SerializeField]
+        private float sellTargetMultiplier = 1.2f;
+
         [SerializeField] private CurrencyService currencyService = null!;
         [SerializeField] private TimeController timeController = null!;
 
@@ -43,7 +47,7 @@ namespace Lunaculture.Objectives
         {
             if (sellProgress >= SellTarget)
             {
-                SellTarget += sellTargetIncrease;
+                SellTarget = Mathf.RoundToInt((SellTarget + sellTargetIncrease) * sellTargetMultiplier);
                 sellProgress = 0;
                 OnObjectiveComplete?.Invoke();
             }
