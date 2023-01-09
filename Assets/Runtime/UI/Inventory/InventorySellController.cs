@@ -43,9 +43,9 @@ namespace Lunaculture.UI.Inventory
 
         private void OnSlotCellAssigned(SlotCell cell)
         {
-            if (cell.AssignedStack is { Empty: false} && !cell.AssignedStack.ItemType!.CanSell)
+            if (cell.AssignedStack is { Empty: false })
             {
-                cell.Transparency = 0.2f;
+                cell.Transparency = cell.AssignedStack.ItemType!.CanSell ? 1 : 0.2f;
             }
         }
     }
