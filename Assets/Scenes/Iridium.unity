@@ -2214,6 +2214,9 @@ MonoBehaviour:
   - <ItemType>k__BackingField: {fileID: 11400000, guid: 38496544902f20e499a28a326bfd1d66,
       type: 2}
     <Count>k__BackingField: 1
+  - <ItemType>k__BackingField: {fileID: 11400000, guid: adceeac1c6b1f9544aab5c2e90b72cfa,
+      type: 2}
+    <Count>k__BackingField: 1
   inventoryService: {fileID: 962633878}
 --- !u!114 &962633880
 MonoBehaviour:
