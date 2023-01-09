@@ -24,7 +24,7 @@ namespace Lunaculture.Player.Inventory
         {
             for (var i = 0; i < Inventory.Length; i++)
             {
-                if (Inventory[i] != null && Inventory[i]!.ItemType == item)
+                if (Inventory[i] != null && Inventory[i]!.ItemType == item && Inventory[i]!.Count > 0)
                 {
                     Inventory[i]!.Count += count;
                     InventoryUpdatedEvent?.Invoke();
