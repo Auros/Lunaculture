@@ -13,31 +13,22 @@ namespace Lunaculture.UI.Tooltips
         [SerializeField] private TextMeshProUGUI? _nameText = null!;
         [SerializeField] private TextMeshProUGUI? _textText = null!;
 
-        private Camera _camera;
-
-        private bool tooltipActive = false;
-
-        private void Start()
-        {
-            _camera = Camera.main;
-        }
-
         public void OnTooltipMovement(InputAction.CallbackContext context)
         {
             _tooltipTransform.position = context.ReadValue<Vector2>();
         }
 
-        private void OnTooltipEnter(TooltipSource source)
+        public void ShowTooltip(TooltipSource source) => ShowTooltip(source.TooltipName, source.TooltipText);
+
+        public void ShowTooltip(string name, string text)
         {
             _tooltipTransform.gameObject.SetActive(true);
-            tooltipActive = true;
-            _nameText.text = source.TooltipName;
-            _textText.text = source.TooltipText;
+            _nameText.text = name;
+            _textText.text = text;
         }
 
-        private void OnTooltipExit(TooltipSource source)
+        public void CloseTooltip()
         {
-            tooltipActive = false;
             _tooltipTransform.gameObject.SetActive(false);
         }
     }
