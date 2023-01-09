@@ -23,6 +23,5 @@ MonoBehaviour:
   <SellPrice>k__BackingField: 0
   <CanPlace>k__BackingField: 1
   <PlacePrefab>k__BackingField: {fileID: 0}
-  <Tags>k__BackingField:
-  - Infinite
+  <Tags>k__BackingField: []
   <DoNotGrantAutomatically>k__BackingField: 1
