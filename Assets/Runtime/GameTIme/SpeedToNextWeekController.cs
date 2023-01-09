@@ -1,4 +1,5 @@
 using Cinemachine;
+using Cysharp.Threading.Tasks;
 using ElRaccoone.Tweens;
 using ElRaccoone.Tweens.Core;
 using Lunaculture.Cameras;
@@ -79,7 +80,15 @@ namespace Lunaculture.GameTime
 
                 _activeSpeed.AsNull()?.Cancel();
                 _timeController.GameSpeed = _menuPopupController.MenuOpen ? 0f : 1f;
+                YetAnotherStupidFix().AttachExternalCancellation(this.GetCancellationTokenOnDestroy()).Forget();
             }
+        }
+
+        private async UniTask YetAnotherStupidFix()
+        {
+            await UniTask.WaitWhile(() => _timeController.GameSpeed == 0);
+
+            _timeController.GameSpeed = 1f;
         }
 
         private void ObjectiveService_OnObjectiveProgress(float progress)
