@@ -345,7 +345,7 @@ MonoBehaviour:
   _objectiveService: {fileID: 85955511}
   _itemReferenceProvider: {fileID: 952133960}
   _shopUIController: {fileID: 879721788}
-  _loreBoxController: {fileID: 0}
+  _loreBoxController: {fileID: 430030494}
   _iridiumSprite: {fileID: 21300000, guid: 5f4f82337c962d74bb77c55f7631cebf, type: 3}
   _seedsGrantedUponUnlock: 10
 --- !u!4 &228790029 stripped
@@ -650,6 +650,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &430030494 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4698907621937667840, guid: 494a0199c90150742a549378c4c76860,
+    type: 3}
+  m_PrefabInstance: {fileID: 879721787}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9b48473e307ac43a16ebe65a80aec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &516818172
 GameObject:
   m_ObjectHideFlags: 0
