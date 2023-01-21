@@ -1,6 +1,8 @@
 # Lunaculture
 Ludum Dare 52 Game Jam with @legoandmars and @Caeden117
 
+Our Submission on [LDJAM](https://ldjam.com/events/ludum-dare/52/lunaculture) and [Itch](https://legoandmars.itch.io/lunaculture)
+
 ## What is Ludum Dare
 Ludum Dare is a 72 hour online game jam where developers get together and build a game around a theme over a weekend.
 
